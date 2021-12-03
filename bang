@@ -14,7 +14,7 @@ alias cpy='xclip -selection clipboard'
 ## Fileless-xec server cpy
 bang.flxscpy(){
 if [ "$1" = "-h" ]; then
-    echo "bang.flxscpy $AP"
+    echo "bang.flxscpy \$AP"
 else
     echo "fileless-xec server $1"|cpy
 fi
@@ -23,7 +23,7 @@ fi
 ## Fileless-xec send to server
 bang.flxssend(){
 if [ "$1" = "-h" ]; then
-    echo "bang.flxssend $AA $AP [file]"
+    echo "bang.flxssend \$AA \$AP [file]"
 else
     curl -X POST -F "executable=@$3" http://$1:$2/upload
 fi
@@ -32,7 +32,7 @@ fi
 ## Gitar start
 bang.gitar(){
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar $AA"
+    echo "bang.gitar \$AA"
 else
   gitar -e $1
 fi
