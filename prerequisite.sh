@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p $HOME/bin
+mkdir -p $HOME/.local/bin/
 mkdir -p $HOME/.bang
 
 cp bang $HOME/.bang
