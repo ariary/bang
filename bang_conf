@@ -37,6 +37,10 @@ bang.conf(){
     cTP ${TAR_PORT}
 }
 
+## Current conf
+alias 'bang.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
+
+
 ##Load shortcuts
 
 alias bang='source ~/.bang/bang'
