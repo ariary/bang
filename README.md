@@ -4,7 +4,7 @@
 
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
 * `echo "export $PATH=$PATH:$HOME/bin" >> ~/.bashrc && source ~/.bashrc`
-* `echo "source ~/.bang_conf" >> ~/.bashrc && source ~/.bashrc`
+* `echo "source ~/.bang/bang_conf" >> ~/.bashrc && source ~/.bashrc`
 
 ## Install tools
 **➲** *Install all sort of tools*
