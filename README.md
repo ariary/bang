@@ -1,7 +1,7 @@
 # 💥
 
 ## Quickstart
-
+**➲** *🏎️*
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
 * `echo "export $PATH=$PATH:$HOME/bin" >> ~/.bashrc && source ~/.bashrc`
 * `echo "source ~/.bang/bang_conf" >> ~/.bashrc && source ~/.bashrc`
@@ -15,7 +15,7 @@
 **➲** *Load shortcuts and aliases*
 1. Configure your pentest (Set attacker and target info):
     * attacker addr: `cAA=[ATTACKER_IP]` & attacker port: `cAP=[ATTACKER_PORT]` 
-    * target addr: `cTA=[ATTACKER_IP]` & target port: `cTP=[ATTACKER_PORT]`
+    * target addr: `cTA=[TARGET_IP]` & target port: `cTP=[TARGET_PORT]`
 
 2. Load Shortcuts: `$ bang`
 
