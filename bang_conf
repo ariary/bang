@@ -21,6 +21,22 @@ cAP(){
     eval export AP=$1
 }
 
+## Interactiv conf
+bang.conf(){
+    echo "Enter Attacker IP: "
+    read ATT_ADDR
+    cAA ${ATT_ADDR}
+    echo "Enter Attacker PORT: "
+    read ATT_PORT
+    cAP ${ATT_PORT}
+    echo "Enter Target IP: "
+    read TAR_ADDR
+    cTA ${TAR_ADDR}
+    echo "Enter Target PORT: "
+    read TAR_PORT
+    cTP ${TAR_PORT}
+}
+
 ##Load shortcuts
 
 alias bang='source ~/.bang/bang'
