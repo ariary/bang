@@ -1,0 +1,19 @@
+# personnal shortcuts
+# 'source' it before making pentest
+
+## Queensono send
+
+## Queensono send cpy
+
+## Queensono receive
+
+## Queensono receive cpy
+
+## Fileless-xec server cpy
+
+## Fileless-xec send to server
+
+## Gitar start
+bang.gitar(){
+  gitar -e $1 -p $2
+}

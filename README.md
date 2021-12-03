@@ -15,7 +15,7 @@
 
 1. Configure your pentest (Set attacker and target info):
     * attacker addr: `cAA=[ATTACKER_IP]` & attacker port: `cAP=[ATTACKER_PORT]` 
-    * target addr: `cAA=[ATTACKER_IP]` & target port: `cAP=[ATTACKER_PORT]`
+    * target addr: `cTA=[ATTACKER_IP]` & target port: `cTP=[ATTACKER_PORT]`
 
 2. Load Shortcuts: `$ bang`
 

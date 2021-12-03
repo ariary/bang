@@ -1,0 +1,26 @@
+# Configure envvar before pentest
+# as it is short you could source it in ~/bashrc
+
+## Change Target IP (Addr) envvar
+cTA(){
+    eval export TA=$1
+}
+
+## Change Target port envvar
+cTP(){
+    eval export TP=$1
+}
+
+## Change Attacker IP (Addr) envvar
+cTA(){
+    eval export AA=$1
+}
+
+## Change Attacker port envvar
+cAP(){
+    eval export AP=$1
+}
+
+##Load shortcuts
+
+alias bang='source ~/.bang'
