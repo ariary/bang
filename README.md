@@ -3,13 +3,13 @@
 ## Quickstart
 **➲** *Let your environment be ready*
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
-* `echo "export PATH=$PATH:$HOME/bin" >> ~/.bashrc && source ~/.bashrc`
+* `echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.bashrc && source ~/.bashrc`
 * `echo "source ~/.bang/bang_conf" >> ~/.bashrc && source ~/.bashrc`
 
 ## Install tools
 **➲** *Install all sort of tools*
-* ***install-ariary.sh***: install all ariary useful (for pentesting) repo in ~/bin
-* ***install-tools.sh***: install other useful tools for pentesting
+* ***install-ariary.sh***: install all ariary useful (for pentesting) repo in ~/.local/bin/
+* ***install-tools.sh***: install other useful tools for pentesting in ~/.local/bin/
 
 ## Bang !
 **➲** *Load shortcuts and aliases*
