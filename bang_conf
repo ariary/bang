@@ -12,7 +12,7 @@ cTP(){
 }
 
 ## Change Attacker IP (Addr) envvar
-cTA(){
+cAA(){
     eval export AA=$1
 }
 
