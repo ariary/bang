@@ -1,6 +1,8 @@
 # personnal shortcuts
 # 'source' it before making pentest
 
+alias cpy='xclip -selection clipboard'
+
 ## Queensono send
 
 ## Queensono send cpy
@@ -10,8 +12,22 @@
 ## Queensono receive cpy
 
 ## Fileless-xec server cpy
+bang.flxscpy(){
+if [ "$1" = "-h" ]; then
+    echo "bang.flxscpy $AP"
+else
+    echo "fileless-xec server $1"|cpy
+fi
+}
 
 ## Fileless-xec send to server
+bang.flxssend(){
+if [ "$1" = "-h" ]; then
+    echo "bang.flxssend $AA $AP [file]"
+else
+    curl -X POST -F "executable=@$3" http://$1:$2/upload
+fi
+}
 
 ## Gitar start
 bang.gitar(){
