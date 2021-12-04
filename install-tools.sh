@@ -22,4 +22,8 @@ GO_ENDPOINT="$(curl -s https://go.dev/dl/ | grep "linux" -n --color |head -1| cu
 curl -L0 -s $GO_URL$GO_ENDPOINT -o go.tar.gz
 sudo tar -C /usr/local -xvf go.tar.gz
 rm go.tar.gz
-export PATH=$PATH:/usr/local/go/bin >> ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+echo "export PATH=$PATH:$HOME/go/bin" >> ~/.bashrc #Add go install in PATH
+
+#ko
+go install github.com/google/ko@latest
