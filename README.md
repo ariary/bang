@@ -12,8 +12,9 @@
 * ***install-tools.sh***: install other useful tools for pentesting in ~/.local/bin/
 
 ## Bang !
-**➲** *Load shortcuts and aliases*
-Configure your pentest (Set attacker and target info): `bang.conf`
+**➲** *Configure your pentest*
+
+Set attacker and target info: `bang.conf`
 
 You could alternatively configure each item:
  * attacker addr: `cAA=[ATTACKER_IP]` & attacker port: `cAP=[ATTACKER_PORT]` 
