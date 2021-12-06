@@ -25,10 +25,14 @@ You could alternatively configure each item:
 
 #### `gitar` (pentest easy file sharing)
 
-* share file with remote machine
-* share file with remote machine safely
+* [Share file with remote machine](https://github.com/ariary/bang/blob/main/EXAMPLES.md#share-files)
+* [Share file with remote machine safely](https://github.com/ariary/bang/blob/main/EXAMPLES.md#share-files-safely)
 
 #### `fileless-xec` (stealth execution of binary on a remote machine)
 
-* Copy line to run `fileless-xec` on remote
-* Send local binary on remote & execute it using `fileless-xec`
+* [Copy line to run `fileless-xec` on remote](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-line-to-launch-fieleless-xec-stealth-dropper)
+* [Send local binary on remote & execute it using `fileless-xec`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-local-file-to-remote-fileless-xec-to-stealthy-run-it)
+
+#### Others
+
+* [Expose local file on internet (`ngrok`)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-local-file-to-remote-fileless-xec-to-stealthy-run-it)

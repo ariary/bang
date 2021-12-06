@@ -46,3 +46,12 @@ else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs" -v "${PWD}:/a/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
 fi
 }
+
+## Ngrok expose
+bang.gitar-safe(){
+if [ "$1" = "-h" ]; then
+    echo "bang.expose \$AP"
+else
+  ngrok http $1
+fi
+}

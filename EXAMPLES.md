@@ -31,10 +31,20 @@ This will copy command line on your clipboard to launch fileless-xec on remote. 
 bang.flxscpy
 ```
 
-### Send a local file to remote `fileless-xec` to stealrthy run it
+### Send a local file to remote `fileless-xec` to stealthy run it
 
 This will send a local binary to a remote listening `fileless-xec`. The binary will be then executed (stealthy) on remote
 
 ```
 bang.flxssend [TARGET_IP]] [TARGET_PORT] [binary]
+```
+
+## `ngrok`
+
+With `ngrok` you expose on internet file of your local machine.
+
+### Expose local file on internet
+
+```
+bang.expose [LOCAL_PORT]
 ```
