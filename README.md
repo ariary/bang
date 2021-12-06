@@ -3,8 +3,8 @@
 ## Quickstart
 **➲** *Let your environment be ready*
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
-* `echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.bashrc && source ~/.bashrc`
-* `echo "source ~/.bang/bang_conf" >> ~/.bashrc && source ~/.bashrc`
+* `export SH=[bash/zsh] && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.$SHrc && source ~/.$SHrc`
+* `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.$SHrc && source ~/.$SHrc`
 
 ## Install tools
 **➲** *Install all sort of tools*
