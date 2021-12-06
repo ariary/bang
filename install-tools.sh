@@ -2,7 +2,7 @@
 
 ## Install tools
 
-#docker, etc
+#docker, vim plugin etc
 
 #xclip
 echo "[*] Install clip.."
@@ -27,7 +27,7 @@ curl -L0 -s $GO_URL$GO_ENDPOINT -o go.tar.gz
 sudo tar -C /usr/local -xvf go.tar.gz
 rm go.tar.gz
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
-echo "export PATH=$PATH:$HOME/go/bin" >> ~/.bashrc #Add go install in PATH
+echo "export PATH=$PATH:$HOME/go/bin" >> ~/.zshrc #Add go install in PATH
 
 #ko
 echo "[*] Install ko.."
@@ -43,4 +43,13 @@ read -s NGROK_TOKEN
 $HOME/.local/bin/ngrok authtoken $NGROK_TOKEN
 unset NGROK_TOKEN
 
-echo "export PATH=$PATH:$HOME/.local/bin/" >> $HOME/.bashrc
+##zsh & co
+echo "[*] Install ZSH & co.."
+sudo apt install zsh
+sudo apt install zsh-completions
+git clone https://github.com/ohmyzsh/ohmyzsh.git && cd ohmyzsh && sudo ./install.sh
+cd .. & rm -rf zsh-completions
+echo "[*] Install ZSH theme"
+sed -i '/ZSH_THEME/c\ZSH_THEME="awfoler"' ~/.zshrc
+
+echo "export PATH=$PATH:$HOME/.local/bin/" >> $HOME/.zshrc
