@@ -38,7 +38,7 @@ bang.conf(){
 }
 
 ## Current conf
-alias 'bang.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
+alias 'bang.conf.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
 
 
 ##Load shortcuts
