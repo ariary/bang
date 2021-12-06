@@ -43,11 +43,38 @@ bang.gitar-safe(){
 if [ "$1" = "-h" ]; then
     echo "bang.gitar-safe \$AA"
 else
-  docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs" -v "${PWD}:/a/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
+  docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
 fi
 }
 
-## Ngrok expose
+## Gitar start + url override
+bang.gitar-override(){
+if [ "$1" = "-h" ]; then
+    echo "bang.gitar-override [PROXY_URL]"
+else
+  gitar -alias-override-url=$1
+fi
+}
+
+## "Safe" Gitar start + url override
+bang.gitar-safe-override(){
+if [ "$1" = "-h" ]; then
+    echo "gitar-safe-override [PROXY_URL]"
+else
+  docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -alias-override-url=$1
+fi
+}
+
+## Ngrok expose a https service
+bang.expose-https(){
+if [ "$1" = "-h" ]; then
+    echo "bang.expose-https \$AP"
+else
+  ngrok http https://127.0.0.1:$1
+fi
+}
+
+## Ngrok expose a port
 bang.expose(){
 if [ "$1" = "-h" ]; then
     echo "bang.expose \$AP"
@@ -55,3 +82,5 @@ else
   ngrok http $1
 fi
 }
+
+alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share" rflathers/webdav'
