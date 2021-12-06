@@ -12,18 +12,18 @@ alias cpy='xclip -selection clipboard'
 ## Queensono receive cpy
 
 ## Fileless-xec server cpy
-bang.flxscpy(){
+bang.flx.serve.cpy(){
 if [ "$1" = "-h" ]; then
-    echo "bang.flxscpy \$AP"
+    echo "bang.flx.serve.cpy \$AP"
 else
     echo "fileless-xec server $1"|cpy
 fi
 }
 
 ## Fileless-xec send to server
-bang.flxssend(){
+bang.flx.send(){
 if [ "$1" = "-h" ]; then
-    echo "bang.flxssend \$TA \$TP [file]"
+    echo "bang.flx.send \$TA \$TP [file]"
 else
     curl -X POST -F "executable=@$3" http://$1:$2/upload
 fi
@@ -39,34 +39,34 @@ fi
 }
 
 ## "Safe" Gitar start
-bang.gitar-safe(){
+bang.gitar.safe(){
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar-safe \$AA"
+    echo "bang.gitar.safe \$AA"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
 fi
 }
 
 ## Gitar start + url override
-bang.gitar-override(){
+bang.gitar.override(){
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar-override [PROXY_URL]"
+    echo "bang.gitar.override [PROXY_URL]"
 else
   gitar -alias-override-url=$1
 fi
 }
 
 ## "Safe" Gitar start + url override
-bang.gitar-safe-override(){
+bang.gitar.safe-override(){
 if [ "$1" = "-h" ]; then
-    echo "gitar-safe-override [PROXY_URL]"
+    echo "gitar.safe-override [PROXY_URL]"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -alias-override-url=$1
 fi
 }
 
 ## Ngrok expose a https service
-bang.expose-https(){
+bang.expose.https(){
 if [ "$1" = "-h" ]; then
     echo "bang.expose-https \$AP"
 else
