@@ -48,7 +48,7 @@ fi
 }
 
 ## Ngrok expose
-bang.gitar-safe(){
+bang.expose(){
 if [ "$1" = "-h" ]; then
     echo "bang.expose \$AP"
 else

@@ -35,7 +35,7 @@ go install github.com/google/ko@latest
 
 #ngrok
 echo "[*] Install ngrok.."
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip ngrok-stable-linux-amd64.zip
 mv ./ngrok ~/.local/bin/
 echo "[INPUT REQUIRE] Enter your ngrok token: (find it https://dashboard.ngrok.com/get-started/your-authtoken)"
