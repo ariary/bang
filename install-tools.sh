@@ -49,6 +49,6 @@ sudo apt install zsh
 sudo apt install zsh-completions
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "[*] Install ZSH theme"
-sed -i '/ZSH_THEME/c\ZSH_THEME="awfoler"' ~/.zshrc
+sed -i '0,/ZSH_THEME/c\ZSH_THEME="awfoler"' ~/.zshrc
 
 echo "export PATH=$PATH:$HOME/.local/bin/" >> $HOME/.zshrc
