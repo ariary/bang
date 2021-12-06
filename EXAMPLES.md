@@ -21,6 +21,17 @@ Start safe file sharing:
 bang.gitar-safe $AA $AP
 ```
 
+### Expose local file on internet
+
+`ngrok` enable us to share local port on the internet. The idea is to start `gitar` server locally and then expose the local port on internet using `ngrok`
+
+*Notes: as we use `ngrok` and we do not add certificates we must a use gitar w/o TLS*
+
+1. Start `gitar` server: `bang.gitar 127.0.0.1`
+2. Expose the server port on internet: `bang.expose 9237`
+
+Ngrok will output the internet reachable address for your server (use `https` one preferably)
+
 ## `fileless-xec`
 
 ### Copy line to launch `fieleless-xec` stealth dropper
@@ -39,12 +50,3 @@ This will send a local binary to a remote listening `fileless-xec`. The binary w
 bang.flxssend [TARGET_IP]] [TARGET_PORT] [binary]
 ```
 
-## `ngrok`
-
-With `ngrok` you expose on internet file of your local machine.
-
-### Expose local file on internet
-
-```
-bang.expose [LOCAL_PORT]
-```
