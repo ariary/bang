@@ -83,9 +83,10 @@ This enable us to share all files of current directory trough a webdav server
 bang.webdavhere
 ```
 
-You can now access file from a remote machine (Windows) with the UNC path: ` \\[ATTACKER_ADDR]@[ATTACKER_PORT]\share`
+You can now access file from a remote machine (Windows) with the UNC path: `\\[ATTACKER_ADDR]@[ATTACKER_PORT]\share`
 
 You could eventually expose server behind a internet address using `ngrok` (if you are behdin an NAT for exemple):
 ```
 bang.expose 8080
 ```
+Access file: `\\[NGROK_URL]@\share`
