@@ -19,7 +19,6 @@ You could alternatively configure each item:
  * attacker addr: `cAA=[ATTACKER_IP]` & attacker port: `cAP=[ATTACKER_PORT]` 
  * target addr: `cTA=[TARGET_IP]` & target port: `cTP=[TARGET_PORT]`
 
-2. Load Shortcuts: `bang`
 
 ### Examples
 
