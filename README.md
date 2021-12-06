@@ -13,14 +13,15 @@
 
 ## Bang !
 **➲** *Load shortcuts and aliases*
-1. Configure your pentest (Set attacker and target info): `bang.conf`
+Configure your pentest (Set attacker and target info): `bang.conf`
 
 You could alternatively configure each item:
  * attacker addr: `cAA=[ATTACKER_IP]` & attacker port: `cAP=[ATTACKER_PORT]` 
  * target addr: `cTA=[TARGET_IP]` & target port: `cTP=[TARGET_PORT]`
 
 
-### Examples
+## Examples
+**➲** *List of useful `bang`shortcut
 
 #### `gitar` (pentest easy file sharing)
 
