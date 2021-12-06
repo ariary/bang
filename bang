@@ -23,7 +23,7 @@ fi
 ## Fileless-xec send to server
 bang.flxssend(){
 if [ "$1" = "-h" ]; then
-    echo "bang.flxssend \$AA \$AP [file]"
+    echo "bang.flxssend \$TA \$TP [file]"
 else
     curl -X POST -F "executable=@$3" http://$1:$2/upload
 fi
@@ -35,5 +35,14 @@ if [ "$1" = "-h" ]; then
     echo "bang.gitar \$AA"
 else
   gitar -e $1
+fi
+}
+
+## "Safe" Gitar start
+bang.gitar-safe(){
+if [ "$1" = "-h" ]; then
+    echo "bang.gitar-safe \$AA"
+else
+  docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs" -v "${PWD}:/a/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
 fi
 }

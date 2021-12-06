@@ -2,7 +2,7 @@
 
 ## Install tools
 
-#docker, go,etc
+#docker, etc
 
 #xclip
 sudo apt install xclip

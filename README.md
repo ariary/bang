@@ -21,9 +21,14 @@ You could alternatively configure each item:
 
 2. Load Shortcuts: `bang`
 
-### Gitar example
+### Examples
 
-Start file sharing:
-```
-bang.gitar $AA $AP
-```
+#### `gitar` (pentest easy file sharing)
+
+* share file with remote machine
+* share file with remote machine safely
+
+#### `fileless-xec` (stealth execution of binary on a remote machine)
+
+* Copy line to run `fileless-xec` on remote
+* Send local binary on remote & execute it using `fileless-xec`
