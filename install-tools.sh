@@ -47,8 +47,7 @@ unset NGROK_TOKEN
 echo "[*] Install ZSH & co.."
 sudo apt install zsh
 sudo apt install zsh-completions
-git clone https://github.com/ohmyzsh/ohmyzsh.git && cd ohmyzsh && sudo ./install.sh
-cd .. & rm -rf oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "[*] Install ZSH theme"
 sed -i '/ZSH_THEME/c\ZSH_THEME="awfoler"' ~/.zshrc
 
