@@ -111,3 +111,5 @@ fi
 }
 
 alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share" rflathers/webdav'
+
+alias bang.proxycurl='curl --proxy http://127.0.0.1:8080'
