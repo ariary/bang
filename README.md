@@ -23,19 +23,20 @@ You could alternatively configure each item:
 
 
 ## Examples
-**➲** *List of useful `bang` shortcut*
+**➲** *List of useful `bang` shortcuts*
 
 #### `gitar` (pentest easy file sharing)
 
 * [Share file with remote machine](https://github.com/ariary/bang/blob/main/EXAMPLES.md#share-files)
 * [Share file with remote machine safely](https://github.com/ariary/bang/blob/main/EXAMPLES.md#share-files-safely)
-* [Expose local file on internet (`ngrok`)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#expose-local-file-on-internet)
+* [Expose local file on internet (`ngrok`)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#expose-local-file-on-internet) (Attacker ⇠ Internet ⇠ Target)
 
 
 #### `fileless-xec` (stealth execution of binary on a remote machine)
 
+* [Exec local binary exposing it trough http](https://github.com/ariary/bang/blob/main/EXAMPLES.md#exec-binary-from-a-local-http-server) (Attacker ⇠ Target)
 * [Copy line to run `fileless-xec` on remote](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-line-to-launch-fieleless-xec-stealth-dropper)
-* [Send local binary on remote & execute it using `fileless-xec`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-local-file-to-remote-fileless-xec-to-stealthy-run-it)
+* [Send local binary on remote & execute it using `fileless-xec`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-local-file-to-remote-fileless-xec-to-stealthy-run-it) (Attacker ⇢ Target)
 
 
 #### Others
