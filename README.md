@@ -8,8 +8,9 @@
 
 ## Install tools
 **➲** *Install all sort of tools*
-* ***install-ariary.sh***: install all ariary useful (for pentesting) repo in ~/.local/bin/
-* ***install-tools.sh***: install other useful tools for pentesting in ~/.local/bin/
+* ***install/install-ariary.sh***: install all ariary useful (for pentesting) repo in ~/.local/bin/
+* ***install/install-tools.sh***: install other useful tools for pentesting in ~/.local/bin/
+* ***install/install-zsh.sh*** & ***install/post-install-zsh.sh*** : install zsh environment
 
 ## Bang !
 **➲** *Configure your pentest*
