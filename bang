@@ -88,7 +88,7 @@ bang.gitar.kill(){
 if [ "$1" = "-h" ]; then
     echo "bang.gitar.kill"
 else
-  sudo kill -9 $(pgrep gitar)
+  sudo pkill -9 gitar
 fi
 }
 
