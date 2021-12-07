@@ -70,7 +70,7 @@ bang.flxscpy
 This will send a local binary to a remote listening `fileless-xec`. The binary will be then executed (stealthy) on remote
 
 ```
-bang.flxssend [TARGET_IP]] [TARGET_PORT] [binary]
+bang.flxssend [TARGET_IP] [TARGET_PORT] [binary]
 ```
 
 ## Webdav server
