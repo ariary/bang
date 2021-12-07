@@ -22,7 +22,7 @@ You could alternatively configure each item:
 
 
 ## Examples
-**➲** *List of useful `bang` shortcut*
+**➲** *List of useful `bang` shortcuts*
 
 #### `gitar` (pentest easy file sharing)
 
