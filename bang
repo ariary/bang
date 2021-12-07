@@ -59,9 +59,27 @@ fi
 ## "Safe" Gitar start + url override
 bang.gitar.safe-override(){
 if [ "$1" = "-h" ]; then
-    echo "gitar.safe-override [PROXY_URL]"
+    echo "ban.gitar.safe-override [PROXY_URL]"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -alias-override-url=$1
+fi
+}
+
+## Gitar server as a daemon 
+bang.gitar.daemon(){
+if [ "$1" = "-h" ]; then
+    echo "bang.gitar.daemon \$AA"
+else
+  nohup gitar -e $1 &
+fi
+}
+
+## Kill gitar process
+bang.gitar.kill(){
+if [ "$1" = "-h" ]; then
+    echo "bang.gitar.kill"
+else
+  sudo kill -9 $(pgrep gitar)
 fi
 }
 
