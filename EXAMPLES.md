@@ -14,7 +14,7 @@ This will start a `gitar` http server and copy to your clipboard a command line 
 
 #### Alternative
 Launch gitar as a daemon, and kill it later when you want (=>no logs)
-1. Start gitar: `bang.gitar.daemon`(copy command line)
+1. Start gitar: `bang.gitar.daemon $AA`(copy command line)
 2. paste command line on remote
 3. Do your stuff (`push`,`pull`, etc)
 4. kill gitar: `bang.gitar.kill`
