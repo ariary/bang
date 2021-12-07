@@ -1,0 +1,9 @@
+bang.weather()
+{
+  curl "http://wttr.in/$1?1"
+}
+
+bang.weather.tomorrow()
+{
+  curl "http://wttr.in/$1?2"
+}
