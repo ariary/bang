@@ -2,7 +2,7 @@
 
 ## Install tools
 
-#docker, vim plugin etc
+#TODO: docker, vim plugin, mitmproxy, feroxbuster (+alias, w/ gobuster also) etc
 
 #xclip
 echo "[*] Install clip.."
