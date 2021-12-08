@@ -114,12 +114,19 @@ alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share
 
 alias bang.proxycurl='curl --proxy http://127.0.0.1:8080'
 
-bang.mitmproxy.intercept.request(){
+bang.mitmproxy.intercept.request.domain(){
 if [ "$1" = "-h" ]; then
-    echo "bang.mitmproxy.intercept.request [DOMAIN]"
+    echo "bang.mitmproxy.intercept.request.domain [DOMAIN]"
 else
   mitmproxy --intercept "~u /*$1 & ~q"
 fi
 }
 
+bang.mitmproxy.intercept.request(){
+if [ "$1" = "-h" ]; then
+    echo "bang.mitmproxy.intercept.request"
+else
+  mitmproxy --intercept "~q"
+fi
+}
 
