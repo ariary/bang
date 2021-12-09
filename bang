@@ -127,7 +127,7 @@ bang.mitmproxy.intercept.request.domain(){
 if [ "$1" = "-h" ]; then
     echo "bang.mitmproxy.intercept.request.domain [DOMAIN]"
 else
-  mitmproxy --intercept "~u /*$1 & ~q"
+  $HOME/.local/bin/mitmproxy --intercept "~u /*$1 & ~q" #need absolute path
 fi
 }
 
@@ -135,7 +135,7 @@ bang.mitmproxy.intercept.request(){
 if [ "$1" = "-h" ]; then
     echo "bang.mitmproxy.intercept.request"
 else
-  mitmproxy --intercept "~q"
+  $HOME/.local/bin/mitmproxy --intercept "~q"
 fi
 }
 

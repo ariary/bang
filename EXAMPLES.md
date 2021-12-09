@@ -111,3 +111,27 @@ You could eventually expose server behind a internet address using `ngrok` (if y
 bang.expose 8080
 ```
 Access file: `\\[NGROK_URL]@\share`
+
+## Get the weather of your city
+
+```
+bang.fun.weather [CITY]
+```
+
+## Intercept request with command line
+
+We will use `mitm-proxy` which enable us to capture HTTP flow.
+
+1. Set up your proxy:
+    * If you want to catch request to a specific domains: `bang.mitmproxy.intercept.request.domain [DOMAIN]`
+    * If you want to catch all request: `bang.mitmproxy.intercept.request`
+2. Perform a curl request trough your proxy: `bang.proxycurl http://[DOMAIN]`
+
+### Modify request
+You will catch it in your mitm-proxy. Navigate over it, press `<ENTER>`
+To edit it press `e` and select the field you want to modify.
+When you have finished your modification: `<ECHAP>`, then press `q`, then press `q`again (requests view) and press `a` to perform the request
+
+### Repeat request
+
+[See](https://docs.mitmproxy.org/stable/mitmproxytutorial-replayrequests/)

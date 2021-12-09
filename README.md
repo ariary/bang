@@ -15,6 +15,8 @@ When you want to have all `bang` shortcut in you shell just tap `bang`
 * ***`bang.conf.install`***: install other useful tools for pentesting in ~/.local/bin/
 * ***install/install-zsh.sh*** & ***install/post-install-zsh.sh*** : install zsh environment (not required)
 
+These tools are used in bang shortcuts then.
+
 *To update the installation scripts used by these commands: `bang.conf.update`*
 
 ## Bang !
@@ -49,3 +51,4 @@ You could alternatively configure each item:
 
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
 * [Get weather for a given city]()
+* [Intercept HTTP request from command line]()
