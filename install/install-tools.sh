@@ -144,3 +144,8 @@ fi
 if [ "$1" = "--include" ]; then
     install_include "${@:2}"
 fi
+
+# By default install all
+if [ -z "$1" ]; then
+    install_exclude " "
+fi
