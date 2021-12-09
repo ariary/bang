@@ -6,6 +6,9 @@
 * `export SH=[bash/zsh] && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.$SHrc && source ~/.$SHrc`
 * `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.$SHrc && source ~/.$SHrc`
 
+When you want to have all `bang` shortcut in you shell just tap `bang`
+*(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.$SHrc)*
+
 ## Install tools
 **➲** *Ease installation of tools*
 * ***`bang.conf.install-ariary`***: install all ariary tools useful for pentesting in ~/.local/bin/
@@ -45,3 +48,4 @@ You could alternatively configure each item:
 #### Others
 
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
+* [Get weather for a given city]()

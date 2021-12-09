@@ -12,12 +12,18 @@ bang.gitar $AA $AP
 ```
 This will start a `gitar` http server and copy to your clipboard a command line to run on remote. Run it, you can now upload and download file from remote easily (without further installations [see](https://github.com/ariary/gitar/blob/main/README.md#tldr---and-listen-music)). 
 
-#### Alternative
+#### Alternative 1 - Daemon
 Launch gitar as a daemon, and kill it later when you want (=>no logs)
 1. Start gitar: `bang.gitar.daemon $AA`(copy command line)
 2. paste command line on remote
 3. Do your stuff (`push`,`pull`, etc)
 4. kill gitar: `bang.gitar.kill`
+
+#### Alternative 2 - For `/bin/sh`
+by default, `gitar` use completion. `/bin/sh` doesn't have `complete` enable. Hence launch gitar without this feature:
+```
+bang.gitar.no-completion
+```
 
 ### Share files safely
 

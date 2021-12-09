@@ -92,6 +92,15 @@ else
 fi
 }
 
+## Gitar without completion
+bang.gitar.no-completion(){
+if [ "$1" = "-h" ]; then
+    echo "bang.gitar.no-completion [ATTACKER_ADDR]"
+else
+    gitar -e $1 -completion=false
+fi
+}
+
 ## Ngrok expose a https service
 bang.expose.https(){
 if [ "$1" = "-h" ]; then

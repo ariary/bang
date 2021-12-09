@@ -42,7 +42,7 @@ alias 'bang.conf.pentest.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»�
 
 ##Update conf
 bang.conf.update(){
-    git clone git clone https://github.com/ariary/bang.git && cd bang
+    git clone https://github.com/ariary/bang.git && cd bang
     cp bang $HOME/.bang
     cp bang_conf $HOME/.bang
     cp -r ./install/ $HOME/.bang
