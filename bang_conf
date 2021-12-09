@@ -22,7 +22,7 @@ cAP(){
 }
 
 ## Interactiv conf
-bang.conf(){
+bang.conf.pentest(){
     echo "Enter Attacker IP: "
     read ATT_ADDR
     cAA ${ATT_ADDR}
@@ -38,9 +38,20 @@ bang.conf(){
 }
 
 ## Current conf
-alias 'bang.conf.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
+alias 'bang.conf.pentest.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
 
+##Update conf
+bang.conf.update(){
+    git clone git clone https://github.com/ariary/bang.git && cd bang
+    cp bang $HOME/.bang
+    cp bang_conf $HOME/.bang
+    cp -r ./install/ $HOME/.bang
+    cd .. && rm -rf bang
+}
+
+##Install modules/tools
+alias 'bang.conf.install=$HOME/.bang/install/install-tools.sh'
+alias 'bang.conf.install-ariary=$HOME/.bang/install/install-ariary.sh'
 
 ##Load shortcuts
-
 alias bang='source ~/.bang/bang'

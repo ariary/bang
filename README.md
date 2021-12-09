@@ -7,20 +7,23 @@
 * `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.$SHrc && source ~/.$SHrc`
 
 ## Install tools
-**➲** *Install all sort of tools*
-* ***install/install-ariary.sh***: install all ariary useful (for pentesting) repo in ~/.local/bin/
-* ***install/install-tools.sh***: install other useful tools for pentesting in ~/.local/bin/
-* ***install/install-zsh.sh*** & ***install/post-install-zsh.sh*** : install zsh environment
+**➲** *Ease installation of tools*
+* ***`bang.conf.install-ariary`***: install all ariary tools useful for pentesting in ~/.local/bin/
+* ***`bang.conf.install`***: install other useful tools for pentesting in ~/.local/bin/
+* ***install/install-zsh.sh*** & ***install/post-install-zsh.sh*** : install zsh environment (not required)
+
+*To update the installation scripts used by these commands: `bang.conf.update`*
 
 ## Bang !
 **➲** *Configure your pentest*
 
-Set attacker and target info: `bang.conf`
+Set attacker and target info: `bang.conf.pentest`
 
 You could alternatively configure each item:
  * attacker addr: `cAA=[ATTACKER_IP]` & attacker port: `cAP=[ATTACKER_PORT]` 
  * target addr: `cTA=[TARGET_IP]` & target port: `cTP=[TARGET_PORT]`
 
+*You could see the pentest configuration then with `bang.conf.pentest.map`*
 
 ## Examples
 **➲** *List of useful `bang` shortcuts*
