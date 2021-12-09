@@ -43,12 +43,10 @@ read -s NGROK_TOKEN
 $HOME/.local/bin/ngrok authtoken $NGROK_TOKEN
 unset NGROK_TOKEN
 
-##zsh & co
-echo "[*] Install ZSH & co.."
-sudo apt install zsh
-sudo apt install zsh-completions
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo "[*] Install ZSH theme"
-sed -i '/ZSH_THEME/c\ZSH_THEME="afowler"' ~/.zshrc
+##fx
+wget https://github.com/antonmedv/fx/releases/latest/download/fx-linux.zip
+unzip fx-linux.zip && rm fx-linux.zip
+mv fx-linux fx && mv fx $HOME/.local/bin/
+
 
 echo "export PATH=$PATH:$HOME/.local/bin/" >> $HOME/.zshrc
