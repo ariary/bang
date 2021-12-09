@@ -66,13 +66,16 @@ fx(){
     mv fx-linux fx && mv fx $HOME/.local/bin/
 }
 
-
-sourcing(){
-    echo "export PATH=$PATH:$HOME/.local/bin/" >> $HOME/.zshrc
+mitm-proxy(){
+    rm -f ~/Downloads/mitmproxy-*
+    echo "Visit https://mitmproxy.org > \"Download binary\" > Press enter when it is ok..."
+    read ok
+    tar xvf ~/Downloads/mitmproxy-*
+    mv mitmproxy $HOME/.local/bin/
+    mv mitmdump $HOME/.local/bin/
+    mv mitmweb $HOME/.local/bin/
+    rm -f ~/Downloads/mitmproxy-*
 }
-
-
-
 
 ####################
 ### INSTALL PART ###
