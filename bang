@@ -211,3 +211,5 @@ else
     nmap $TA -sP
 fi
 }
+alias pup='pup --color'
+alias pup.script='pup --color script'

@@ -50,5 +50,5 @@ You could alternatively configure each item:
 #### Others
 
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
-* [Get weather for a given city]()
-* [Intercept HTTP request from command line]()
+* [Get weather for a given city](https://github.com/ariary/bang/blob/main/EXAMPLES.md#get-the-weather-of-your-city)
+* [Intercept HTTP request from command line](https://github.com/ariary/bang/blob/main/EXAMPLES.md#intercept-request-with-command-line)

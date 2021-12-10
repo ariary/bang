@@ -77,6 +77,10 @@ mitm-proxy(){
     rm -f ~/Downloads/mitmproxy-*
 }
 
+pup(){
+    go get github.com/ericchiang/pup
+}
+
 ####################
 ### INSTALL PART ###
 ####################

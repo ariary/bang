@@ -127,6 +127,8 @@ We will use `mitm-proxy` which enable us to capture HTTP flow.
     * If you want to catch all request: `bang.mitmproxy.intercept.request`
 2. Perform a curl request trough your proxy: `bang.proxycurl http://[DOMAIN]`
 
+***TIPS:*** You could use alias `pup.script` to parse the response (html) and get only script code
+
 ### Modify request
 You will catch it in your mitm-proxy. Navigate over it, press `<ENTER>`
 To edit it press `e` and select the field you want to modify.
