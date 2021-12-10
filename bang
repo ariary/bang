@@ -139,3 +139,75 @@ else
 fi
 }
 
+bang.urlencode(){
+if [ "$1" = "-h" ]; then
+    echo "bang.urlencode \"[TEXT]\""
+else 
+  python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<< "$1"
+fi
+}
+
+bang.urldecode(){
+if [ "$1" = "-h" ]; then
+    echo "bang.decode \"[TEXT]\""
+else 
+  python3 -c "import urllib.parse; print(urllib.parse.unquote(input()))" <<< "$1"
+fi
+}
+
+
+bang.b64encode(){
+if [ "$1" = "-h" ]; then
+    echo "bang.b64encode \"[TEXT]\""
+else 
+    echo "$1" | base64
+fi
+}
+
+bang.b64decode(){
+if [ "$1" = "-h" ]; then
+    echo "bang.b64decode \"[TEXT]\""
+else 
+    echo "$1" | base64 -d
+fi
+}
+
+bang.domain2ip(){
+if [ "$1" = "-h" ]; then
+    echo "bang.domain2ip [domain]"
+else 
+    dig +short $1 @resolver1.opendns.com
+fi
+}
+
+
+
+## NMAP ##
+alias bang.nmap.show-script='ll /usr/share/nmap/scripts/'
+
+bang.nmap.scan-ports(){
+if [ "$1" = "-h" ]; then
+    echo "bang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
+else 
+    nmap -p $1 $TA
+fi
+}
+
+#Intensity 5 -> for ctf not real world use
+bang.nmap.scan-top100(){
+if [ "$1" = "-h" ]; then
+    echo "bang.nmap.scan-top100"
+else
+
+    nmap --top-port 100 $TA -sV --version-intensity 5
+fi
+}
+
+#Intensity 5 -> for ctf not real world use
+bang.nmap.discovery(){
+if [ "$1" = "-h" ]; then
+    echo "bang.nmap.discovery [RANGE]"
+else 
+    nmap $TA -sP
+fi
+}
