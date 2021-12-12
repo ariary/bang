@@ -8,7 +8,7 @@ Some examples of bang usage
 
 Start file sharing:
 ```
-bang.gitar $AA $AP
+bang.gitar $AA
 ```
 This will start a `gitar` http server and copy to your clipboard a command line to run on remote. Run it, you can now upload and download file from remote easily (without further installations [see](https://github.com/ariary/gitar/blob/main/README.md#tldr---and-listen-music)). 
 
@@ -22,7 +22,7 @@ Launch gitar as a daemon, and kill it later when you want (=>no logs)
 #### Alternative 2 - For `/bin/sh`
 by default, `gitar` use completion. `/bin/sh` doesn't have `complete` enable. Hence launch gitar without this feature:
 ```
-bang.gitar.no-completion
+bang.gitar.no-completion $AA
 ```
 
 ### Share files safely
@@ -31,7 +31,7 @@ Same as above + inside a container + using https for encryption
 
 Start safe file sharing:
 ```
-bang.gitar-safe $AA $AP
+bang.gitar-safe $AA
 ```
 
 ### Expose local file on internet
