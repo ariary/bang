@@ -6,7 +6,7 @@ alias cpy='xclip -selection clipboard'
 ## Queensono send file
 bang.queensono.send.file(){
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.send.file \$AA [FILENAME]"
+    echo "bang.queensono.send.file \$TA [FILENAME]"
 else
     qssender send file -d 1 -r $1 $2
 fi
