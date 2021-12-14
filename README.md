@@ -3,11 +3,11 @@
 ## Quickstart
 **➲** *Let your environment be ready*
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
-* `export SH=[bash/zsh] && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.$SHrc && source ~/.$SHrc`
-* `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.$SHrc && source ~/.$SHrc`
+* `export SH=[bash/zsh] && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.${SH}rc && source ~/.${SH}rc`
+* `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && source ~/.${SH}rc`
 
 When you want to have all `bang` shortcut in you shell just tap `bang`
-*(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.$SHrc)*
+*(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.${SH}rc)*
 
 ## Install tools
 **➲** *Ease tools installation*
