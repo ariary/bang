@@ -8,14 +8,18 @@
 xclip(){
     echo "[*] Install clip.."
     sudo apt install xclip
+    echo "\n"
 }
 
 #bat & extras
 bat(){
     echo "[*] Install bat & co.."
+    go install -u github.com/mvdan/sh/cmd/shfmt
     sudo apt install bat
     git clone https://github.com/eth-p/bat-extras.git && cd bat-extras && ./build.sh
     mv ./bin/* $HOME/.local/bin/
+    rm -rf bat-extras
+    echo "\n"
 }
 
 
@@ -24,6 +28,7 @@ fd(){
     echo "[*] Install fd.."
     sudo apt install fd-find
     ln -s $(which fdfind) $HOME/.local/bin/fd
+    echo "\n"
 }
 
 
@@ -37,6 +42,7 @@ golang(){
     rm go.tar.gz
     echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile
     echo "export PATH=$PATH:$HOME/go/bin" >> $HOME/.zshrc #Add go install in PATH
+    echo "\n"
 }
 
 
@@ -44,6 +50,7 @@ golang(){
 ko(){
     echo "[*] Install ko.."
     go install github.com/google/ko@latest
+    echo "\n"
 }
 
 
@@ -57,16 +64,20 @@ ngrok(){
     read -s NGROK_TOKEN
     $HOME/.local/bin/ngrok authtoken $NGROK_TOKEN
     unset NGROK_TOKEN
+     echo "\n"
 }
 
 #fx
 fx(){
+    echo "[*] Install fx.."
     wget https://github.com/antonmedv/fx/releases/latest/download/fx-linux.zip
     unzip fx-linux.zip && rm fx-linux.zip
     mv fx-linux fx && mv fx $HOME/.local/bin/
+    echo "\n"
 }
 
 mitm-proxy(){
+    echo "[*] Install mitm-proxy.."
     rm -f ~/Downloads/mitmproxy-*
     echo "Visit https://mitmproxy.org > \"Download binary\" > Press enter when it is ok..."
     read ok
@@ -75,10 +86,13 @@ mitm-proxy(){
     mv mitmdump $HOME/.local/bin/
     mv mitmweb $HOME/.local/bin/
     rm -f ~/Downloads/mitmproxy-*
+    echo "\n"
 }
 
 pup(){
+    echo "[*] Install pup.."
     go get github.com/ericchiang/pup
+    echo "\n"
 }
 
 ####################
