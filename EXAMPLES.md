@@ -111,7 +111,7 @@ This will start a `gitar` http server and copy to your clipboard a command line 
 bang.queensono.send.file.cpy $AA [FILENAME]
 ```
 
-### Send a msg trough ICMP
+### Send a message trough ICMP
 ```
 bang.queensono.send $TA "[MSG]"
 ```
