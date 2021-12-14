@@ -30,7 +30,7 @@ You could alternatively configure each item:
 
 *You could see the pentest configuration then with `bang.conf.pentest.map`*
 
-## Examples
+## Shortcut Examples
 **➲** *List of useful `bang` shortcuts*
 
 #### `gitar` (pentest easy file sharing)
