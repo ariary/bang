@@ -10,7 +10,7 @@ When you want to have all `bang` shortcut in you shell just tap `bang`
 *(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.$SHrc)*
 
 ## Install tools
-**➲** *Ease installation of tools*
+**➲** *Ease tools installation*
 * ***`bang.conf.install-ariary`***: install all ariary tools useful for pentesting in ~/.local/bin/
 * ***`bang.conf.install`***: install other useful tools for pentesting in ~/.local/bin/
 * ***install/install-zsh.sh*** & ***install/post-install-zsh.sh*** : install zsh environment (not required)
