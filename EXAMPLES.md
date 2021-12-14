@@ -94,6 +94,54 @@ This will send a local binary to a remote listening `fileless-xec`. The binary w
 bang.flxssend [TARGET_IP] [TARGET_PORT] [binary]
 ```
 
+## `Queensono`
+
+Exchange data using ICMP protocol
+
+### Send a file trough ICMP
+
+Send a file to `$TA`:
+```
+bang.queensono.send.file \$TA [FILENAME]
+```
+This will start a `gitar` http server and copy to your clipboard a command line to run on remote. Run it, you can now upload and download file from remote easily (without further installations [see](https://github.com/ariary/gitar/blob/main/README.md#tldr---and-listen-music)). 
+
+#### Copy the line to send a file
+```
+bang.queensono.send.file.cpy $AA [FILENAME]
+```
+
+### Send a msg trough ICMP
+```
+bang.queensono.send $TA "[MSG]"
+```
+
+#### Copy the line to send a message
+```
+bang.queensono.send.cpy $AA "[MSG]"
+```
+
+### Receive file trough ICMP
+```
+bang.queensono.receive.file [FILENAME]
+```
+
+#### Copy the line to receive file
+```
+bang.queensono.receive.file.cpy [FILENAME]
+```
+
+### Receive message trough ICMP
+```
+bang.queensono.receive
+```
+
+#### Copy the line to receive file
+```
+bang.queensono.receive.cpy
+```
+
+
 ## Webdav server
 
 [see](https://blog.ropnop.com/docker-for-pentesters/#example-6---serving-files-over-webdav)
