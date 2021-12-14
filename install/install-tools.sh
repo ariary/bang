@@ -1,19 +1,23 @@
 #!/bin/bash
 
+export BLUE='\033[0;34m'
+export ROSE='\033[1;35m'
+export NC='\033[0m'
+
 #######################
 ### "MODULES"/TOOLS ###
 #######################
 
 #xclip
 xclip(){
-    echo "[*] Install clip.."
+    echo -e "${BLUE}[*] Install clip..${NC}"
     sudo apt install xclip
     echo "\n"
 }
 
 #bat & extras
 bat(){
-    echo "[*] Install bat & co.."
+    echo -e "${BLUE}[*] Install bat & co..${NC}"
     go install -u github.com/mvdan/sh/cmd/shfmt
     sudo apt install bat
     git clone https://github.com/eth-p/bat-extras.git && cd bat-extras && ./build.sh
@@ -25,7 +29,7 @@ bat(){
 
 #fd
 fd(){
-    echo "[*] Install fd.."
+    echo -e "${BLUE}[*] Install fd..${NC}"
     sudo apt install fd-find
     ln -s $(which fdfind) $HOME/.local/bin/fd
     echo "\n"
@@ -34,7 +38,7 @@ fd(){
 
 #go
 golang(){
-    echo "[*] Install go.."
+    echo -e "${BLUE}[*] Install go..${NC}"
     GO_URL="https://golang.org"
     GO_ENDPOINT="$(curl -s https://go.dev/dl/ | grep "linux" -n --color |head -1| cut -d "=" -f 3 | cut -d '"' -f 2)"
     curl -L0 -s $GO_URL$GO_ENDPOINT -o go.tar.gz
@@ -48,7 +52,7 @@ golang(){
 
 #ko
 ko(){
-    echo "[*] Install ko.."
+    echo -e "${BLUE}[*] Install ko..${NC}"
     go install github.com/google/ko@latest
     echo "\n"
 }
@@ -56,11 +60,11 @@ ko(){
 
 #ngrok
 ngrok(){
-    echo "[*] Install ngrok.."
+    echo -e "${BLUE}[*] Install ngrok..${NC}"
     wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
     unzip ngrok-stable-linux-amd64.zip
     mv ./ngrok $HOME/.local/bin/
-    echo "[INPUT REQUIRE] Enter your ngrok token: (find it https://dashboard.ngrok.com/get-started/your-authtoken)"
+    echo -e "${ROSE}[INPUT REQUIRE] Enter your ngrok token: (find it https://dashboard.ngrok.com/get-started/your-authtoken)${NC}"
     read -s NGROK_TOKEN
     $HOME/.local/bin/ngrok authtoken $NGROK_TOKEN
     unset NGROK_TOKEN
@@ -69,7 +73,7 @@ ngrok(){
 
 #fx
 fx(){
-    echo "[*] Install fx.."
+    echo -e "${BLUE}[*] Install fx..${NC}"
     wget https://github.com/antonmedv/fx/releases/latest/download/fx-linux.zip
     unzip fx-linux.zip && rm fx-linux.zip
     mv fx-linux fx && mv fx $HOME/.local/bin/
@@ -77,9 +81,9 @@ fx(){
 }
 
 mitm-proxy(){
-    echo "[*] Install mitm-proxy.."
+    echo -e "${BLUE}[*] Install mitm-proxy..${NC}"
     rm -f ~/Downloads/mitmproxy-*
-    echo "Visit https://mitmproxy.org > \"Download binary\" > Press enter when it is ok..."
+    echo -e "${ROSE}Visit https://mitmproxy.org > \"Download binary\" > Press enter when it is ok...${NC}"
     read ok
     tar xvf ~/Downloads/mitmproxy-*
     mv mitmproxy $HOME/.local/bin/
@@ -90,7 +94,7 @@ mitm-proxy(){
 }
 
 pup(){
-    echo "[*] Install pup.."
+    echo -e "${BLUE}[*] Install pup..${NC}"
     go get github.com/ericchiang/pup
     echo "\n"
 }
