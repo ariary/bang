@@ -46,6 +46,18 @@ You could alternatively configure each item:
 * [Copy line to run `fileless-xec` on remote](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-line-to-launch-fieleless-xec-stealth-dropper)
 * [Send local binary on remote & execute it using `fileless-xec`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-local-file-to-remote-fileless-xec-to-stealthy-run-it) (Attacker ⇢ Target)
 
+### `Queensono`( Use ICMP protocol for data exchange)
+
+* Send trough ICMP
+  * [File](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-file-trough-icmp)
+    * [Copy line to send file](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-file)
+  * [Message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#send-a-message-trough-icmp)
+    * [Copy line to send message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
+* Receive trough ICMP
+  * [File](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
+    * [Copy line to receive file](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
+  * [Message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
+    * [Copy line to receive message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
 
 #### Others
 
