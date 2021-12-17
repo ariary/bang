@@ -165,6 +165,16 @@ else
 fi
 }
 
+## curl & jse
+bang.jse.after-curl(){
+if [ "$1" = "-h" ]; then
+    echo "bang.jse.after-curl [url]"
+else
+    URL=$(echo $1 | cut -d "/" -f -3) && curl $1 -H "Accept: text/html" | jse -d $URL -gather-scr
+fi
+}
+
+
 ## Ngrok expose a https service
 bang.expose.https(){
 if [ "$1" = "-h" ]; then
