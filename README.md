@@ -59,6 +59,9 @@ You could alternatively configure each item:
   * [Message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
     * [Copy line to receive message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
 
+#### `jse`( Extract js code from HTML page)
+* [extract js code for html page from curl](https://github.com/ariary/bang/blob/main/EXAMPLES.md#jse)
+
 #### Others
 
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
