@@ -141,6 +141,14 @@ bang.queensono.receive
 bang.queensono.receive.cpy
 ```
 
+## `jse`
+
+`jse` enables to gather js code from webpages
+
+Perfor curl request and extract js from it:
+```
+bang.jse.after-url [url]
+```
 
 ## Webdav server
 
