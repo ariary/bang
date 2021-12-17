@@ -31,4 +31,4 @@ mv gitar $HOME/.local/bin/
 echo -e "${BLUE}[*] Install jse..${NC}"
 curl -lO -L https://github.com/ariary/JSextractor/releases/latest/download/jse
 chmod +x jse
-mv gitar $HOME/.local/bin/
+mv jse $HOME/.local/bin/
