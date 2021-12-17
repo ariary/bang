@@ -25,3 +25,10 @@ echo -e "${BLUE}[*] Install gitar..${NC}"
 curl -s -lO -L https://github.com/ariary/gitar/releases/latest/download/gitar
 chmod +x gitar
 mv gitar $HOME/.local/bin/
+
+
+### jse
+echo -e "${BLUE}[*] Install jse..${NC}"
+curl -lO -L https://github.com/ariary/JSextractor/releases/latest/download/jse
+chmod +x jse
+mv gitar $HOME/.local/bin/
