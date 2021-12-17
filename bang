@@ -170,7 +170,7 @@ bang.jse.after-curl(){
 if [ "$1" = "-h" ]; then
     echo "bang.jse.after-curl [url]"
 else
-    URL=$(echo $1 | cut -d "/" -f -3) && curl $1 -H "Accept: text/html" | jse -u $URL -gather-scr
+    URL=$(echo $1 | cut -d "/" -f -3) && curl -s $1 -H "Accept: text/html" | jse -u $URL -gather-scr
 fi
 }
 
