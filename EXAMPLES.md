@@ -145,7 +145,7 @@ bang.queensono.receive.cpy
 
 `jse` enables to gather js code from webpages
 
-Perfor curl request and extract js from it:
+Perform curl request and extract js from it:
 ```
 bang.jse.after-url [url]
 ```
