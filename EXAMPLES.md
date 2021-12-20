@@ -150,6 +150,11 @@ Perform curl request and extract js from it:
 bang.jse.after-url [url]
 ```
 
+Same thing with a terminal UI (TUI):
+```
+bang.jse.tui-after-url [url]
+```
+
 ## Webdav server
 
 [see](https://blog.ropnop.com/docker-for-pentesters/#example-6---serving-files-over-webdav)
