@@ -147,12 +147,12 @@ bang.queensono.receive.cpy
 
 Perform curl request and extract js from it:
 ```
-bang.jse.after-url [url]
+bang.jse.after-curl [url]
 ```
 
 Same thing with a terminal UI (TUI):
 ```
-bang.jse.tui-after-url [url]
+bang.jse.tui-after-curl [url]
 ```
 
 ## Webdav server
