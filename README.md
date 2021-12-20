@@ -60,7 +60,7 @@ You could alternatively configure each item:
     * [Copy line to receive message](https://github.com/ariary/bang/blob/main/EXAMPLES.md#copy-the-line-to-send-a-message)
 
 #### `jse`( Extract js code from HTML page)
-* [extract js code for html page from curl](https://github.com/ariary/bang/blob/main/EXAMPLES.md#jse)
+* [Extract js code for html page from curl](https://github.com/ariary/bang/blob/main/EXAMPLES.md#jse)
 
 #### Others
 
