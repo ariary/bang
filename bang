@@ -170,7 +170,16 @@ bang.jse.after-curl(){
 if [ "$1" = "-h" ]; then
     echo "bang.jse.after-curl [url]"
 else
-    URL=$(echo $1 | cut -d "/" -f -3) && curl -s $1 -H "Accept: text/html" | jse -u $URL -gather-scr
+    curl -s $1 -H "Accept: text/html" | jse -u $1 -gather-scr
+fi
+}
+
+## curl & TUIjse
+bang.jse.tui-after-curl(){
+if [ "$1" = "-h" ]; then
+    echo "bang.jse.tui-after-curl [url]"
+else
+    curl -s $1 -H "Accept: text/html" | jse -u $1 -tui -gather-src
 fi
 }
 
