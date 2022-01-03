@@ -4,6 +4,9 @@
 alias cpy='xclip -selection clipboard'
 alias hgrep='history | grep'
 alias screenshot='flameshot gui'
+alias bang.screen.launch-and-detach='screen -d -m'
+alias bang.screen.reattach='screen -r'
+alias bang.screen.list='screen -ls'
 
 ## Queensono send file
 bang.queensono.send.file(){
