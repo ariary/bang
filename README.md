@@ -7,6 +7,7 @@
 * `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && source ~/.${SH}rc`
 
 When you want to have all `bang` shortcut in you shell just tap `bang`
+
 *(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.${SH}rc)*
 
 ## Install tools
