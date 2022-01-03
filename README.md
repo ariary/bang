@@ -34,6 +34,8 @@ You could alternatively configure each item:
 ## Shortcut Examples
 **➲** *List of useful `bang` shortcuts*
 
+List all shortcut (not aliases) with `bang.list-all`
+
 #### `gitar` (pentest easy file sharing)
 
 * [Share file with remote machine](https://github.com/ariary/bang/blob/main/EXAMPLES.md#share-files)
