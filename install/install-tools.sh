@@ -10,8 +10,15 @@ export NC='\033[0m'
 
 #xclip
 xclip(){
-    echo -e "${BLUE}[*] Install clip..${NC}"
+    echo -e "${BLUE}[*] Install xclip..${NC}"
     sudo apt install xclip
+    echo "\n"
+}
+
+#flameshot
+flameshot(){
+    echo -e "${BLUE}[*] Install flameshot..${NC}"
+    sudo apt install flameshot
     echo "\n"
 }
 
