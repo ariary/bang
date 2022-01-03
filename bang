@@ -2,6 +2,7 @@
 # 'source' it before making pentest
 
 alias cpy='xclip -selection clipboard'
+alias hgrep='history | grep'
 
 ## Queensono send file
 bang.queensono.send.file(){
