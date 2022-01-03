@@ -22,6 +22,13 @@ flameshot(){
     echo "\n"
 }
 
+#screen
+screen(){
+    echo -e "${BLUE}[*] Install screen..${NC}"
+    sudo apt install screen
+    echo "\n"
+}
+
 #bat & extras
 bat(){
     echo -e "${BLUE}[*] Install bat & co..${NC}"
