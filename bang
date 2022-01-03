@@ -7,9 +7,11 @@ alias screenshot='flameshot gui'
 alias bang.screen.launch-and-detach='screen -d -m'
 alias bang.screen.reattach='screen -r'
 alias bang.screen.list='screen -ls'
+alias pup='pup --color'
+alias pup.script='pup --color script'
 
 ## Queensono send file
-bang.queensono.send.file(){
+bang.queensono.send.file() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.send.file \$TA [FILENAME]"
 else
@@ -18,7 +20,7 @@ fi
 }
 
 ## Queensono send file cpy
-bang.queensono.send.file.cpy(){
+bang.queensono.send.file.cpy() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.send.file.cpy \$AA [FILENAME]"
 else
@@ -27,7 +29,7 @@ fi
 }
 
 ## Queensono send
-bang.queensono.send(){
+bang.queensono.send() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.send \$TA \"[MSG]\""
 else
@@ -36,7 +38,7 @@ fi
 }
 
 ## Queensono send cpy
-bang.queensono.send.cpy(){
+bang.queensono.send.cpy() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.send.cpy \$AA \"[MSG]\""
 else
@@ -45,7 +47,7 @@ fi
 }
 
 ## Queensono receive file
-bang.queensono.receive.file(){
+bang.queensono.receive.file() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.receive.file [FILENAME]"
 else
@@ -54,7 +56,7 @@ fi
 }
 
 ## Queensono receive file cpy
-bang.queensono.receive.file.cpy(){
+bang.queensono.receive.file.cpy() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.receive.file.cpy [FILENAME]"
 else
@@ -63,7 +65,7 @@ fi
 }
 
 ## Queensono receive
-bang.queensono.receive(){
+bang.queensono.receive() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.receive"
 else
@@ -72,7 +74,7 @@ fi
 }
 
 ## Queensono receive cpy
-bang.queensono.receive.cpy(){
+bang.queensono.receive.cpy() {
 if [ "$1" = "-h" ]; then
     echo "bang.queensono.receive.cpy"
 else
@@ -81,7 +83,7 @@ fi
 }
 
 ## Fileless-xec as client (Launch a server and copy line to launch on target)
-bang.flx.client.cpy(){
+bang.flx.client.cpy() {
 if [ "$1" = "-h" ]; then
     echo "bang.flx.client.cpy \$AA \$AP [BINARY_NAME]"
 else
@@ -90,7 +92,7 @@ fi
 }
 
 ## Fileless-xec server cpy
-bang.flx.serve.cpy(){
+bang.flx.serve.cpy() {
 if [ "$1" = "-h" ]; then
     echo "bang.flx.serve.cpy \$AP"
 else
@@ -99,7 +101,7 @@ fi
 }
 
 ## Fileless-xec send to server
-bang.flx.send(){
+bang.flx.send() {
 if [ "$1" = "-h" ]; then
     echo "bang.flx.send \$TA \$TP [file]"
 else
@@ -108,7 +110,7 @@ fi
 }
 
 ## Gitar start
-bang.gitar(){
+bang.gitar() {
 if [ "$1" = "-h" ]; then
     echo "bang.gitar \$AA"
 else
@@ -117,7 +119,7 @@ fi
 }
 
 ## "Safe" Gitar start
-bang.gitar.safe(){
+bang.gitar.safe() {
 if [ "$1" = "-h" ]; then
     echo "bang.gitar.safe \$AA"
 else
@@ -126,7 +128,7 @@ fi
 }
 
 ## Gitar start + url override
-bang.gitar.override(){
+bang.gitar.override() {
 if [ "$1" = "-h" ]; then
     echo "bang.gitar.override [PROXY_URL]"
 else
@@ -135,7 +137,7 @@ fi
 }
 
 ## "Safe" Gitar start + url override
-bang.gitar.safe-override(){
+bang.gitar.safe-override() {
 if [ "$1" = "-h" ]; then
     echo "ban.gitar.safe-override [PROXY_URL]"
 else
@@ -144,7 +146,7 @@ fi
 }
 
 ## Gitar server as a daemon 
-bang.gitar.daemon(){
+bang.gitar.daemon() {
 if [ "$1" = "-h" ]; then
     echo "bang.gitar.daemon \$AA"
 else
@@ -153,7 +155,7 @@ fi
 }
 
 ## Kill gitar process
-bang.gitar.kill(){
+bang.gitar.kill() {
 if [ "$1" = "-h" ]; then
     echo "bang.gitar.kill"
 else
@@ -162,7 +164,7 @@ fi
 }
 
 ## Gitar without completion
-bang.gitar.no-completion(){
+bang.gitar.no-completion() {
 if [ "$1" = "-h" ]; then
     echo "bang.gitar.no-completion [ATTACKER_ADDR]"
 else
@@ -171,7 +173,7 @@ fi
 }
 
 ## curl & jse
-bang.jse.after-curl(){
+bang.jse.after-curl() {
 if [ "$1" = "-h" ]; then
     echo "bang.jse.after-curl [url]"
 else
@@ -180,7 +182,7 @@ fi
 }
 
 ## curl & TUIjse
-bang.jse.tui-after-curl(){
+bang.jse.tui-after-curl() {
 if [ "$1" = "-h" ]; then
     echo "bang.jse.tui-after-curl [url]"
 else
@@ -190,7 +192,7 @@ fi
 
 
 ## Ngrok expose a https service
-bang.expose.https(){
+bang.expose.https() {
 if [ "$1" = "-h" ]; then
     echo "bang.expose-https \$AP"
 else
@@ -199,7 +201,7 @@ fi
 }
 
 ## Ngrok expose a port
-bang.expose(){
+bang.expose() {
 if [ "$1" = "-h" ]; then
     echo "bang.expose \$AP"
 else
@@ -211,7 +213,7 @@ alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share
 
 alias bang.proxycurl='curl --proxy http://127.0.0.1:8080'
 
-bang.mitmproxy.intercept.request.domain(){
+bang.mitmproxy.intercept.request.domain() {
 if [ "$1" = "-h" ]; then
     echo "bang.mitmproxy.intercept.request.domain [DOMAIN]"
 else
@@ -219,7 +221,7 @@ else
 fi
 }
 
-bang.mitmproxy.intercept.request(){
+bang.mitmproxy.intercept.request() {
 if [ "$1" = "-h" ]; then
     echo "bang.mitmproxy.intercept.request"
 else
@@ -227,43 +229,43 @@ else
 fi
 }
 
-bang.urlencode(){
+bang.urlencode() {
 if [ "$1" = "-h" ]; then
     echo "bang.urlencode \"[TEXT]\""
-else 
+else
   python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<< "$1"
 fi
 }
 
-bang.urldecode(){
+bang.urldecode() {
 if [ "$1" = "-h" ]; then
     echo "bang.decode \"[TEXT]\""
-else 
+else
   python3 -c "import urllib.parse; print(urllib.parse.unquote(input()))" <<< "$1"
 fi
 }
 
 
-bang.b64encode(){
+bang.b64encode() {
 if [ "$1" = "-h" ]; then
     echo "bang.b64encode \"[TEXT]\""
-else 
+else
     echo "$1" | base64
 fi
 }
 
-bang.b64decode(){
+bang.b64decode() {
 if [ "$1" = "-h" ]; then
     echo "bang.b64decode \"[TEXT]\""
-else 
+else
     echo "$1" | base64 -d
 fi
 }
 
-bang.domain2ip(){
+bang.domain2ip() {
 if [ "$1" = "-h" ]; then
     echo "bang.domain2ip [domain]"
-else 
+else
     dig +short $1 @resolver1.opendns.com
 fi
 }
@@ -273,31 +275,43 @@ fi
 ## NMAP ##
 alias bang.nmap.show-script='ll /usr/share/nmap/scripts/'
 
-bang.nmap.scan-ports(){
+bang.nmap.scan-ports() {
 if [ "$1" = "-h" ]; then
     echo "bang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
-else 
+else
     nmap -p $1 $TA
 fi
 }
 
 #Intensity 5 -> for ctf not real world use
-bang.nmap.scan-top100(){
+bang.nmap.scan-top100() {
 if [ "$1" = "-h" ]; then
     echo "bang.nmap.scan-top100"
 else
-
     nmap --top-port 100 $TA -sV --version-intensity 5
 fi
 }
 
 #Intensity 5 -> for ctf not real world use
-bang.nmap.discovery(){
+bang.nmap.discovery() {
 if [ "$1" = "-h" ]; then
     echo "bang.nmap.discovery [RANGE]"
-else 
+else
     nmap $TA -sP
 fi
 }
-alias pup='pup --color'
-alias pup.script='pup --color script'
+
+## List bang functions
+bang.list-all() {
+    FUNCTIONS=$(cat $HOME/.bang/bang | awk '!/^main[ (]/ && /^[^ {}]+ *\(\)/ { gsub(/[()]/, "", $1); print $1}')
+    exclude=(bang.list-all)
+    for del in ${exclude[@]}
+    do
+        FUNCTIONS=("${FUNCTIONS[@]/$del}") #Quotes when working with strings
+    done
+    for f in $FUNCTIONS
+    do
+        echo $f
+        $f -h
+    done
+}
