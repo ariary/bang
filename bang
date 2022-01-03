@@ -309,9 +309,5 @@ bang.list-all() {
     do
         FUNCTIONS=("${FUNCTIONS[@]/$del}") #Quotes when working with strings
     done
-    for f in $FUNCTIONS
-    do
-        echo $f
-        $f -h
-    done
+    echo $FUNCTIONS
 }
