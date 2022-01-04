@@ -321,13 +321,11 @@ bang.ls() {
         FUNC=("${FUNC[@]/$del}") #Quotes when working with strings
     done
 
-    echo $FUNC
-
     if [ -n "$ZSH_VERSION" ]; then
         for f in $FUNC
         do
             echo -n "$f"
-            echo -n "\t\033[1;35m"
+            echo -n "\t\t\033[1;35m"
             $f -h
             echo -n "\033[0m"
         done
@@ -336,7 +334,7 @@ for (( i=0; i<${#FUNC[@]}; i++ ))
 do
     echo -n "${FUNC[$i]}"
     HELP=$(${FUNC[$i]} -h 2>/dev/null)
-    echo -e "\t\033[1;35m$HELP\033[0m"
+    echo -e "\t\t\033[1;35m$HELP\033[0m"
 done
     fi
 }
