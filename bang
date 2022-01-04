@@ -277,7 +277,7 @@ alias bang.nmap.show-script='ll /usr/share/nmap/scripts/'
 
 bang.nmap.scan-ports() {
 if [ "$1" = "-h" ]; then
-    echo "Scan a specific port with nmapbang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
+    echo "Scan specific ports with nmap: (one port) bang.nmap.scan-ports [port] OR (multiple ports) bang.nmap.scan-ports [from]-[to]"
 else
     nmap -p $1 $TA
 fi
