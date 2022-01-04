@@ -2,7 +2,7 @@
 # as it is short you could source it in ~/bashrc
 
 ## Change Target IP (Addr) envvar
-cTA(){
+cTA() {
 if [ "$1" = "-h" ]; then
     echo "Change Target Address: cTA [address]"
 else
@@ -11,7 +11,7 @@ fi
 }
 
 ## Change Target port envvar
-cTP(){
+cTP() {
 if [ "$1" = "-h" ]; then
     echo "Change Target Port: cTP [port]"
 else
@@ -20,7 +20,7 @@ fi
 }
 
 ## Change Attacker IP (Addr) envvar
-cAA(){
+cAA() {
 if [ "$1" = "-h" ]; then
     echo "Change Attacker Address: cAA [address]"
 else
@@ -29,7 +29,7 @@ fi
 }
 
 ## Change Attacker port envvar
-cAP(){
+cAP() {
 if [ "$1" = "-h" ]; then
     echo "Change Attacker Port: cAP [port]"
 else
@@ -38,9 +38,9 @@ fi
 }
 
 ## Interactiv conf
-bang.conf.pentest(){
+bang.conf.pentest() {
 if [ "$1" = "-h" ]; then
-    echo "Configure all you pentest envar (TA,TP, AA,AP)"
+    echo "Configure all your pentest env vars (TA,TP, AA,AP)"
 else
     echo "Enter Attacker IP: "
     read ATT_ADDR
@@ -61,9 +61,9 @@ fi
 alias 'bang.conf.pentest.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
 
 ##Update conf
-bang.conf.update(){
+bang.conf.update() {
 if [ "$1" = "-h" ]; then
-    echo "Update bang files (conf + shortcut). Launch "bang" afterward to load new shortcuts"
+    echo "Update bang files (conf + shortcut). Launch "bang" afterward to load new shortcuts."
 else
     git clone https://github.com/ariary/bang.git && cd bang
     cp bang $HOME/.bang
@@ -79,8 +79,18 @@ alias 'bang.conf.install-ariary=$HOME/.bang/install/install-ariary.sh'
 
 ##Show config shortcuts
 bang.conf.aliases() {
-    echo "toto"
+export ROSE='\033[1;35m'
+export NC='\033[0m'
+
+echo -e "bang\t\t${ROSE}Load bang shortcuts & aliases in current shell${NC}"
+
+echo -e "bang.conf.install\t\t${ROSE}Install tools used by bang${NC}"
+echo -e "bang.conf.install-ariary\t\t${ROSE}Install ariary's tools used by bang${NC}"
+
+echo -e "bang.conf.pentest.map\t\t${ROSE}Nice printing of the current pentest configuration${NC}"
+
 }
+
 bang.conf.ls() {
     # SHORTCUT
     bold=$(tput bold)
