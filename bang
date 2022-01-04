@@ -13,7 +13,7 @@ alias pup.script='pup --color script'
 ## Queensono send file
 bang.queensono.send.file() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.send.file \$TA [FILENAME]"
+    echo "Send file using ICMP: bang.queensono.send.file \$TA [FILENAME]"
 else
     qssender send file -d 1 -r $1 $2
 fi
@@ -22,7 +22,7 @@ fi
 ## Queensono send file cpy
 bang.queensono.send.file.cpy() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.send.file.cpy \$AA [FILENAME]"
+    echo "Copy line to send file with ICMP: bang.queensono.send.file.cpy \$AA [FILENAME]"
 else
     echo "qssender send file -d 1 -r $1 $2" | cpy
 fi
@@ -31,7 +31,7 @@ fi
 ## Queensono send
 bang.queensono.send() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.send \$TA \"[MSG]\""
+    echo "Send message using ICMP: bang.queensono.send \$TA \"[MSG]\""
 else
     qssender send "$2" -d 1 -r $1
 fi
@@ -40,7 +40,7 @@ fi
 ## Queensono send cpy
 bang.queensono.send.cpy() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.send.cpy \$AA \"[MSG]\""
+    echo "Copy line to send message with ICMP: bang.queensono.send.cpy \$AA \"[MSG]\""
 else
     echo "qssender send \"$2\" -d 1 -r $1 -N" |cpy
 fi
@@ -49,7 +49,7 @@ fi
 ## Queensono receive file
 bang.queensono.receive.file() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.receive.file [FILENAME]"
+    echo "Receive file using ICMP server: bang.queensono.receive.file [FILENAME]"
 else
     qsreceiver receive -p -f $1
 fi
@@ -58,7 +58,7 @@ fi
 ## Queensono receive file cpy
 bang.queensono.receive.file.cpy() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.receive.file.cpy [FILENAME]"
+    echo "Copy line to receive file using ICMP server: bang.queensono.receive.file.cpy [FILENAME]"
 else
     echo "qsreceiver receive -p -f $1" | cpy
 fi
@@ -67,7 +67,7 @@ fi
 ## Queensono receive
 bang.queensono.receive() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.receive"
+    echo "Receive message using ICMP: bang.queensono.receive"
 else
      qsreceiver receive
 fi
@@ -76,7 +76,7 @@ fi
 ## Queensono receive cpy
 bang.queensono.receive.cpy() {
 if [ "$1" = "-h" ]; then
-    echo "bang.queensono.receive.cpy"
+    echo "Copy line to receive message using ICMP: bang.queensono.receive.cpy"
 else
      echo "qsreceiver receive" | cpy
 fi
