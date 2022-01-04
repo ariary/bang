@@ -3,26 +3,45 @@
 
 ## Change Target IP (Addr) envvar
 cTA(){
+if [ "$1" = "-h" ]; then
+    echo "Change Target Address: cTA [address]"
+else
     eval export TA=$1
+fi
 }
 
 ## Change Target port envvar
 cTP(){
+if [ "$1" = "-h" ]; then
+    echo "Change Target Port: cTP [port]"
+else
     eval export TP=$1
+fi
 }
 
 ## Change Attacker IP (Addr) envvar
 cAA(){
+if [ "$1" = "-h" ]; then
+    echo "Change Attacker Address: cAA [address]"
+else
     eval export AA=$1
+fi
 }
 
 ## Change Attacker port envvar
 cAP(){
+if [ "$1" = "-h" ]; then
+    echo "Change Attacker Port: cAP [port]"
+else
     eval export AP=$1
+fi
 }
 
 ## Interactiv conf
 bang.conf.pentest(){
+if [ "$1" = "-h" ]; then
+    echo "Configure all you pentest envar (TA,TP, AA,AP)"
+else
     echo "Enter Attacker IP: "
     read ATT_ADDR
     cAA ${ATT_ADDR}
@@ -35,6 +54,7 @@ bang.conf.pentest(){
     echo "Enter Target PORT: "
     read TAR_PORT
     cTP ${TAR_PORT}
+fi
 }
 
 ## Current conf
@@ -42,11 +62,15 @@ alias 'bang.conf.pentest.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»�
 
 ##Update conf
 bang.conf.update(){
+if [ "$1" = "-h" ]; then
+    echo "Update bang files (conf + shortcut). Launch "bang" afterward to load new shortcuts"
+else
     git clone https://github.com/ariary/bang.git && cd bang
     cp bang $HOME/.bang
     cp bang_conf $HOME/.bang
     cp -r ./install/ $HOME/.bang
     cd .. && rm -rf bang
+fi
 }
 
 ##Install modules/tools
@@ -54,13 +78,16 @@ alias 'bang.conf.install=$HOME/.bang/install/install-tools.sh'
 alias 'bang.conf.install-ariary=$HOME/.bang/install/install-ariary.sh'
 
 ##Show config shortcuts
+bang.conf.aliases() {
+    echo "toto"
+}
 bang.conf.ls() {
     # SHORTCUT
     bold=$(tput bold)
     normal=$(tput sgr0)
     echo "${bold}SHORTCUT${normal}"
 
-    exclude=(bang.conf.ls)
+    exclude=(bang.conf.ls bang.conf.aliases)
 
     #must differenciate between zsh and bash for multiline var -> array trick
     if [ -n "$ZSH_VERSION" ]; then
@@ -103,7 +130,7 @@ bang.conf.ls() {
     # ALIASES
     echo
     echo "${bold}ALIASES${normal}"
-    bang.aliases | column -t -s $'\t'
+    bang.conf.aliases | column -t -s $'\t'
 }
 
 ##Load shortcuts
