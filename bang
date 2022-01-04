@@ -148,7 +148,7 @@ fi
 ## Gitar server as a daemon 
 bang.gitar.daemon() {
 if [ "$1" = "-h" ]; then
-    echo ""Start a gitar server as a deamon: bang.gitar.daemon \$AA"
+    echo "Start a gitar server as a deamon: bang.gitar.daemon \$AA"
 else
   nohup gitar -e $1 &
 fi
