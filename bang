@@ -277,7 +277,7 @@ alias bang.nmap.show-script='ll /usr/share/nmap/scripts/'
 
 bang.nmap.scan-ports() {
 if [ "$1" = "-h" ]; then
-    echo "Scan specific ports with nmap: (one port) bang.nmap.scan-ports [port] OR (multiple ports) bang.nmap.scan-ports [from]-[to]"
+    echo "Scan a specific port with nmapbang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
 else
     nmap -p $1 $TA
 fi
@@ -301,9 +301,43 @@ else
 fi
 }
 
+##List all bang aliases
+bang.aliases() {
+export ROSE='\033[1;35m'
+export NC='\033[0m'
+
+echo -e "bang.find\t\t${ROSE}Grep in all bang shortcuts & aliases${NC}"
+
+echo -e "bang.nmap.show-script\t\t${ROSE}Show nmap scripts location${NC}"
+
+echo -e "bang.proxycurl\t\t${ROSE}Perorm a curl request using a local proxy listening on http://127.0.0.1:8080: bang.proxycurl [URL]${NC}"
+
+
+echo -e "bang.screen.launch-and-detach\t\t${ROSE}Launch a process with screen and detach from the screen virtual terminal (reattach with bang.screen.reattach)${NC}"
+echo -e "bang.screen.reattach\t\t${ROSE}Reattach a screen screen virtual terminal which was detached (You can re-detach w/ CTRL+A D)${NC}"
+echo -e "bang.screen.ls\t\t${ROSE}List all existent screens (virtual terminal)${NC}"
+
+echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on port 80808 for the current repository (useful for file exchange with a windows host)${NC}"
+
+echo -e "cpy\t\t${ROSE}Copy stdin to clipboard${NC}"
+
+echo -e "hgrep\t\t${ROSE}Grep in history command${NC}"
+
+
+echo -e "pup\t\t${ROSE}Color html input (ex: curl https://google.fr | pup)${NC}"
+echo -e "pup.script\t\t${ROSE}Retrieve script tag in html input (ex: curl https://google.fr | pup.script)${NC}"
+
+echo -e "screenshot\t\t${ROSE}Take a screenshot${NC}"
+}
+
 ## List bang functions
 bang.ls() {
-    exclude=(bang.ls)
+    # SHORTCUT
+    bold=$(tput bold)
+    normal=$(tput sgr0)
+    echo "${bold}SHORTCUT${normal}"
+
+    exclude=(bang.ls bang.aliases)
 
     #must differenciate between zsh and bash for multiline var -> array trick
     if [ -n "$ZSH_VERSION" ]; then
@@ -342,4 +376,10 @@ bang.ls() {
     fi
 
     echo -e $OUTPUT | column -t -s $'\t'
+
+    # ALIASES
+    echo
+    echo "${bold}ALIASES${normal}"
+    bang.aliases | column -t -s $'\t'
 }
+alias bang.find='bang.ls | grep'
