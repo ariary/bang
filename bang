@@ -203,7 +203,7 @@ fi
 ## Ngrok expose a port
 bang.expose() {
 if [ "$1" = "-h" ]; then
-    echo ""Expose a local port using ngrok: bang.expose \$AP"
+    echo "Expose a local port using ngrok: bang.expose \$AP"
 else
   ngrok http $1
 fi
