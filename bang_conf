@@ -53,5 +53,58 @@ bang.conf.update(){
 alias 'bang.conf.install=$HOME/.bang/install/install-tools.sh'
 alias 'bang.conf.install-ariary=$HOME/.bang/install/install-ariary.sh'
 
+##Show config shortcuts
+bang.conf.ls() {
+    # SHORTCUT
+    bold=$(tput bold)
+    normal=$(tput sgr0)
+    echo "${bold}SHORTCUT${normal}"
+
+    exclude=(bang.conf.ls)
+
+    #must differenciate between zsh and bash for multiline var -> array trick
+    if [ -n "$ZSH_VERSION" ]; then
+        FUNC=("${(@f)$(cat $HOME/.bang/bang_conf | awk '!/^main[ (]/ && /^[^ {}]+ *\(\)/ { gsub(/[()]/, "", $1); print $1}')}")
+    elif [ -n "$BASH_VERSION" ]; then
+        FUNC=$(cat $HOME/.bang/bang_conf | awk '!/^main[ (]/ && /^[^ {}]+ *\(\)/ { gsub(/[()]/, "", $1); print $1}')
+        SAVEIFS=$IFS
+        IFS=$'\n'
+        FUNC=($FUNC)
+        IFS=$SAVEIFS  
+    fi
+
+    for del in ${exclude[@]}
+    do
+        FUNC=("${FUNC[@]/$del}") #Quotes when working with strings
+    done
+
+    OUTPUT=""
+    if [ -n "$ZSH_VERSION" ]; then
+
+        for f in $FUNC
+        do
+            OUTPUT=$OUTPUT$(echo -n "$f"; \
+            echo -n "\t\t\033[1;35m" ;\
+            HELP=$($f -h) ;\
+            echo "$HELP";\
+            echo -n "\033[0m";)
+        done
+    elif [ -n "$BASH_VERSION" ]; then
+        for (( i=0; i<${#FUNC[@]}; i++ ))
+        do  
+            OUTPUT=$OUTPUT$(echo "\n";echo -n "${FUNC[$i]}\t";\
+            HELP=$(${FUNC[$i]} -h 2>/dev/null);\
+            echo -e "\t\t\033[1;35m$HELP\033[0m";)
+        done
+    fi
+
+    echo -e $OUTPUT | column -t -s $'\t'
+
+    # ALIASES
+    echo
+    echo "${bold}ALIASES${normal}"
+    bang.aliases | column -t -s $'\t'
+}
+
 ##Load shortcuts
 alias bang='source ~/.bang/bang'
