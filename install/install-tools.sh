@@ -94,6 +94,7 @@ fx(){
     echo "\n"
 }
 
+#mitm-proxy
 mitm-proxy(){
     echo -e "${BLUE}[*] Install mitm-proxy..${NC}"
     rm -f ~/Downloads/mitmproxy-*
@@ -107,15 +108,17 @@ mitm-proxy(){
     echo "\n"
 }
 
+#pup
 pup(){
     echo -e "${BLUE}[*] Install pup..${NC}"
     go get github.com/ericchiang/pup
     echo "\n"
 }
 
+#vim
 vim(){
     echo -e "${BLUE}[*] Install vim..${NC}"
-    sudo apt install vim
+    sudo apt install vim -y
     echo -e "${BLUE}[->] Set up vundle vim..${NC}"
     mkdir -p ~/.vim/bundle/
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
