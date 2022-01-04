@@ -302,12 +302,41 @@ fi
 }
 
 ## List bang functions
-bang.list-all() {
-    FUNCTIONS=$(cat $HOME/.bang/bang | awk '!/^main[ (]/ && /^[^ {}]+ *\(\)/ { gsub(/[()]/, "", $1); print $1}')
-    exclude=(bang.list-all)
+bang.ls() {
+    exclude=(bang.ls)
+
+    #must differenciate between zsh and bash for multiline var -> array trick
+    if [ -n "$ZSH_VERSION" ]; then
+        FUNC=("${(@f)$(cat $HOME/.bang/bang | awk '!/^main[ (]/ && /^[^ {}]+ *\(\)/ { gsub(/[()]/, "", $1); print $1}')}")
+    elif [ -n "$BASH_VERSION" ]; then
+        FUNC=$(cat $HOME/.bang/bang | awk '!/^main[ (]/ && /^[^ {}]+ *\(\)/ { gsub(/[()]/, "", $1); print $1}')
+        SAVEIFS=$IFS
+        IFS=$'\n'
+        FUNC=($FUNC)
+        IFS=$SAVEIFS  
+    fi
+
     for del in ${exclude[@]}
     do
-        FUNCTIONS=("${FUNCTIONS[@]/$del}") #Quotes when working with strings
+        FUNC=("${FUNC[@]/$del}") #Quotes when working with strings
     done
-    echo $FUNCTIONS
+
+    echo $FUNC
+
+    if [ -n "$ZSH_VERSION" ]; then
+        for f in $FUNC
+        do
+            echo -n "$f"
+            echo -n "\t\033[1;35m"
+            $f -h
+            echo -n "\033[0m"
+        done
+    elif [ -n "$BASH_VERSION" ]; then
+for (( i=0; i<${#FUNC[@]}; i++ ))
+do
+    echo -n "${FUNC[$i]}"
+    HELP=$(${FUNC[$i]} -h 2>/dev/null)
+    echo -e "\t\033[1;35m$HELP\033[0m"
+done
+    fi
 }
