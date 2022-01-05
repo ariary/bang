@@ -217,7 +217,7 @@ bang.mitmproxy.intercept.request.domain() {
 if [ "$1" = "-h" ]; then
     echo "Launch mitm-proxy and configure it to catch requests to a specific domain: bang.mitmproxy.intercept.request.domain [DOMAIN]"
 else
-  $HOME/.local/bin/mitmproxy --intercept "~u /*$1 & ~q" #need absolute path
+  mitmproxy --intercept "~u /*$1 & ~q" #need absolute path
 fi
 }
 
@@ -225,7 +225,7 @@ bang.mitmproxy.intercept.request() {
 if [ "$1" = "-h" ]; then
     echo "Launch mitm-proxy and configure it to catch all requests: bang.mitmproxy.intercept.request"
 else
-  $HOME/.local/bin/mitmproxy --intercept "~q"
+  mitmproxy --intercept "~q"
 fi
 }
 
