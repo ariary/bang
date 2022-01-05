@@ -250,7 +250,7 @@ bang.b64encode() {
 if [ "$1" = "-h" ]; then
     echo "Encode in base64 a text: bang.b64encode \"[TEXT]\""
 else
-    echo "$1" | base64 -w 0
+    echo -n "$1" | base64 -w 0
 fi
 }
 
