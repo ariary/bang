@@ -301,10 +301,36 @@ else
 fi
 }
 
+##feroxbuster
+alias bang.feroxbuster='feroxbuster -u'
+alias bang.feroxbuster.redirect='feroxbuster -r -u'
+alias bang.feroxbuster.search-extensions='feroxbuster -x js,html,txt,pdf,json,php,doc,docx,xml -u'
+alias bang.feroxbuster.only-success='feroxbuster -r -C $(seq -s, $CODE 400 599) -u'
+alias bang.feroxbuster.only-error='feroxbuster -C $(seq -s, $CODE 1 399) -u'
+alias bang.feroxbuster.only-error='feroxbuster -C $(seq -s, $CODE 1 399) -u'
+alias bang.feroxbuster.extract-links='feroxbuster --extract-links -u'
+
+##hakluke tools
+bang.hakrawler() {
+if [ "$1" = "-h" ]; then
+    echo "Web crawler for gathering URLs and JavaSript file locations: bang.hakrawler [url]"
+else
+    echo $1 | hakrawler -subs
+fi
+}
+
 ##List all bang aliases
 bang.aliases() {
 export ROSE='\033[1;35m'
 export NC='\033[0m'
+
+
+echo -e "bang.feroxbuster\t\t${ROSE}Perform a basic feroxbuster scan${NC}"
+echo -e "bang.feroxbuster.redirect\t\t${ROSE}Perform a basic feroxbuster scan and follow redirects${NC}"
+echo -e "bang.feroxbuster.search-extensions\t\t${ROSE}Perform a feroxbuster scan to retrieve php,docx,doc,xml,json,pdf,txt,html and js files${NC}"
+echo -e "bang.feroxbuster.only-success\t\t${ROSE}Perform feroxbuster scan a filter on success response code (0-399)${NC}"
+echo -e "bang.feroxbuster.only-error\t\t${ROSE}Perform feroxbuster scan a filter on error response code (400-599)${NC}"
+echo -e "bang.feroxbuster.extract-links\t\t${ROSE}Perform feroxbuster scan and extract links from body${NC}"
 
 echo -e "bang.find\t\t${ROSE}Grep in all bang shortcuts & aliases${NC}"
 
