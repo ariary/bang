@@ -68,7 +68,7 @@ golang(){
 ko(){
     echo -e "${BLUE}[*] Install ko..${NC}"
     go install github.com/google/ko@latest
-    echo "\n"
+    echo
 }
 
 
