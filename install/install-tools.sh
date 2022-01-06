@@ -148,6 +148,12 @@ feroxbuster(){
     sudo apt update && sudo apt install -y feroxbuster
     echo
 }
+
+#hakrawler(){
+    echo -e "${BLUE}[*] Install hakrawler..${NC}"
+    go install github.com/hakluke/hakrawler@latest
+    echo   
+}
 ####################
 ### INSTALL PART ###
 ####################
