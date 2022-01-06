@@ -116,30 +116,30 @@ pup(){
 }
 
 #vim
-vim(){
-    echo -e "${BLUE}[*] Install vim..${NC}"
-    sudo apt install vim -y
-    echo -e "${BLUE}[->] Set up vundle vim..${NC}"
-    mkdir -p ~/.vim/bundle/
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    echo -e "${BLUE}[->] Install vim plugin (Nerdtree,lightline)..${NC}"
-    echo -e "
-set nocompatible 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'itchyny/lightline.vim'
-Plugin 'preservim/nerdtree'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-eunuch' 
-call vundle#end()
-map <C-g> :NERDTreeToggle<CR>
-filetype plugin indent on
-    " >> $HOME/.vimrc
-    echo -e "${BLUE}[->] Load plugin into vim..${NC}"
-    vim -u NONE -c "PluginInstall" -c q
-    echo "\n"
-}
+#vim(){
+#    echo -e "${BLUE}[*] Install vim..${NC}"
+#    sudo apt install vim -y
+#    echo -e "${BLUE}[->] Set up vundle vim..${NC}"
+#    mkdir -p ~/.vim/bundle/
+#    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#    echo -e "${BLUE}[->] Install vim plugin (Nerdtree,lightline)..${NC}"
+#    echo -e "
+#set nocompatible 
+#filetype off
+#set rtp+=~/.vim/bundle/Vundle.vim
+#call vundle#begin()
+#Plugin 'itchyny/lightline.vim'
+#Plugin 'preservim/nerdtree'
+#Plugin 'terryma/vim-multiple-cursors'
+#Plugin 'tpope/vim-eunuch' 
+#call vundle#end()
+#map <C-g> :NERDTreeToggle<CR>
+#filetype plugin indent on
+#    " >> $HOME/.vimrc
+#    echo -e "${BLUE}[->] Load plugin into vim..${NC}"
+#    vim -u NONE -c "PluginInstall" -c q
+#    echo "\n"
+#}
 
 ####################
 ### INSTALL PART ###
