@@ -142,6 +142,12 @@ pup(){
 #    echo "\n"
 #}
 
+#feroxbuster
+feroxbuster(){
+    echo -e "${BLUE}[*] Install feroxbuster..${NC}"
+    sudo apt update && sudo apt install -y feroxbuster
+    echo
+}
 ####################
 ### INSTALL PART ###
 ####################
