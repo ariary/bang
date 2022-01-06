@@ -145,4 +145,4 @@ bang.conf.ls() {
 }
 
 ##Load shortcuts
-alias bang='source ~/.bang/bang && source ~/.bang/bang_fun'
+alias bang='source $HOME/.bang/bang && source $HOME/.bang/bang_fun'
