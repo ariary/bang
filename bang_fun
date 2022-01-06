@@ -7,3 +7,8 @@ bang.weather.tomorrow()
 {
   curl "http://wttr.in/$1?2"
 }
+
+bang.exit-vim.cpy()
+{
+  echo ":!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9" | xclip -selection clipboard
+}
