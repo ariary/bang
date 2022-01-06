@@ -12,21 +12,21 @@ export NC='\033[0m'
 xclip(){
     echo -e "${BLUE}[*] Install xclip..${NC}"
     sudo apt install xclip
-    echo "\n"
+    echo
 }
 
 #flameshot
 flameshot(){
     echo -e "${BLUE}[*] Install flameshot..${NC}"
     sudo apt install flameshot
-    echo "\n"
+    echo
 }
 
 #screen
 screen(){
     echo -e "${BLUE}[*] Install screen..${NC}"
     sudo apt install screen
-    echo "\n"
+    echo
 }
 
 #bat & extras
@@ -37,7 +37,7 @@ bat(){
     git clone https://github.com/eth-p/bat-extras.git && cd bat-extras && ./build.sh
     mv ./bin/* $HOME/.local/bin/
     rm -rf bat-extras
-    echo "\n"
+    echo
 }
 
 
@@ -46,7 +46,7 @@ fd(){
     echo -e "${BLUE}[*] Install fd..${NC}"
     sudo apt install fd-find
     ln -s $(which fdfind) $HOME/.local/bin/fd
-    echo "\n"
+    echo
 }
 
 
@@ -83,7 +83,7 @@ ngrok(){
     read -s NGROK_TOKEN
     $HOME/.local/bin/ngrok authtoken $NGROK_TOKEN
     unset NGROK_TOKEN
-     echo "\n"
+     echo
 }
 
 #fx
@@ -92,7 +92,7 @@ fx(){
     wget https://github.com/antonmedv/fx/releases/latest/download/fx-linux.zip
     unzip fx-linux.zip && rm fx-linux.zip
     mv fx-linux fx && mv fx $HOME/.local/bin/
-    echo "\n"
+    echo
 }
 
 #mitm-proxy
@@ -106,14 +106,14 @@ mitm-proxy(){
     mv mitmdump $HOME/.local/bin/
     mv mitmweb $HOME/.local/bin/
     rm -f ~/Downloads/mitmproxy-*
-    echo "\n"
+    echo
 }
 
 #pup
 pup(){
     echo -e "${BLUE}[*] Install pup..${NC}"
     go get github.com/ericchiang/pup
-    echo "\n"
+    echo
 }
 
 #vim
