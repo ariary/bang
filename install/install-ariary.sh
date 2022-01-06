@@ -6,7 +6,6 @@ export NC='\033[0m'
 
 ### Queensono
 echo -e "${BLUE}[*] Install Queensono..${NC}"
-echo "[*] Install Queensono.."
 curl -s -lO -L https://github.com/ariary/QueenSono/releases/latest/download/qsreceiver
 curl -s -lO -L https://github.com/ariary/QueenSono/releases/latest/download/qssender
 chmod +x qsreceiver qssender
