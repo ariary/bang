@@ -59,8 +59,9 @@ golang(){
     sudo tar -C /usr/local -xvf go.tar.gz
     rm go.tar.gz
     echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile
-    echo "export PATH=$PATH:$HOME/go/bin" >> $HOME/.zshrc #Add go install in PATH
-    echo "\n"
+    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshrc #Add go install in PATH
+    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
+    echo
 }
 
 
