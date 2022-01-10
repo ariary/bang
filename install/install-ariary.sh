@@ -24,6 +24,9 @@ echo -e "${BLUE}[*] Install gitar..${NC}"
 curl -s -lO -L https://github.com/ariary/gitar/releases/latest/download/gitar
 chmod +x gitar
 mv gitar $HOME/.local/bin/
+git clone https://github.com/ariary/gitar.git && cd gitar
+make build.image-gitar
+cd .. && rm -rf gitar
 
 
 ### jse
