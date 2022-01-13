@@ -173,15 +173,25 @@ fi
 }
 
 ## curl & jse
-bang.jse.after-curl() {
+bang.jse.after-curl.verbose() {
 if [ "$1" = "-h" ]; then
-    echo "Fetch an URL and retrieve JS in response: bang.jse.after-curl [url]"
+    echo "Fetch an URL and retrieve JS in response with nice printing: bang.jse.after-curl.verbose [url]"
 else
     curl -s $1 -H "Accept: text/html" | jse -u $1 -gather-scr
 fi
 }
 
-## curl & TUIjse
+
+## extract all js from remote
+bang.jse.after-curl() {
+if [ "$1" = "-h" ]; then
+    echo "Fetch an URL and retrieve JS in response: bang.jse.after-curl [url]"
+else
+    curl -s $1 -H "Accept: text/html" | jse -u $1 -gather-scr 2>/dev/null
+fi
+}
+
+## curl & TUI jse
 bang.jse.tui-after-curl() {
 if [ "$1" = "-h" ]; then
     echo "Fetch an URL and retrieve JS in response. Browse it using a Terminal based UI: bang.jse.tui-after-curl [url]"
