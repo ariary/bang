@@ -350,7 +350,7 @@ echo -e "bang.proxycurl\t\t${ROSE}Perorm a curl request using a local proxy list
 
 
 echo -e "bang.screen.launch-and-detach\t\t${ROSE}Launch a process with screen and detach from the screen virtual terminal (reattach with bang.screen.reattach)${NC}"
-echo -e "bang.screen.reattach\t\t${ROSE}Reattach a screen screen virtual terminal which was detached (You can re-detach w/ CTRL+A+D)${NC}"
+echo -e "bang.screen.reattach\t\t${ROSE}Reattach a screen screen virtual terminal which was detached (You can re-detach w/ CTRL+A D)${NC}"
 echo -e "bang.screen.ls\t\t${ROSE}List all existent screens (virtual terminal)${NC}"
 
 echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on port 80808 for the current repository (useful for file exchange with a windows host)${NC}"
