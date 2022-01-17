@@ -216,6 +216,26 @@ When you have finished your modification: `<ECHAP>`, then press `q`, then press 
 [See](https://docs.mitmproxy.org/stable/mitmproxytutorial-replayrequests/)
 
 
+## Deploy local app with trusted cert
+***>avoid curl `-k` option or warning in browser***
+
+***1)*** First install mkcert root cert in your local trust store: `bang.mkcert.install`
+
+***2)*** Then generate key and intermediate cert for a specific domain:
+```
+bang.mkcert.generate-cert [domain]
+>>>>> IT WILL OUTPUT THE COMMAND LINE TO CHANGE DNS ENTRY (COPY & PASTE IT)
+```
+***3)*** Change DNS entry in `/etc/hosts`
+
+You can now join your local http service using ssl without warning or `-k` option. Example: `curl https://[domain]` or `(&>/dev/null firefox https://[domain] &)`
+
+***4)*** When you finish you task. Clean cert and so on:
+```
+bang.mkcert.uninstall
+>>>>> IT WILL OUTPUT THE COMMAND LINE TO CHANGE DNS ENTRY BACK TO IT INITIAL STATUS (COPY & PASTE IT)
+```
+
 ## `nmap` scan
 
 Configure your pentest target before using these commands: `bang.conf.pentest`
@@ -269,6 +289,10 @@ bang.screen.reattach
 ```
 
 *Help: to list all existent screens: bang.screen.ls*
+
+## Use `mkcert` to trust local certs
+
+
 
 ## `bang` helpers
 
