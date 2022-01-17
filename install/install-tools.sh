@@ -149,7 +149,8 @@ feroxbuster(){
     echo
 }
 
-#hakrawler(){
+#hakrawler
+hakrawler(){
     echo -e "${BLUE}[*] Install hakrawler..${NC}"
     go install github.com/hakluke/hakrawler@latest
     echo   
