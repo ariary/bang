@@ -71,3 +71,5 @@ List all shortcut (not aliases) with `bang.list-all`
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
 * [Get weather for a given city](https://github.com/ariary/bang/blob/main/EXAMPLES.md#get-the-weather-of-your-city)
 * [Intercept HTTP request from command line](https://github.com/ariary/bang/blob/main/EXAMPLES.md#intercept-request-with-command-line)
+* [Launch a bomb within current directory](https://github.com/ariary/bang/blob/main/EXAMPLES.md#launch-a-bomb-inside-your-tty)
+* [Copy a line to exit vim](https://github.com/ariary/bang/blob/main/EXAMPLES.md#exit-vim-line)
