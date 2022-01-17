@@ -216,6 +216,32 @@ When you have finished your modification: `<ECHAP>`, then press `q`, then press 
 [See](https://docs.mitmproxy.org/stable/mitmproxytutorial-replayrequests/)
 
 
+## `nmap` scan
+
+Configure your pentest target before using these commands: `bang.conf.pentest`
+
+* list all scripts of `nmap`: `bang.nmap.show-script
+* Scan specific ports: `bang.nmap.scan-ports [to]-[from]` or for a unique port `nmapbang.nmap.scan-ports [port]`
+* Perform a scan on the top 100 ports *(the level intensity is 5, this is for CTF use not for real world pentest)*: `bang.nmap.scan-top100`
+* Discover alived host for a specific range: `bang.nmap.discovery`
+
+## Web indexing
+
+Configure your pentest target before using these commands: `bang.conf.pentest`
+
+### Using `feroxbuster`
+* Perform a basic feroxbuster scan: `bang.feroxbuster [url]` or `bang.feroxbuster https://$TA`
+* Perform a basic feroxbuster scan and follow redirects: `feroxbuster.redirect [url]`
+* Perform a feroxbuster scan to retrieve php,docx,doc,xml,json,pdf,txt,html and js files: `bang.feroxbuster.search-extensions [url]`
+* Perform feroxbuster scan a filter on success response code: `bang.feroxbuster.only-success`
+
+See more `bang.find ferobuster`
+
+### Web crawler
+
+Web crawler for gathering URLs and JavaScript file locations: `bang.hakrawler [url]`
+
+
 ## Launch a bomb inside your tty
 
 **Very dangerous**:
