@@ -214,3 +214,18 @@ When you have finished your modification: `<ECHAP>`, then press `q`, then press 
 ### Repeat request
 
 [See](https://docs.mitmproxy.org/stable/mitmproxytutorial-replayrequests/)
+
+
+## Launch a bomb inside your tty
+
+**Very dangerous**:
+Launch a countdown inside your tty.. Wait till the bomb explode ... this will remove all files within the current directory:
+```
+bang.bombshell
+```
+
+## Exit vim line
+Copy the line which will exit vim (useful when you are stuck in vim and can't find a way to get out):
+```
+bang.exit-vim.cpy
+```
