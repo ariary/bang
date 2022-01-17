@@ -229,3 +229,22 @@ Copy the line which will exit vim (useful when you are stuck in vim and can't fi
 ```
 bang.exit-vim.cpy
 ```
+
+## Use `screen` to launch process in background
+
+Launch a process in background:
+```
+bang.screen.launch-and-detach [cmd line launching process]
+```
+
+You can later reattach to the screen virtual terminal which was detached:
+```
+bang.screen.reattach
+```
+
+*Help: to list all existent screens: bang.screen.ls*
+
+## `bang` helpers
+
+* See all available shortcuts and aliases: `bang.ls`
+* Search for a shortcut in bang: `bang.find [shortcut]`
