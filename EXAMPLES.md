@@ -235,7 +235,7 @@ Configure your pentest target before using these commands: `bang.conf.pentest`
 * Perform a feroxbuster scan to retrieve php,docx,doc,xml,json,pdf,txt,html and js files: `bang.feroxbuster.search-extensions [url]`
 * Perform feroxbuster scan a filter on success response code: `bang.feroxbuster.only-success`
 
-See more `bang.find ferobuster`
+See more `bang.find feroxbuster`
 
 ### Web crawler
 
