@@ -64,6 +64,7 @@ List all shortcut (not aliases) with `bang.list-all`
 
 #### `jse`( Extract js code from HTML page)
 * [Extract js code for html page from curl](https://github.com/ariary/bang/blob/main/EXAMPLES.md#jse)
+* [Find DOM XSS](https://github.com/ariary/bang/blob/main/EXAMPLES.md#find-dom-xss) with [`fsource`](https://github.com/ariary/DomXssFinder) and [`fsink`](https://github.com/ariary/DomXssFinder)
 
 #### Others
 
