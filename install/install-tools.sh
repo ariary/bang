@@ -95,6 +95,12 @@ fx(){
     echo
 }
 
+#jsonfui
+jsonfui(){
+    echo -e "${BLUE}[*] Install jsonfui..${NC}"
+    curl -L https://github.com/AdrianSchneider/jsonfui/releases/download/1.2.6/jsonfui-linux-1.2.6 -o jsonfui && chmod +x jsonfui && mv jsonfui $HOME/.local/bin
+    echo
+}
 #mitm-proxy
 mitm-proxy(){
     echo -e "${BLUE}[*] Install mitm-proxy..${NC}"
