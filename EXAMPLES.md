@@ -143,12 +143,14 @@ bang.queensono.receive.cpy
 
 ## `jse`
 
-`jse` enables to gather js code from webpages
+`jse` enables to gather js code from web pages
 
 Perform curl request and extract js from it:
 ```
-bang.jse.after-curl [url]
+bang.jse.after-curl.verbose [url]
 ```
+
+If you only want the neat part (js): `bang.jse.after-curl [url]`
 
 Same thing with a terminal UI (TUI):
 ```
@@ -157,10 +159,17 @@ bang.jse.tui-after-curl [url]
 
 ### Find DOM XSS
 
-Same thing with a terminal UI (TUI):
+To find sources in js code, use `fsource`:
 ```
-bang.jse.tui-after-curl [url]
+bang.jse.after-curl [url] | fsource
 ```
+
+Similary with `fsink` to find sinks:
+```
+bang.jse.after-curl [url] | fsink
+```
+
+To ease the js inspection, you could "[beautify](https://github.com/beautify-web/js-beautify)" the js code
 
 ## Webdav server
 
