@@ -155,6 +155,18 @@ hakrawler(){
     go install github.com/hakluke/hakrawler@latest
     echo   
 }
+
+#mkcert
+mkcert(){
+    echo -e "${BLUE}[*] Install mkcert..${NC}"
+    sudo apt install libnss3-tools
+    git clone https://github.com/FiloSottile/mkcert && cd mkcert
+    go build -ldflags "-X main.Version=$(git describe --tags)"
+    mv mkcert $HOME/.local/bin/
+    cd .. && rm -rf mkcert
+    echo   
+}
+
 ####################
 ### INSTALL PART ###
 ####################
