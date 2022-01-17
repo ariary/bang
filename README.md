@@ -34,7 +34,7 @@ You could alternatively configure each item:
 ## Shortcut Examples
 **➲** *List of useful `bang` shortcuts*
 
-List all shortcut (not aliases) with `bang.list-all`
+List all shortcut with `bang.ls`
 
 #### `gitar` (pentest easy file sharing)
 
