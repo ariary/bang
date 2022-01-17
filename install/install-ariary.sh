@@ -34,3 +34,10 @@ echo -e "${BLUE}[*] Install jse..${NC}"
 curl -lO -L https://github.com/ariary/JSextractor/releases/latest/download/jse
 chmod +x jse
 mv jse $HOME/.local/bin/
+
+### DomXssFinder
+echo -e "${BLUE}[*] Install DomXssFinder (fsource and fsink)..${NC}"
+curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/fsink 
+curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/fsource
+chmod +x fsink fsource
+mv fsink $HOME/.local/bin/ && mv fsource $HOME/.local/bin/
