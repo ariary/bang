@@ -329,6 +329,19 @@ else
 fi
 }
 
+##mkcert
+alias bang.mkcert.install='mkcert -install'
+alias bang.mkcert.uninstall="mkcert -uninstall && rm -rf $(mkcert -CAROOT) && echo 'Remove /etc/host entry: \"echo \'sudo sed -i \'/BANGDNSENTRY/d\' /etc/hosts\'"
+
+bang.mkcert.generate-cert() {
+if [ "$1" = "-h" ]; then
+    echo Generate trusted cert for local app and set a specific domain: bang.mkcert.generate-cert [domain name]"
+else
+    mkcert -key-file key.pem -cert-file cert.pem $1 localhost 127.0.0.1 ::1 && echo "Change /etc/hosts entry: \"echo '127.0.0.1 $1 #BANGDNSENTRY' | sudo tee -a /etc/hosts  > /dev/null\"
+fi
+}
+
+
 ##List all bang aliases
 bang.aliases() {
 export ROSE='\033[1;35m'
@@ -354,6 +367,9 @@ echo -e "bang.screen.reattach\t\t${ROSE}Reattach a screen screen virtual termina
 echo -e "bang.screen.ls\t\t${ROSE}List all existent screens (virtual terminal)${NC}"
 
 echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on port 80808 for the current repository (useful for file exchange with a windows host)${NC}"
+
+echo -e "bang.mkcert.install\t\t${ROSE}Add mkcert to the  local trust store(curl, browsers etc)${NC}"
+echo -e "bang.mkcert.uninstall\t\t${ROSE}Uninstall mkcert cert from local trust store${NC}"
 
 echo -e "cpy\t\t${ROSE}Copy stdin to clipboard${NC}"
 
@@ -418,4 +434,5 @@ bang.ls() {
     echo "${bold}ALIASES${normal}"
     bang.aliases | column -t -s $'\t'
 }
+
 alias bang.find='bang.ls | grep'
