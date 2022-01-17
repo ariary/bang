@@ -155,6 +155,13 @@ Same thing with a terminal UI (TUI):
 bang.jse.tui-after-curl [url]
 ```
 
+### Find DOM XSS
+
+Same thing with a terminal UI (TUI):
+```
+bang.jse.tui-after-curl [url]
+```
+
 ## Webdav server
 
 [see](https://blog.ropnop.com/docker-for-pentesters/#example-6---serving-files-over-webdav)
