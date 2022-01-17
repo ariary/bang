@@ -217,7 +217,7 @@ When you have finished your modification: `<ECHAP>`, then press `q`, then press 
 
 
 ## Deploy local app with trusted cert
-***>avoid curl `-k` option or warning in browser***
+*> avoid curl `-k` option or warning in browser*
 
 ***1)*** First install mkcert root cert in your local trust store: `bang.mkcert.install`
 
@@ -228,7 +228,10 @@ bang.mkcert.generate-cert [domain]
 ```
 ***3)*** Change DNS entry in `/etc/hosts`
 
-You can now join your local http service using ssl without warning or `-k` option. Example: `curl https://[domain]` or `(&>/dev/null firefox https://[domain] &)`
+***Enjoy:***
+You can now join your local http service using ssl without warning or `-k` option.
+
+Example: `curl https://[domain]` or `(&>/dev/null firefox https://[domain] &)`
 
 ***4)*** When you finish you task. Clean cert and so on:
 ```
