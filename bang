@@ -350,7 +350,7 @@ bang.aliases() {
 export ROSE='\033[1;35m'
 export NC='\033[0m'
 
-echo -e "bang.cpy.download-micro\t\t${ROSE}Copy command line to dl micro (a standalone text editor). Useful to dl it on machine where you don't have vim or nano${NC}"
+echo -e "bang.cpy.download-text-editor\t\t${ROSE}Copy command line to dl micro (a standalone text editor). Useful to dl it on machine where you don't have vim or nano${NC}"
 
 echo -e "bang.feroxbuster\t\t${ROSE}Perform a basic feroxbuster scan${NC}"
 echo -e "bang.feroxbuster.redirect\t\t${ROSE}Perform a basic feroxbuster scan and follow redirects${NC}"
