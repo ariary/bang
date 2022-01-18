@@ -9,7 +9,7 @@ alias bang.screen.reattach='screen -r'
 alias bang.screen.list='screen -ls'
 alias pup='pup --color'
 alias pup.script='pup --color script'
-alias bang.cpy.download-micro="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
+alias bang.cpy.download-text-editor="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
 
 ## Queensono send file
 bang.queensono.send.file() {
