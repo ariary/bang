@@ -31,7 +31,7 @@ cd .. && rm -rf gitar
 
 ### jse
 echo -e "${BLUE}[*] Install jse..${NC}"
-curl -lO -L https://github.com/ariary/JSextractor/releases/latest/download/jse
+curl -lO -L -s https://github.com/ariary/JSextractor/releases/latest/download/jse
 chmod +x jse
 mv jse $HOME/.local/bin/
 
