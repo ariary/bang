@@ -374,7 +374,7 @@ echo -e "bang.screen.launch-and-detach\t\t${ROSE}Launch a process with screen an
 echo -e "bang.screen.reattach\t\t${ROSE}Reattach a screen screen virtual terminal which was detached (You can re-detach w/ CTRL+A D)${NC}"
 echo -e "bang.screen.ls\t\t${ROSE}List all existent screens (virtual terminal)${NC}"
 
-echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on port 8080 for the current repository (useful for file exchange with a windows host). then 'bang.expose 8080' & access files w/ '\\[NGROK_URL]@\share'${NC}"
+echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on port 8080 for the current repository (useful for file exchange with a windows host). then 'bang.expose 8080' & access files w/ '\\\[NGROK_URL]@\share'${NC}"
 
 echo -e "cpy\t\t${ROSE}Copy stdin to clipboard${NC}"
 
