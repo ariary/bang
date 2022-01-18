@@ -337,7 +337,7 @@ alias bang.mkcert.uninstall="mkcert -uninstall && rm -rf $(mkcert -CAROOT) && ec
 
 bang.mkcert.generate-cert() {
 if [ "$1" = "-h" ]; then
-    echo Generate trusted cert for local app and set a specific domain: bang.mkcert.generate-cert [domain name]"
+    echo "Generate trusted cert for local app and set a specific domain: bang.mkcert.generate-cert [domain name]"
 else
     mkcert -key-file key.pem -cert-file cert.pem $1 localhost 127.0.0.1 ::1 && echo "echo '127.0.0.1 $1 #BANGDNSENTRY' | sudo tee -a /etc/hosts  > /dev/null"
 fi
