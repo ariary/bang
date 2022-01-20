@@ -378,8 +378,8 @@ echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on por
 
 echo -e "cpy\t\t${ROSE}Copy stdin to clipboard${NC}"
 
-echo -e "fsink\t\t${ROSE}find sinks in js code${NC}
-echo -e "fsource\t\t${ROSE}find sources in js code${NC}
+echo -e "fsink\t\t${ROSE}find sinks in js code${NC}"
+echo -e "fsource\t\t${ROSE}find sources in js code${NC}"
 
 echo -e "hgrep\t\t${ROSE}Grep in history command${NC}"
 
