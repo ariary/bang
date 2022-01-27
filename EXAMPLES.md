@@ -295,9 +295,11 @@ bang.screen.reattach
 
 ## Use `mkcert` to trust local certs
 
-
+..TO DO..
 
 ## `bang` helpers
 
 * See all available shortcuts and aliases: `bang.ls`
 * Search for a shortcut in bang: `bang.find [shortcut]`
+
+## Persistence
