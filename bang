@@ -225,10 +225,20 @@ fi
 
 ## Ngrok expose a tcp service
 bang.expose.tcp() {
-if [ "$1" = "-h" ] || [-z $1]; then
+if [ "$1" = "-h" ] || [ -z $1]; then
     echo "Expose a local tcp service using ngrok: bang.expose.tcp \$AP"
 else
   ngrok tcp $1
+fi
+}
+
+## Ngrok expose a tcp service
+bang.expose.tcp.cpy() {
+if [ "$1" = "-h" ] || [ -z $1]; then
+    echo "Show and copy line that expose a local tcp service using ngrok: bang.expose.tcp.cpy [port]"
+else
+  echo "ngrok tcp $1"
+  echo "ngrok tcp $1"|cpy
 fi
 }
 
@@ -378,8 +388,6 @@ bang.webshell.php.dial() {
 if [ "$1" = "-h" ] || [ -z "${WSURL}" ] || [ -z "$1" ]; then
     echo "Connect and interact with an webshell HTTP server to execute a command: bang.webshell.php.dial [cmd]. (Set WSLURL env var before using it)"
 else
-    echo "$WSURL"
-    echo "$@"
     CMD="$@"
     curl -X GET -G $WSURL --data-urlencode "cmd=${CMD}"
 fi
