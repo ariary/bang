@@ -68,8 +68,8 @@ List all shortcut with `bang.ls`
 
 #### Others
 
+* [Perform shell persistence on target](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
-* [Get weather for a given city](https://github.com/ariary/bang/blob/main/EXAMPLES.md#get-the-weather-of-your-city)
 * [Intercept HTTP request from command line](https://github.com/ariary/bang/blob/main/EXAMPLES.md#intercept-request-with-command-line)
 * [Perform `nmap` scan](https://github.com/ariary/bang/blob/main/EXAMPLES.md#nmap-scan)
 * [Perform web indexing](bang.feroxbuster.search-extensions)
@@ -77,4 +77,5 @@ List all shortcut with `bang.ls`
 * [Launch a bomb within current directory](https://github.com/ariary/bang/blob/main/EXAMPLES.md#launch-a-bomb-inside-your-tty)
 * [Copy a line to exit vim](https://github.com/ariary/bang/blob/main/EXAMPLES.md#exit-vim-line)
 * [Launch background process](https://github.com/ariary/bang/blob/main/EXAMPLES.md#use-screen-to-launch-process-in-background)
+* [Get weather for a given city](https://github.com/ariary/bang/blob/main/EXAMPLES.md#get-the-weather-of-your-city)
 * [`bang` helpers](https://github.com/ariary/bang/blob/main/EXAMPLES.md#bang-helpers)
