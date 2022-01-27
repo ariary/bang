@@ -68,7 +68,9 @@ List all shortcut with `bang.ls`
 
 #### Others
 
-* [Perform shell persistence on target (even in internal network)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
+* [Persistence on target (even in internal network)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
+  * [Reverse shell](https://github.com/ariary/bang/blob/main/EXAMPLES.md#via-a-tcp-tunnel)
+  * [Webshell](https://github.com/ariary/bang/blob/main/EXAMPLES.md#via-webshell)
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
 * [Intercept HTTP request from command line](https://github.com/ariary/bang/blob/main/EXAMPLES.md#intercept-request-with-command-line)
 * [Perform `nmap` scan](https://github.com/ariary/bang/blob/main/EXAMPLES.md#nmap-scan)
