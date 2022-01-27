@@ -326,7 +326,7 @@ Ngrok will give you an address to join to access the tunnel. Connect to the reve
 ```shell
 nc [ngrok_addr] [ngrok_port]
 # And enjoy!
-```shell
+```
 
 ### Via webshell
 
