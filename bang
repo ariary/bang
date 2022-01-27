@@ -50,7 +50,7 @@ fi
 
 ## Queensono receive file
 bang.queensono.receive.file() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Receive file using ICMP server: bang.queensono.receive.file [FILENAME]"
 else
     qsreceiver receive -p -f $1
@@ -59,7 +59,7 @@ fi
 
 ## Queensono receive file cpy
 bang.queensono.receive.file.cpy() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Copy line to receive file using ICMP server: bang.queensono.receive.file.cpy [FILENAME]"
 else
     echo "qsreceiver receive -p -f $1" | cpy
@@ -113,7 +113,7 @@ fi
 
 ## Gitar start
 bang.gitar() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a gitar server to ease file exchange: bang.gitar \$AA"
 else
   gitar -e $1
@@ -122,7 +122,7 @@ fi
 
 ## "Safe" Gitar start
 bang.gitar.safe() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a safe gitar server to ease file exchange (docker+https): bang.gitar.safe \$AA"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
@@ -131,7 +131,7 @@ fi
 
 ## Gitar start + url override
 bang.gitar.override() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a gitar server with URL overriding (use it to precise proxy url of the gitar server): bang.gitar.override [PROXY_URL]"
 else
   gitar -alias-override-url=$1
@@ -140,7 +140,7 @@ fi
 
 ## "Safe" Gitar start + url override
 bang.gitar.safe-override() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a safe gitar server with URL overriding (use it to precise proxy url of the gitar server): bang.gitar.safe-override [PROXY_URL]"
 else
   docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -alias-override-url=$1
@@ -149,7 +149,7 @@ fi
 
 ## Gitar server as a daemon 
 bang.gitar.daemon() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a gitar server as a deamon: bang.gitar.daemon \$AA"
 else
   nohup gitar -e $1 &
@@ -167,7 +167,7 @@ fi
 
 ## Gitar without completion
 bang.gitar.no-completion() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Launch a gitar server without completion (when you are dealing with a shell that note handle completion): bang.gitar.no-completion [ATTACKER_ADDR]"
 else
     gitar -e $1 -completion=false
@@ -176,7 +176,7 @@ fi
 
 ## curl & jse
 bang.jse.after-curl.verbose() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Fetch an URL and retrieve JS in response with nice printing: bang.jse.after-curl.verbose [url]"
 else
     curl -s $1 -H "Accept: text/html" | jse -u $1 -gather-src
@@ -188,7 +188,7 @@ fi
 
 ## extract all js from remote
 bang.jse.after-curl() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Fetch an URL and retrieve JS in response: bang.jse.after-curl [url]"
 else
     curl -s $1 -H "Accept: text/html" | jse -u $1 -gather-src 2>/dev/null
@@ -197,7 +197,7 @@ fi
 
 ## curl & TUI jse
 bang.jse.tui-after-curl() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Fetch an URL and retrieve JS in response. Browse it using a Terminal based UI: bang.jse.tui-after-curl [url]"
 else
     curl -s $1 -H "Accept: text/html" | jse -u $1 -tui -gather-src
@@ -207,8 +207,8 @@ fi
 
 ## Ngrok expose a https service
 bang.expose.https() {
-if [ "$1" = "-h" ]; then
-    echo "Expose a local https service using ngrok: bang.expose-https \$AP"
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
+    echo "Expose a local https service using ngrok: bang.expose.https \$AP"
 else
   ngrok http https://127.0.0.1:$1
 fi
@@ -216,10 +216,19 @@ fi
 
 ## Ngrok expose a port
 bang.expose() {
-if [ "$1" = "-h" ]; then
-    echo "Expose a local port using ngrok: bang.expose \$AP"
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
+    echo "Expose a local port using ngrok trough http tunnel: bang.expose \$AP"
 else
   ngrok http $1
+fi
+}
+
+## Ngrok expose a tcp service
+bang.expose.tcp() {
+if [ "$1" = "-h" ] || [-z $1]; then
+    echo "Expose a local tcp service using ngrok: bang.expose.tcp \$AP"
+else
+  ngrok tcp $1
 fi
 }
 
@@ -228,7 +237,7 @@ alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share
 alias bang.proxycurl='curl --proxy http://127.0.0.1:8080'
 
 bang.mitmproxy.intercept.request.domain() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Launch mitm-proxy and configure it to catch requests to a specific domain: bang.mitmproxy.intercept.request.domain [DOMAIN]"
 else
   mitmproxy --intercept "~u /*$1 & ~q" #need absolute path
@@ -277,7 +286,7 @@ fi
 }
 
 bang.domain2ip() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Find IPs behind a specific domain: bang.domain2ip [domain]"
 else
     dig +short $1 @resolver1.opendns.com
@@ -290,7 +299,7 @@ fi
 alias bang.nmap.show-script='ll /usr/share/nmap/scripts/'
 
 bang.nmap.scan-ports() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Scan a specific port with nmapbang.nmap.scan-ports [port] OR bang.nmap.scan-ports [from]-[to]"
 else
     nmap -p $1 $TA
@@ -299,7 +308,7 @@ fi
 
 #Intensity 5 -> for ctf not real world use
 bang.nmap.scan-top100() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Scan top 100 port with nmap: bang.nmap.scan-top100"
 else
     nmap --top-port 100 $TA -sV --version-intensity 5
@@ -308,7 +317,7 @@ fi
 
 #nmap discover host alive
 bang.nmap.discovery() {
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Discover alived host for a specific range: bang.nmap.discovery [RANGE]"
 else
     nmap $TA -sP
@@ -345,7 +354,7 @@ else
 fi
 }
 
-## Webshell & Persistence
+## Webshell
 
 ### PHP
 bang.webshell.php() {
