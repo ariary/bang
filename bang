@@ -244,6 +244,18 @@ fi
 
 alias bang.expose.show="curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | \"\\(.public_url) -> \\(.config.addr)\"' -r"
 
+###  launch a netcat listener with a ngrok tcp tunnel
+bang.expose.netcat-listener() {
+if [ "$1" = "-h" ] || [ -z $1]; then
+    echo "Expose a netcat listener with ngrok: bang.expose.netcat-listener [port]"
+else
+  ngrok tcp $1 &
+  echo "ngrok running in background, don't forget to kill it after:'pgrep ngrok' and 'sudo kill -9 [pid]'"
+  curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | \"\\(.public_url) -> \\(.config.addr)\"' -r"
+  nc -nlvp $1
+fi
+}
+
 alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share" rflathers/webdav'
 
 alias bang.proxycurl='curl --proxy http://127.0.0.1:8080'
