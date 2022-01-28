@@ -204,8 +204,8 @@ else
 fi
 }
 
-
-## Ngrok expose a https service
+## NGROK
+### Ngrok expose a https service
 bang.expose.https() {
 if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Expose a local https service using ngrok: bang.expose.https \$AP"
@@ -214,7 +214,7 @@ else
 fi
 }
 
-## Ngrok expose a port
+### Ngrok expose a port
 bang.expose() {
 if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Expose a local port using ngrok trough http tunnel: bang.expose \$AP"
@@ -232,7 +232,7 @@ else
 fi
 }
 
-## Ngrok expose a tcp service
+###  Copy Ngrok expose a tcp service
 bang.expose.tcp.cpy() {
 if [ "$1" = "-h" ] || [ -z $1]; then
     echo "Show and copy line that expose a local tcp service using ngrok: bang.expose.tcp.cpy [port]"
@@ -241,6 +241,8 @@ else
   echo "ngrok tcp $1"|cpy
 fi
 }
+
+alias bang.expose.show="curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | \"\\(.public_url) -> \\(.config.addr)\"' -r"
 
 alias bang.webdavhere='docker run --rm -it -p 8080:80 -v "${PWD}:/srv/data/share" rflathers/webdav'
 
@@ -399,6 +401,8 @@ export ROSE='\033[1;35m'
 export NC='\033[0m'
 
 echo -e "bang.cpy.download-text-editor\t\t${ROSE}Copy command line to dl micro (a standalone text editor). Useful to dl it on machine where you don't have vim or nano${NC}"
+
+echo -e "bang.expose.show\t\t${ROSE}Show ngrok tunnel current configuration${NC}"
 
 echo -e "bang.feroxbuster\t\t${ROSE}Perform a basic feroxbuster scan${NC}"
 echo -e "bang.feroxbuster.redirect\t\t${ROSE}Perform a basic feroxbuster scan and follow redirects${NC}"
