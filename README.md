@@ -68,7 +68,7 @@ List all shortcut with `bang.ls`
 
 #### Others
 
-* [Persistence on target (even in internal network)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
+* [Persistence on target (even in internal network!)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
   * [Reverse shell](https://github.com/ariary/bang/blob/main/EXAMPLES.md#via-a-tcp-tunnel)
   * [Webshell](https://github.com/ariary/bang/blob/main/EXAMPLES.md#via-webshell)
 * [Start a webdav server](https://github.com/ariary/bang/blob/main/EXAMPLES.md#webdav-server)
