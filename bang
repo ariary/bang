@@ -225,7 +225,7 @@ fi
 
 ## Ngrok expose a tcp service
 bang.expose.tcp() {
-if [ "$1" = "-h" ] || [ -z $1]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Expose a local tcp service using ngrok: bang.expose.tcp \$AP"
 else
   ngrok tcp $1
@@ -234,7 +234,7 @@ fi
 
 ###  Copy Ngrok expose a tcp service
 bang.expose.tcp.cpy() {
-if [ "$1" = "-h" ] || [ -z $1]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Show and copy line that expose a local tcp service using ngrok: bang.expose.tcp.cpy [port]"
 else
   echo "ngrok tcp $1"
@@ -246,10 +246,10 @@ alias bang.expose.show="curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels
 
 ###  launch a netcat listener with a ngrok tcp tunnel
 bang.expose.netcat.listener() {
-if [ "$1" = "-h" ] || [ -z $1]; then
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Expose a netcat listener with ngrok: bang.expose.netcat-listener [port]"
 else
-  ngrok tcp $1 &
+  (&>/dev/null ngrok tcp $1 &)
   echo "ngrok running in background, don't forget to kill it after:'pgrep ngrok' and 'sudo kill -9 [pid]'"
   sleep 2
   curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | "\(.public_url) -> \(.config.addr)"' -r
