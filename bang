@@ -245,7 +245,7 @@ fi
 alias bang.expose.show="curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | \"\\(.public_url) -> \\(.config.addr)\"' -r"
 
 ###  launch a netcat listener with a ngrok tcp tunnel
-bang.expose.netcat-listener() {
+bang.expose.netcat.listener() {
 if [ "$1" = "-h" ] || [ -z $1]; then
     echo "Expose a netcat listener with ngrok: bang.expose.netcat-listener [port]"
 else
