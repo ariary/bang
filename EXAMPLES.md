@@ -311,7 +311,7 @@ Requirement:
 
 ### Via a tcp tunnel
 
-On the attacker machine laucnh your netcat listener with a ngrok tunnel above:
+On the attacker machine launch your netcat listener with a ngrok tunnel above:
 ```shell
 bang.expose.netcat.listener [port]
 # launch ngrok in background, print the tunnel addr, and launch netcat lister
