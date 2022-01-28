@@ -251,7 +251,8 @@ if [ "$1" = "-h" ] || [ -z $1]; then
 else
   ngrok tcp $1 &
   echo "ngrok running in background, don't forget to kill it after:'pgrep ngrok' and 'sudo kill -9 [pid]'"
-  curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | \"\\(.public_url) -> \\(.config.addr)\"' -r
+  sleep 2
+  curl -s http://127.0.0.1:4040/api/tunnels | jq '.tunnels[] | "\(.public_url) -> \(.config.addr)"' -r
   nc -nlvp $1
 fi
 }
