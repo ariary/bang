@@ -95,6 +95,13 @@ fx(){
     echo
 }
 
+#jq
+fx(){
+    echo -e "${BLUE}[*] Install jq..${NC}"
+    sudo apt install jq
+    echo
+}
+
 #jsonfui
 jsonfui(){
     echo -e "${BLUE}[*] Install jsonfui..${NC}"
