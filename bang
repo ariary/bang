@@ -408,6 +408,15 @@ else
 fi
 }
 
+bang.cheatsheet() {
+if [ "$1" = "-h" ]; then
+    echo "Get cheat sheet (~man page) for a specific [cmd]: bang.cheatsheet [cmd]"
+else
+    CMD="$@"
+    curl cheat.sh/$CMD
+fi
+}
+
 ##List all bang aliases
 bang.aliases() {
 export ROSE='\033[1;35m'
