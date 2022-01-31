@@ -180,6 +180,14 @@ mkcert(){
     echo   
 }
 
+#static-get
+static-get(){
+    echo -e "${BLUE}[*] Install static-get..${NC}"
+    curl https://raw.githubusercontent.com/minos-org/minos-static/master/static-get -o static-get && chmod +x static-get
+    mv static-get $HOME/.local/bin/
+    echo   
+}
+
 ####################
 ### INSTALL PART ###
 ####################
