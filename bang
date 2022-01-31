@@ -408,12 +408,22 @@ else
 fi
 }
 
+## cheat.sh
 bang.cheatsheet() {
 if [ "$1" = "-h" ]; then
     echo "Get cheat sheet (~man page) for a specific [cmd]: bang.cheatsheet [cmd]"
 else
     CMD="$@"
     curl cheat.sh/$CMD
+fi
+}
+
+## static-get
+bang.static-get() {
+if [ "$1" = "-h" ]; then
+    echo "Get static unix binary: bang.cheatsheet [binary]"
+else
+    static-get $1
 fi
 }
 
