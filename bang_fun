@@ -14,3 +14,6 @@ bang.exit-vim.cpy()
 }
 
 alias bang.bombshell='curl -s https://gist.githubusercontent.com/ariary/ddfeded869c26f03b29ea0e00ab0bcfa/raw/59ac11ec7b5a3c0951d88ce6524466f134e3526b/bombshell.sh | sh'
+
+alias bang.zsh.random-animal='curl -s https://gist.githubusercontent.com/ariary/fe5be3ed5250cfbfc04f984c0525e498/raw/4d66c1f8fbceafdcd209abda936c3657a5acfeac/random_animal_afowler.sh | sh'
+alias bang.zsh.gorilla='curl -s https://gist.githubusercontent.com/ariary/fe5be3ed5250cfbfc04f984c0525e498/raw/4d66c1f8fbceafdcd209abda936c3657a5acfeac/gorilla_afowler.sh | sh'
