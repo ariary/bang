@@ -76,6 +76,8 @@ fi
 
 ##Install modules/tools
 alias 'bang.conf.install=$HOME/.bang/install/install-tools.sh'
+alias 'bang.conf.install.include=$HOME/.bang/install/install-tools.sh --include'
+alias 'bang.conf.install.exclude=$HOME/.bang/install/install-tools.sh --exclude'
 alias 'bang.conf.install-ariary=$HOME/.bang/install/install-ariary.sh'
 
 ##Show config shortcuts
@@ -86,6 +88,8 @@ export NC='\033[0m'
 echo -e "bang\t\t${ROSE}Load bang shortcuts & aliases in current shell${NC}"
 
 echo -e "bang.conf.install\t\t${ROSE}Install tools used by bang${NC}"
+echo -e "bang.conf.install.include\t\t${ROSE}Install tools by including the list${NC}"
+echo -e "bang.conf.install.exclude\t\t${ROSE}Install tools by excluding a list${NC}"
 echo -e "bang.conf.install-ariary\t\t${ROSE}Install ariary's tools used by bang${NC}"
 
 echo -e "bang.conf.pentest.map\t\t${ROSE}Nice printing of the current pentest configuration${NC}"
