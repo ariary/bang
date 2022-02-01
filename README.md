@@ -1,5 +1,9 @@
 # 💥
 
+## TL;DR
+
+**⛳ When you want to load all shortcuts within shell just tap `bang`**
+
 ## Quickstart
 **➲** *Let your environment be ready*
 
@@ -8,12 +12,13 @@
 * `export SH=zsh && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.${SH}rc && source ~/.${SH}rc`
 * `export SH=zsh && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && source ~/.${SH}rc`
 
-**⛳ When you want to load all shortcuts within shell just tap `bang`**
 
 *(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.${SH}rc)*
 
 
 *(We assume that you have already install `zsh`, otherwise replace `SH` envvar by `bash`)*
+
+You can now install tools needed by bang shortcuts!
 
 ## Install tools
 **➲** *Ease tools installation*
