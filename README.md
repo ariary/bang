@@ -4,6 +4,8 @@
 
 **⛳ When you want to load all shortcuts within shell just tap `bang`**
 
+Update installation script & shortcut with: `bang.conf.update`
+
 ## Quickstart
 **➲** *Let your environment be ready*
 
