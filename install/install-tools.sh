@@ -29,6 +29,16 @@ screen(){
     echo
 }
 
+#docker
+docker(){
+    echo -e "${BLUE}[*] Install docker..${NC}"
+    sudo apt update
+    sudo apt install -y docker.io
+    sudo usermod -aG docker ${USER}
+    echo -e "${ROSE}[INPUT REQUIRE] Log out to make groupe change effective (docker group)${NC}"
+    echo
+}
+
 #bat & extras
 bat(){
     echo -e "${BLUE}[*] Install bat & co..${NC}"
