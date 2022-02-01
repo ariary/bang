@@ -2,26 +2,36 @@
 
 ## Quickstart
 **➲** *Let your environment be ready*
+
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
-* `export SH=[bash/zsh] && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.${SH}rc && source ~/.${SH}rc`
-* `export SH=[bash/zsh] && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && source ~/.${SH}rc`
+* `./install/configure-zsh.sh`
+* `export SH=zsh && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.${SH}rc && source ~/.${SH}rc`
+* `export SH=zsh && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && source ~/.${SH}rc`
 
 **⛳ When you want to load all shortcuts within shell just tap `bang`**
 
 *(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.${SH}rc)*
 
+
+*(We assume that you have already install `zsh`, otherwise replace `SH` envvar by `bash`)*
+
 ## Install tools
 **➲** *Ease tools installation*
 * ***`bang.conf.install-ariary`***: install all ariary tools useful for pentesting in ~/.local/bin/
 * ***`bang.conf.install`***: install other useful tools for pentesting in ~/.local/bin/
-* ***install/install-zsh.sh*** & ***install/post-install-zsh.sh*** : install zsh environment (not required)
 
 These tools are used in bang shortcuts then.
 
 *To update the installation scripts used by these commands: `bang.conf.update`*
 
+1. `bang.conf.install.include golang docker`
+2. `bang.conf.install-ariary`
+3. `bang.conf.install.exclude golang docker`
+
 ## Bang !
 **➲** *Configure your pentest*
+
+**⛳ When you want to load all shortcuts within shell just tap `bang`**
 
 Set attacker and target info: `bang.conf.pentest`
 
