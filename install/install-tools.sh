@@ -32,11 +32,12 @@ screen(){
 #bat & extras
 bat(){
     echo -e "${BLUE}[*] Install bat & co..${NC}"
-    go install -u github.com/mvdan/sh/cmd/shfmt
+    go install github.com/mvdan/sh/cmd/shfmt
     sudo apt install bat
     git clone https://github.com/eth-p/bat-extras.git && cd bat-extras && ./build.sh
     mv ./bin/* $HOME/.local/bin/
     rm -rf bat-extras
+    ln -s /usr/bin/batcat $HOME/.local/bin/bat
     echo
 }
 
@@ -125,7 +126,7 @@ mitm-proxy(){
 #pup
 pup(){
     echo -e "${BLUE}[*] Install pup..${NC}"
-    go get github.com/ericchiang/pup
+    go install github.com/ericchiang/pup@latest
     echo
 }
 
