@@ -10,7 +10,7 @@ alias bang.screen.reattach='screen -r'
 alias bang.screen.list='screen -ls'
 alias pup='pup --color'
 alias pup.script='pup --color script'
-alias bang.cpy.download-text-editor="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
+alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
 
 ## Queensono send file
 bang.queensono.send.file() {
@@ -450,7 +450,7 @@ bang.aliases() {
 export ROSE='\033[1;35m'
 export NC='\033[0m'
 
-echo -e "bang.cpy.download-text-editor\t\t${ROSE}Copy command line to dl micro (a standalone text editor). Useful to dl it on machine where you don't have vim or nano${NC}"
+echo -e "bang.download-text-editor.cpy\t\t${ROSE}Copy command line to dl micro (a standalone text editor). Useful to dl it on machine where you don't have vim or nano${NC}"
 
 echo -e "bang.expose.show\t\t${ROSE}Show ngrok tunnel current configuration${NC}"
 
