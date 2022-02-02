@@ -11,7 +11,7 @@ Update installation script & shortcut with: `bang.conf.update`
 
 * `git clone https://github.com/ariary/bang.git && cd bang && ./prerequisite.sh`
 * `./install/configure-zsh.sh`
-* `export SH=zsh && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.${SH}rc && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && source ~/.${SH}rc`
+* `export SH=zsh && echo "export PATH=$PATH:$HOME/.local/bin/" >> ~/.${SH}rc && echo "source ~/.bang/bang_conf" >> ~/.${SH}rc && echo "source ~/.bang/install/.aliases" >> ~/.${SH}rc && source ~/.${SH}rc` 
 
 *(Alternatively, if you want to automaticaly have them in every shell, add `source ~/.bang/bang` in your ~/.${SH}rc)*
 
