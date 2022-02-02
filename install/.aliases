@@ -1,0 +1,5 @@
+alias cpy='xclip -selection clipboard'
+alias firefox='(&>/dev/null firefox &)'
+alias hgrep='history | grep'
+alias screenshot='flameshot gui'
+alias ll='ls -al'
