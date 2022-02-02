@@ -44,6 +44,7 @@ bat(){
     echo -e "${BLUE}[*] Install bat & co..${NC}"
     go install github.com/mvdan/sh/cmd/shfmt
     sudo apt install bat
+    sudo apt-get install ripgrep
     git clone https://github.com/eth-p/bat-extras.git && cd bat-extras && ./build.sh
     mv ./bin/* $HOME/.local/bin/
     rm -rf bat-extras
