@@ -81,6 +81,14 @@ List all shortcut with `bang.ls`
 * [Extract js code for html page from curl](https://github.com/ariary/bang/blob/main/EXAMPLES.md#jse)
 * [Find DOM XSS](https://github.com/ariary/bang/blob/main/EXAMPLES.md#find-dom-xss) with [`fsource`](https://github.com/ariary/DomXssFinder) and [`fsink`](https://github.com/ariary/DomXssFinder)
 
+#### [`httpcustomhouse`](https://github.com/ariary/HTTPCustomHouse#usage)
+
+* Search for HTTP request smuggling with [`httpecho`](https://github.com/ariary/httpecho)
+
+#### [`console.sh`](https://github.com/ariary/console.sh)
+
+* Execute shell commands from browser JS console 
+
 #### Others
 
 * [Persistence on target (even in internal network!)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
