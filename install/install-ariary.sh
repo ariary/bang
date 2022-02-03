@@ -41,3 +41,21 @@ curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/f
 curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/fsource
 chmod +x fsink fsource
 mv fsink $HOME/.local/bin/ && mv fsource $HOME/.local/bin/
+
+### httpecho
+echo -e "${BLUE}[*] Install httpecho..${NC}"
+curl -lO -L -s https://github.com/ariary/httpecho/releases/latest/download/httpecho
+chmod +x httpecho
+mv httpecho $HOME/.local/bin/
+
+### httpcustomhouse
+echo -e "${BLUE}[*] Install httpcustomhouse..${NC}"
+curl -lO -L -s https://github.com/ariary/HTTPCustomHouse/releases/latest/download/httpcustomhouse && chmod +x httpcustomhouse
+chmod +x httpcustomhouse
+mv httpcustomhouse $HOME/.local/bin/
+
+### console.sh
+echo -e "${BLUE}[*] Install console.sh..${NC}"
+curl -lO -L -s https://github.com/ariary/console.sh/releases/latest/download/console.sh
+chmod +x console.sh
+mv console.sh $HOME/.local/bin/
