@@ -11,7 +11,7 @@ alias bang.screen.list='screen -ls'
 alias pup='pup --color'
 alias pup.script='pup --color script'
 alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
-alias bang.wget.mirror-site='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent'
+alias bang.wget.mirror-site='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
 ## Queensono send file
 bang.queensono.send.file() {
