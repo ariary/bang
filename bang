@@ -334,7 +334,7 @@ fi
 
 #Intensity 5 -> for ctf not real world use
 bang.nmap.scan-top100() {
-if [ "$1" = "-h" ] || [ -z "$1" ]; then
+if [ "$1" = "-h" ]; then
     echo "Scan top 100 port with nmap: bang.nmap.scan-top100"
 else
     nmap --top-port 100 $TA -sV --version-intensity 5
@@ -343,7 +343,7 @@ fi
 
 #nmap discover host alive
 bang.nmap.discovery() {
-if [ "$1" = "-h" ] || [ -z "$1" ]; then
+if [ "$1" = "-h" ]; then
     echo "Discover alived host for a specific range: bang.nmap.discovery [RANGE]"
 else
     nmap $TA -sP
