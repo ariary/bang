@@ -11,6 +11,7 @@ alias bang.screen.list='screen -ls'
 alias pup='pup --color'
 alias pup.script='pup --color script'
 alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
+alias bang.wget.mirror-site='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent'
 
 ## Queensono send file
 bang.queensono.send.file() {
@@ -477,6 +478,9 @@ echo -e "bang.screen.reattach\t\t${ROSE}Reattach a screen screen virtual termina
 echo -e "bang.screen.ls\t\t${ROSE}List all existent screens (virtual terminal)${NC}"
 
 echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on port 8080 for the current repository (useful for file exchange with a windows host). then 'bang.expose 8080' & access files w/ '\\\[NGROK_URL]@\share'${NC}"
+
+
+echo -e "bang.wget.mirror-site\t\t${ROSE}Make an offline copy of a website${NC}"
 
 echo -e "cpy\t\t${ROSE}Copy stdin to clipboard${NC}"
 
