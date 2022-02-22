@@ -89,6 +89,11 @@ List all shortcut with `bang.ls`
 
 * Execute shell commands from browser JS console 
 
+
+#### [`cfuzz`](https://github.com/ariary/cfuzz)
+
+* Fuzz command line
+
 #### Others
 
 * [Persistence on target (even in internal network!)](https://github.com/ariary/bang/blob/main/EXAMPLES.md#persistence)
