@@ -49,10 +49,13 @@ chmod +x httpecho
 mv httpecho $HOME/.local/bin/
 
 ### httpcustomhouse
-echo -e "${BLUE}[*] Install httpcustomhouse..${NC}"
-curl -lO -L -s https://github.com/ariary/HTTPCustomHouse/releases/latest/download/httpcustomhouse && chmod +x httpcustomhouse
-chmod +x httpcustomhouse
+echo -e "${BLUE}[*] Install httpcustomhouse tools (httpclient, httpoverrid and httpcustomhouse)..${NC}"
+curl -s -lO -L https://github.com/ariary/HTTPCustomHouse/releases/latest/download/httpcustomhouse && chmod +x httpcustomhouse
+curl -s -lO -L https://github.com/ariary/HTTPCustomHouse/releases/latest/download/httpoverride && chmod +x httpoverride
+curl -s -lO -L https://github.com/ariary/HTTPCustomHouse/releases/latest/download/httpclient && chmod +x httpclient
 mv httpcustomhouse $HOME/.local/bin/
+mv httpoverride $HOME/.local/bin/
+mv httpclient $HOME/.local/bin/
 
 ### console.sh
 echo -e "${BLUE}[*] Install console.sh..${NC}"
