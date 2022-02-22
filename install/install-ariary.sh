@@ -59,3 +59,9 @@ echo -e "${BLUE}[*] Install console.sh..${NC}"
 curl -lO -L -s https://github.com/ariary/console.sh/releases/latest/download/console.sh
 chmod +x console.sh
 mv console.sh $HOME/.local/bin/
+
+### cfuzz
+echo -e "${BLUE}[*] Install cfuzz..${NC}"
+curl -lO -L -s https://github.com/ariary/cfuzz/releases/latest/download/cfuzz
+chmod +x cfuzz
+mv cfuzz $HOME/.local/bin/
