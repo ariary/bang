@@ -341,6 +341,15 @@ else
 fi
 }
 
+#nmap udp
+bang.nmap.udp() {
+if [ "$1" = "-h" ]; then
+    echo "Scan udp sevrices with nmap: bang.nmap.udp"
+else
+    nmap -sUV $TA -T4
+fi
+}
+
 #nmap discover host alive
 bang.nmap.discovery() {
 if [ "$1" = "-h" ]; then
