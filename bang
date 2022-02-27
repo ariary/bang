@@ -210,8 +210,8 @@ bang.tacos.listener() {
 if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
     echo "Launch socat listener waiting for reverse shell. Specify port and host: bang.tacos.listener [url] [port]"
 else
-    cp $HOME/.tacos/ .
-    light-pty4all --lhost $1 --lport $2
+    cp $HOME/.tacos/light-pty4all/* .
+    ./socat-listener.sh --lhost $1 --lport $2
 fi
 }
 
@@ -219,8 +219,8 @@ bang.tacos.listener++() {
 if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
     echo "Launch socat listener waiting for reverse shell. Reverse shell will have shortcut preloaded (e.g. gitar) and others. Specify port and host: bang.tacos.listener++ [url] [port]"
 else
-    cp $HOME/.tacos/ .
-    light-pty4all --lhost $1 --lport $2 --gitar
+    cp $HOME/.tacos/light-pty4all/* .
+    ./socat-listener.sh --lhost $1 --lport $2 --gitar
 fi
 }
 
