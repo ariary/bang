@@ -68,3 +68,12 @@ echo -e "${BLUE}[*] Install cfuzz..${NC}"
 curl -lO -L -s https://github.com/ariary/cfuzz/releases/latest/download/cfuzz
 chmod +x cfuzz
 mv cfuzz $HOME/.local/bin/
+
+### tacos
+echo -e "${BLUE}[*] Install tacos..${NC}"
+git clone https://github.com/ariary/tacos.git && cd tacos
+make before.build
+make build.tacos && mv tacos $HOME/.local/bin/
+mkdir -p $HOME/.tacos
+mv light-pty4all $HOME/.tacos/
+cd .. && rm -rf tacos
