@@ -77,3 +77,81 @@ make build.tacos && mv tacos $HOME/.local/bin/
 mkdir -p $HOME/.tacos
 mv light-pty4all $HOME/.tacos/
 cd .. && rm -rf tacos
+
+
+
+####################
+### INSTALL PART ###
+####################
+install_include(){
+
+    # Get functions available
+    FUNCTIONS=$(typeset -f | awk '/ \(\) $/ && !/^main / {print $1}')
+    exclude=(install install_exclude install_include)
+    for del in ${exclude[@]}
+    do
+        FUNCTIONS=("${FUNCTIONS[@]/$del}") #Quotes when working with strings
+    done
+
+    if [ -z "$1" ]
+    then
+        echo "modules available:"
+        echo $FUNCTIONS
+        echo "Enter modules you want to install(separated by a space):"
+        read INCLUDES
+    else
+        INCLUDES=$@ #add all argument to include
+    fi
+
+    #execute functions
+    install $INCLUDES
+}
+
+install_exclude () {
+    FUNCTIONS=$(typeset -f | awk '/ \(\) $/ && !/^main / {print $1}')
+    exclude=(install install_exclude install_include)
+    for del in ${exclude[@]}
+    do
+        FUNCTIONS=("${FUNCTIONS[@]/$del}") #Quotes when working with strings
+    done
+
+    if [ -z "$1" ]
+    then
+        echo "modules available:"
+        echo $FUNCTIONS
+        echo "Enter modules you don't want to install(separated by a space):"
+        read EXCLUDES
+    else
+        EXCLUDES=$@ #add all argument to include
+    fi
+
+    #withdraw "excluded" functions
+    for del in ${EXCLUDES[@]}
+    do
+        FUNCTIONS=("${FUNCTIONS[@]/$del}") #Quotes when working with strings
+    done
+
+    #execute
+    install $FUNCTIONS
+}
+
+#install from list of functions
+install(){
+    for f in $@
+    do
+        $f
+    done
+}
+
+if [ "$1" = "--exclude" ]; then
+    install_exclude "${@:2}"
+fi
+
+if [ "$1" = "--include" ]; then
+    install_include "${@:2}"
+fi
+
+# By default install all
+if [ -z "$1" ]; then
+    install_exclude " "
+fi
