@@ -472,7 +472,7 @@ if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Copy line to generate an URL containing the output of a command: bang.sprunge.cpy [cmd]"
 else
     CMD="$@"
-    echo "$CMD | curl -F 'sprunge=<-' http://sprunge.us"
+    echo "$CMD | curl -F 'sprunge=<-' http://sprunge.us" | cpy
 fi
 }
 
