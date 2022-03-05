@@ -7,3 +7,4 @@ cp bang $HOME/.bang
 cp bang_conf $HOME/.bang
 cp bang_fun $HOME/.bang
 cp -r ./install/ $HOME/.bang
+mv pentest_conf $HOME/.bang/

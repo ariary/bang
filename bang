@@ -1,7 +1,6 @@
 # personnal shortcuts
 # 'source' it before making pentest
 
-alias cpy='xclip -selection clipboard'
 alias firefox='(&>/dev/null firefox &)'
 alias hgrep='history | grep'
 alias screenshot='flameshot gui'
@@ -10,7 +9,7 @@ alias bang.screen.reattach='screen -r'
 alias bang.screen.list='screen -ls'
 alias pup='pup --color'
 alias pup.script='pup --color script'
-alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | xclip -selection clipboard"
+alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | cpy"
 alias bang.wget.mirror-site='wget --mirror --convert-links --html-extension --wait=2 -o log'
 
 ## Queensono send file

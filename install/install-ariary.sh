@@ -10,6 +10,8 @@ queensono(){
     curl -s -lO -L https://github.com/ariary/QueenSono/releases/latest/download/qsreceiver
     curl -s -lO -L https://github.com/ariary/QueenSono/releases/latest/download/qssender
     chmod +x qsreceiver qssender
+    sudo setcap cap_net_raw+eip qssender
+    sudo setcap cap_net_raw+eip qsreceiver
     mv qsreceiver $HOME/.local/bin/ && mv qssender $HOME/.local/bin/
 }
 

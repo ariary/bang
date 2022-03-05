@@ -7,6 +7,7 @@ if [ "$1" = "-h" ]; then
     echo "Change Target Address: cTA [address]"
 else
     eval export TA=$1
+    sed -i "/TA/c\export TA=$1" $HOME/.bang/pentest_conf
 fi
 }
 
@@ -16,6 +17,7 @@ if [ "$1" = "-h" ]; then
     echo "Change Target Port: cTP [port]"
 else
     eval export TP=$1
+    sed -i "/TP/c\export TP=$1" $HOME/.bang/pentest_conf
 fi
 }
 
@@ -25,6 +27,7 @@ if [ "$1" = "-h" ]; then
     echo "Change Attacker Address: cAA [address]"
 else
     eval export AA=$1
+    sed -i "/AA/c\export AA=$1" $HOME/.bang/pentest_conf
 fi
 }
 
@@ -34,6 +37,7 @@ if [ "$1" = "-h" ]; then
     echo "Change Attacker Port: cAP [port]"
 else
     eval export AP=$1
+    sed -i "/AP/c\export AP=$1" $HOME/.bang/pentest_conf
 fi
 }
 
@@ -75,10 +79,10 @@ fi
 }
 
 ##Install modules/tools
-alias 'bang.conf.install=$HOME/.bang/install/install-tools.sh'
-alias 'bang.conf.install.include=$HOME/.bang/install/install-tools.sh --include'
-alias 'bang.conf.install.exclude=$HOME/.bang/install/install-tools.sh --exclude'
-alias 'bang.conf.install-ariary=$HOME/.bang/install/install-ariary.sh'
+alias bang.conf.install='$HOME/.bang/install/install-tools.sh'
+alias bang.conf.install.include='$HOME/.bang/install/install-tools.sh --include'
+alias bang.conf.install.exclude='$HOME/.bang/install/install-tools.sh --exclude'
+alias bang.conf.install-ariary='$HOME/.bang/install/install-ariary.sh'
 
 ##Show config shortcuts
 bang.conf.aliases() {
@@ -149,4 +153,4 @@ bang.conf.ls() {
 }
 
 ##Load shortcuts
-alias bang='source $HOME/.bang/bang && source $HOME/.bang/bang_fun'
+alias bang='source $HOME/.bang/bang && source $HOME/.bang/bang_fun && source $HOME/.bang/pentest_conf'
