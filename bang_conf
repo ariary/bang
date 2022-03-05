@@ -62,7 +62,7 @@ fi
 }
 
 ## Current conf
-alias 'bang.conf.pentest.map=echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
+alias bang.conf.pentest.map='source $HOME/.bang/pentest_conf && echo "😈 ($AA $AP) [ATTACKER] »»»»»»»»»»»»»»»»»»»»» 😇 ($TA $TP) [TARGET]"'
 
 ##Update conf
 bang.conf.update() {
