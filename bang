@@ -125,7 +125,7 @@ bang.gitar.safe() {
 if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a safe gitar server to ease file exchange (docker+https): bang.gitar.safe \$AA"
 else
-  docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -e $1
+  docker run --rm -it --cap-drop=all -v "${PWD}:/gitar/exchange" ariary/gitar $1
 fi
 }
 
@@ -143,7 +143,7 @@ bang.gitar.safe-override() {
 if [ "$1" = "-h" ] || [ -z "$1" ]; then
     echo "Start a safe gitar server with URL overriding (use it to precise proxy url of the gitar server): bang.gitar.safe-override [PROXY_URL]"
 else
-  docker run --rm --cap-drop=all --cap-add=dac_override -v "${PWD}:/app/upload" -v "${HOME}/.gitar/certs/:/certs:ro" -v "${PWD}:/app/download" -p 9237:9237 gitar -copy=false -u /app/upload -d /app/download -tls=true -c /certs -alias-override-url=$1
+  docker run --rm --cap-drop=all -v "${PWD}:/gitar/exchange" ariary/gitar -alias-override-url=$1
 fi
 }
 
