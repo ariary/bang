@@ -31,7 +31,7 @@ Same as above + inside a container + using https for encryption
 
 Start safe file sharing:
 ```
-bang.gitar-safe $AA
+bang.gitar.safe $AA
 ```
 
 ### Expose local file on internet
