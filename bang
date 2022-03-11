@@ -122,10 +122,10 @@ fi
 
 ## "Safe" Gitar start
 bang.gitar.safe() {
-if [ "$1" = "-h" ] || [ -z "$1" ]; then
+if [ "$1" = "-h" ]; then
     echo "Start a safe gitar server to ease file exchange (docker+https): bang.gitar.safe \$AA"
 else
-  docker run --rm -it --cap-drop=all -v "${PWD}:/gitar/exchange" ariary/gitar $1
+  docker run -it --rm --cap-drop=all --cap-add=dac_override --user $(id -u):$(id -g)  -v "${PWD}:/gitar/exchange" ariary/gitar
 fi
 }
 
