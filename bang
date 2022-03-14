@@ -387,7 +387,6 @@ alias bang.feroxbuster.redirect='feroxbuster -r -u'
 alias bang.feroxbuster.search-extensions='feroxbuster -x js,html,txt,pdf,json,php,doc,docx,xml -u'
 alias bang.feroxbuster.only-success='feroxbuster -r -C $(seq -s, $CODE 400 599) -u'
 alias bang.feroxbuster.only-error='feroxbuster -C $(seq -s, $CODE 1 399) -u'
-alias bang.feroxbuster.only-error='feroxbuster -C $(seq -s, $CODE 1 399) -u'
 alias bang.feroxbuster.extract-links='feroxbuster --extract-links -u'
 
 ##hakluke tools
