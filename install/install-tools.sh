@@ -108,7 +108,7 @@ fx(){
 }
 
 #jq
-fx(){
+jq(){
     echo -e "${BLUE}[*] Install jq..${NC}"
     sudo apt install jq
     echo
