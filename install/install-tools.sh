@@ -200,6 +200,23 @@ static-get(){
     echo   
 }
 
+#surge
+surge(){
+    echo -e "${BLUE}[*] Install surge..${NC}"
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt update
+    sudo apt install nodejs
+    sudo npm install -g surge
+    echo   
+}
+
+#static-get
+static-get(){
+    echo -e "${BLUE}[*] Install static-get..${NC}"
+    curl https://raw.githubusercontent.com/minos-org/minos-static/master/static-get -o static-get && chmod +x static-get
+    mv static-get $HOME/.local/bin/
+    echo   
+}
 ####################
 ### INSTALL PART ###
 ####################
