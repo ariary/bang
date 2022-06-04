@@ -90,6 +90,7 @@ cfuzz(){
 tacos(){
     echo -e "${BLUE}[*] Install tacos..${NC}"
     git clone https://github.com/ariary/tacos.git && cd tacos
+    go mod tidy
     make before.build
     make build.tacos && mv tacos $HOME/.local/bin/
     mkdir -p $HOME/.tacos
