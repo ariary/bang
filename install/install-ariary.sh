@@ -97,6 +97,13 @@ tacos(){
     cd .. && rm -rf tacos
 }
 
+### smtrackerp
+smtrackerp(){
+    echo -e "${BLUE}[*] Install smtrackerp..${NC}"
+    curl -lO -L -s https://github.com/ariary/SMTrackerP/releases/download/v0.0.1/smtrackerp
+    chmod +x smtrackerp
+    mv smtrackerp $HOME/.local/bin/
+}
 
 
 ####################
