@@ -11,6 +11,7 @@ alias pup='pup --color'
 alias pup.script='pup --color script'
 alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | cpy"
 alias bang.wget.mirror-site='wget --mirror --convert-links --html-extension --wait=2 -o log'
+alias bang.json-visio.link='echo "https://jsonvisio.com/editor"'
 
 ## Queensono send file
 bang.queensono.send.file() {
@@ -494,6 +495,7 @@ echo -e "bang.feroxbuster.extract-links\t\t${ROSE}Perform feroxbuster scan and e
 
 echo -e "bang.find\t\t${ROSE}Grep in all bang shortcuts & aliases${NC}"
 
+echo -e "bang.json-visio.link\t\t${ROSE}Echo jsin-viso link${NC}"
 
 echo -e "bang.mkcert.install\t\t${ROSE}Add mkcert to the  local trust store(curl, browsers etc)${NC}"
 echo -e "bang.mkcert.uninstall\t\t${ROSE}Uninstall mkcert cert from local trust store${NC}"
