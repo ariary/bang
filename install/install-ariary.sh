@@ -30,7 +30,7 @@ gitar(){
     chmod +x gitar
     mv gitar $HOME/.local/bin/
     git clone https://github.com/ariary/gitar.git && cd gitar
-    make build.image-gitar
+    make build.gitar.image
     cd .. && rm -rf gitar
 }
 
