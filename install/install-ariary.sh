@@ -108,9 +108,9 @@ smtrackerp(){
 
 ### lobfuscator
 lobfuscator(){
+    echo -e "${BLUE}[*] Install lobfuscator..${NC}"
     git clone https://github.com/ariary/magnet.git && cd magnet
     go mod tidy
-    make before.build
     make build.lobfuscator && mv lobfuscator $HOME/.local/bin/
     cd .. && rm -rf magnet
 }
