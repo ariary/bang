@@ -226,7 +226,14 @@ else
 fi
 }
 
-alias bang.tacos.container='docker run --net host --rm -it ariary/tacos'
+bang.tacos.container(){
+if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Launch socat listener waiting for reverse shell.Specify port and host: bang.tacos.container [url] [port]"
+else
+    docker run -p $2:$2 --rm -it ariary/tacos $1 $2
+fi
+}
+
 
 ## NGROK
 ### Ngrok expose a https service
