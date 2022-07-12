@@ -477,6 +477,16 @@ else
 fi
 }
 
+## SURGE
+
+bang.surge.deploy-binary(){
+if [ "$1" = "-h" ] || [ -z "$1" ]; then
+    echo "Deploy binary file using surge (embed in HTML + raw): bang.surge.deploy-binar [BINARY_FILENAME]"
+else
+    surge-binary-deployment.sh $1   
+fi
+}
+
 ##List all bang aliases
 bang.aliases() {
 export ROSE='\033[1;35m'
