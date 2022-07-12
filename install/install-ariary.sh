@@ -118,7 +118,7 @@ lobfuscator(){
 ### surge-binary-deployment.sh
 surge-binary-deployment.sh(){
     echo -e "${BLUE}[*] Install surge-binary-deployment.sh..${NC}"
-    curl -s https://gist.github.com/ariary/2db681e3c4ae94901476dffe870119dc#file-surge-binary-deployment-sh >surge-binary-deployment.sh
+    curl -s https://gist.githubusercontent.com/ariary/2db681e3c4ae94901476dffe870119dc/raw/5f1136368c6de9ce8613c0e4525c26b2f5e36adb/surge-binary-deployment.sh >surge-binary-deployment.sh
     chmod +x surge-binary-deployment.sh
     mv surge-binary-deployment.sh $HOME/.local/bin/
 }
