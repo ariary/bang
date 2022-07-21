@@ -76,6 +76,10 @@ golang(){
     echo
 }
 
+#delve
+delve(){
+ go install github.com/go-delve/delve/cmd/dlv@latest
+}
 
 #ko
 ko(){
@@ -217,6 +221,23 @@ static-get(){
     mv static-get $HOME/.local/bin/
     echo   
 }
+
+#gdb-peda
+gdb(){
+    echo -e "${BLUE}[*] Install gdb gdp-peda..${NC}"
+    sudo apt install gdb
+    git clone https://github.com/longld/peda.git ~/.peda
+    echo "source ~/.peda/peda.py" >> ~/.gdbinit
+    echo   
+}
+
+#nim
+nim(){
+    echo -e "${BLUE}[*] Install nim..${NC}"
+    curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+    echo
+}
+
 ####################
 ### INSTALL PART ###
 ####################
