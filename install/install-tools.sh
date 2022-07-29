@@ -238,6 +238,15 @@ nim(){
     echo
 }
 
+#pew
+pew(){
+    echo -e "${BLUE}[*] Install pew..${NC}"
+    pip install --upgrade pip
+    pip install pipsi
+    pipsi install pew
+    echo
+}
+
 ####################
 ### INSTALL PART ###
 ####################
