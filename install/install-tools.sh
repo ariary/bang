@@ -247,6 +247,13 @@ pew(){
     echo
 }
 
+#gum
+gum(){
+    echo -e "${BLUE}[*] Install gum..${NC}"
+    go install github.com/charmbracelet/gum@latest
+    echo
+}
+
 ####################
 ### INSTALL PART ###
 ####################
