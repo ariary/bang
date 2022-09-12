@@ -254,6 +254,12 @@ gum(){
     echo
 }
 
+#httpie
+httpie(){
+    echo -e "${BLUE}[*] Install httpie..${NC}"
+    sudo apt install httpie
+    echo
+}
 ####################
 ### INSTALL PART ###
 ####################
