@@ -216,7 +216,7 @@ fi
 }
 
 bang.tacos.listener.ngrok() {
-if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
+if [ "$1" = "-h" ]; then
     echo "Launch socat listener waiting for reverse shell, use ngrok for exposition. Specify port and host: bang.tacos.listener.ngrok"
 else
     cp $HOME/.tacos/wrapper.sh .
@@ -226,7 +226,7 @@ fi
 
 
 bang.tacos.listener.bore() {
-if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
+if [ "$1" = "-h" ]; then
     echo "Launch socat listener waiting for reverse shell, use bore for exposition. Specify port and host: bang.tacos.listener.ngrok"
 else
     cp $HOME/.tacos/wrapper.sh .
