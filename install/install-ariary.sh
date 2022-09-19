@@ -95,7 +95,7 @@ tacos(){
     make build.tacos && mv tacos $HOME/.local/bin/
     mkdir -p $HOME/.tacos
     mv light-pty4all $HOME/.tacos/
-    mv /wrapper/wrapper.sh $HOME/.tacos/
+    mv ./wrapper/wrapper.sh $HOME/.tacos/
     cd .. && rm -rf tacos
 }
 
