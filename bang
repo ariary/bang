@@ -210,19 +210,27 @@ bang.tacos.listener() {
 if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
     echo "Launch socat listener waiting for reverse shell. Specify port and host: bang.tacos.listener [url] [port]"
 else
-    cp $HOME/.tacos/light-pty4all/* .
-    cp $HOME/.local/bin/tacos .
-    ./socat-listener.sh --lhost $1 --lport $2
+    cp $HOME/.tacos/wrapper.sh .
+    ./wrapper.sh --lhost $1 --lport $2
 fi
 }
 
-bang.tacos.listener++() {
+bang.tacos.listener.ngrok() {
 if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
-    echo "Launch socat listener waiting for reverse shell. Reverse shell will have shortcut preloaded (e.g. gitar) and others. Specify port and host: bang.tacos.listener++ [url] [port]"
+    echo "Launch socat listener waiting for reverse shell, use ngrok for exposition. Specify port and host: bang.tacos.listener.ngrok"
 else
-    cp $HOME/.tacos/light-pty4all/* .
-    cp $HOME/.local/bin/tacos .
-    ./socat-listener.sh --lhost $1 --lport $2 --gitar
+    cp $HOME/.tacos/wrapper.sh .
+    ./wrapper.sh --ngrok
+fi
+}
+
+
+bang.tacos.listener.bore() {
+if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Launch socat listener waiting for reverse shell, use bore for exposition. Specify port and host: bang.tacos.listener.ngrok"
+else
+    cp $HOME/.tacos/wrapper.sh .
+    ./wrapper.sh --bore
 fi
 }
 
