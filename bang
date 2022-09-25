@@ -211,7 +211,7 @@ if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
     echo "Launch socat listener waiting for reverse shell. Specify port and host: bang.tacos.listener [url] [port]"
 else
     cp $HOME/.tacos/wrapper.sh .
-    ./wrapper.sh --lhost $1 --lport $2
+    ./wrapper.sh $1 $2
 fi
 }
 
