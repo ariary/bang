@@ -234,6 +234,24 @@ else
 fi
 }
 
+bang.tacos.listener.bore.tmp() {
+if [ "$1" = "-h" ]; then
+    echo "Launch socat listener waiting for reverse shell, use bore for exposition. Specify port and host: bang.tacos.listener.ngrok"
+else
+    cp $HOME/.tacos/wrapper.sh .
+    ./wrapper.sh --bore --tmp
+fi
+}
+
+bang.tacos.listener.ngrok.tmp() {
+if [ "$1" = "-h" ]; then
+    echo "Launch socat listener waiting for reverse shell, use ngrok for exposition. Specify port and host: bang.tacos.listener.ngrok"
+else
+    cp $HOME/.tacos/wrapper.sh .
+    ./wrapper.sh --ngrok --tmp
+fi
+}
+
 alias bang.tacos.container='docker run --net host --rm -it ariary/tacos'
 
 ## NGROK
