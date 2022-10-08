@@ -513,6 +513,9 @@ else
 fi
 }
 
+## wrap-rs.sh
+alias bang.wrap-rs='wrap-rs.sh'
+
 ##List all bang aliases
 bang.aliases() {
 export ROSE='\033[1;35m'
@@ -551,6 +554,8 @@ echo -e "bang.webdavhere\t\t${ROSE}Launch a webdav server (file exchange) on por
 
 
 echo -e "bang.wget.mirror-site\t\t${ROSE}Make an offline copy of a website${NC}"
+
+echo -e "bang.wrap-rs\t\t${ROSE}Non-interactive reverse shell as a Service (launch listener + output command to execute on target)${NC}"
 
 echo -e "cpy\t\t${ROSE}Copy stdin to clipboard${NC}"
 
