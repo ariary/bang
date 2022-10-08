@@ -124,6 +124,14 @@ surge-binary-deployment.sh(){
     mv surge-binary-deployment.sh $HOME/.local/bin/
 }
 
+### wrap-rs.sh
+wrap-rs.sh(){
+    echo -e "${BLUE}[*] Install wrap-rs.sh..${NC}"
+    curl -s https://gist.githubusercontent.com/ariary/09f836ba98e5eed6c0fb6e4adb799680/raw/2043c9f204dd9090da7e6ae6d3916a6e8a882df8/wrap-rs.sh > wrap-rs.sh
+    chmod +x wrap-rs.sh
+    mv wrap-rs.sh $HOME/.local/bin/
+}
+
 ####################
 ### INSTALL PART ###
 ####################
