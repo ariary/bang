@@ -132,6 +132,15 @@ wrap-rs.sh(){
     mv wrap-rs.sh $HOME/.local/bin/
 }
 
+
+### notionterm
+notionterm(){
+    echo -e "${BLUE}[*] Install notionterm..${NC}"
+    curl -lO -L -s https://github.com/ariary/notionterm/releases/latest/download/notionterm
+    chmod +x notionterm
+    mv notionterm $HOME/.local/bin/
+}
+
 ####################
 ### INSTALL PART ###
 ####################
