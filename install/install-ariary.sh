@@ -139,6 +139,7 @@ notionterm(){
     curl -lO -L -s https://github.com/ariary/notionterm/releases/latest/download/notionterm
     chmod +x notionterm
     mv notionterm $HOME/.local/bin/
+    curl https://raw.githubusercontent.com/ariary/notionterm/main/wrap-notionterm.sh > wrap-notionterm.sh && chmod +x wrap-notionterm.sh && mv wrap-notionterm.sh $HOME/.local/bin/ 
 }
 
 ####################
