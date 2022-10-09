@@ -254,6 +254,10 @@ fi
 
 alias bang.tacos.container='docker run --net host --rm -it ariary/tacos'
 
+
+##Notionterm
+alias bang.notionterm.wrap.sh='wrap-notionterm.sh'
+
 ## NGROK
 ### Ngrok expose a https service
 bang.expose.https() {
