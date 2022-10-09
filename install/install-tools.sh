@@ -257,7 +257,16 @@ gum(){
 #httpie
 httpie(){
     echo -e "${BLUE}[*] Install httpie..${NC}"
-    sudo apt install httpie
+    sudo apt install httpie -y
+    echo
+}
+
+#cargo & bore
+bore(){
+    echo -e "${BLUE}[*] Install cargo..${NC}"
+    sudo apt-get -y install cargo
+    echo -e "${BLUE}[*] Install bore..${NC}"
+    cargo install bore-cli
     echo
 }
 ####################
