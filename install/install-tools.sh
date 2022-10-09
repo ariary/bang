@@ -209,7 +209,7 @@ surge(){
     echo -e "${BLUE}[*] Install surge..${NC}"
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     sudo apt update
-    sudo apt install nodejs
+    sudo apt install nodejs npm -y
     sudo npm install -g surge
     echo   
 }
