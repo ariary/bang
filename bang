@@ -207,49 +207,26 @@ fi
 
 ## tacos
 bang.tacos.listener() {
-if [ "$1" = "-h" ] || [ -z "$1" ] || [ -z "$2" ]; then
-    echo "Launch socat listener waiting for reverse shell. Specify port and host: bang.tacos.listener [url] [port]"
-else
-    cp $HOME/.tacos/wrapper.sh .
-    ./wrapper.sh $1 $2
-fi
-}
+EXPOSITION=$(gum choose "use IP" "tunnel: ngrok" "tunnel: bore")
+FLAGS=""
 
-bang.tacos.listener.ngrok() {
-if [ "$1" = "-h" ]; then
-    echo "Launch socat listener waiting for reverse shell, use ngrok for exposition. Specify port and host: bang.tacos.listener.ngrok"
+if [ "$EXPOSITION" = "use IP" ]; then
+    IP=$(gum input --placeholder "Enter Attacker IP")
+    FLAGS="${FLAGS} --lhost ${IP}"
+elif [ "$IP_CHOICE" = "tunnel: bore" ]; then
+    FLAGS="${FLAGS} -b"
 else
-    cp $HOME/.tacos/wrapper.sh .
-    ./wrapper.sh --ngrok
+    FLAGS="${FLAGS} -n"
 fi
-}
 
+TMP=""
+gum confirm "Shell from /tmp directory ?" && FLAGS="${FLAGS} --tmp"
 
-bang.tacos.listener.bore() {
-if [ "$1" = "-h" ]; then
-    echo "Launch socat listener waiting for reverse shell, use bore for exposition. Specify port and host: bang.tacos.listener.ngrok"
-else
-    cp $HOME/.tacos/wrapper.sh .
-    ./wrapper.sh --bore
+if [ ! -f "tacos" ]; then
+    cp $HOME/.local/bin/tacos .
 fi
-}
 
-bang.tacos.listener.bore.tmp() {
-if [ "$1" = "-h" ]; then
-    echo "Launch socat listener waiting for reverse shell, use bore for exposition. Specify port and host: bang.tacos.listener.ngrok"
-else
-    cp $HOME/.tacos/wrapper.sh .
-    ./wrapper.sh --bore --tmp
-fi
-}
-
-bang.tacos.listener.ngrok.tmp() {
-if [ "$1" = "-h" ]; then
-    echo "Launch socat listener waiting for reverse shell, use ngrok for exposition. Specify port and host: bang.tacos.listener.ngrok"
-else
-    cp $HOME/.tacos/wrapper.sh .
-    ./wrapper.sh --ngrok --tmp
-fi
+tmux new-session -s tacos "wrap ${FLAGS}"
 }
 
 alias bang.tacos.container='docker run --net host --rm -it ariary/tacos'
