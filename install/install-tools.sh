@@ -269,6 +269,15 @@ bore(){
     cargo install bore-cli
     echo
 }
+
+#gum
+gum(){
+    echo -e "${BLUE}[*] Install gum..${NC}"
+    echo "deb https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+    curl https://repo.charm.sh/apt/gpg.key | sudo apt-key add -
+    sudo apt update && sudo apt install gum
+    echo
+}
 ####################
 ### INSTALL PART ###
 ####################
