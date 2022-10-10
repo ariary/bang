@@ -94,8 +94,9 @@ tacos(){
     make before.build
     make build.tacos && mv tacos $HOME/.local/bin/
     mkdir -p $HOME/.tacos
-    mv light-pty4all $HOME/.tacos/
-    mv ./wrapper/wrapper.sh $HOME/.tacos/
+    mv light-pty4all/socat-forker-windows.sh.tpl $HOME/.tacos/
+    mv light-pty4all/socat-forker.sh.tpl $HOME/.tacos/
+    make build.wrap && mv wrap/bin/wrap $HOME/.local/bin/
     cd .. && rm -rf tacos
 }
 
