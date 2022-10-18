@@ -45,8 +45,8 @@ jse(){
 ### DomXssFinder
 domxssfinder(){
     echo -e "${BLUE}[*] Install DomXssFinder (fsource and fsink)..${NC}"
-    curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/fsink 
-    curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/fsource
+    curl -s -lO -L https://raw.githubusercontent.com/ariary/DomXssFinder/main/fsink 
+    curl -s -lO -L https://raw.githubusercontent.com/ariary/DomXssFinder/main/fsource
     chmod +x fsink fsource
     mv fsink $HOME/.local/bin/ && mv fsource $HOME/.local/bin/
 }
