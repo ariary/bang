@@ -105,9 +105,9 @@ ngrok(){
 #fx
 fx(){
     echo -e "${BLUE}[*] Install fx..${NC}"
-    wget https://github.com/antonmedv/fx/releases/latest/download/fx-linux.zip
-    unzip fx-linux.zip && rm fx-linux.zip
-    mv fx-linux fx && mv fx $HOME/.local/bin/
+    wget https://github.com/antonmedv/fx/releases/latest/download/fx_linux_amd64
+    chmod +x fx_linux_amd64
+    mv fx_linux_amd64 fx && mv fx $HOME/.local/bin/
     echo
 }
 
