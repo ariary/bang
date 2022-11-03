@@ -96,7 +96,7 @@ tacos(){
     mkdir -p $HOME/.tacos
     mv light-pty4all/socat-forker-windows.sh.tpl $HOME/.tacos/
     mv light-pty4all/socat-forker.sh.tpl $HOME/.tacos/
-    make build.wrap && mv wrap/bin/wrap $HOME/.local/bin/
+    nimble install cligen && make build.wrap && mv wrap/bin/wrap $HOME/.local/bin/
     cd .. && rm -rf tacos
 }
 
