@@ -93,9 +93,9 @@ tacos(){
     go mod tidy
     make before.build
     make build.tacos && mv tacos $HOME/.local/bin/
-    mkdir -p $HOME/.tacos
-    mv light-pty4all/socat-forker-windows.sh.tpl $HOME/.tacos/
-    mv light-pty4all/socat-forker.sh.tpl $HOME/.tacos/
+    mkdir -p $HOME/.tacos/light-pty4all
+    mv light-pty4all/socat-forker-windows.sh.tpl $HOME/.tacos/light-pty4all
+    mv light-pty4all/socat-forker.sh.tpl $HOME/.tacos/light-pty4all
     nimble install cligen && make build.wrap && mv wrap/bin/wrap $HOME/.local/bin/
     cd .. && rm -rf tacos
 }
