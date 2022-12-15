@@ -92,7 +92,7 @@ tacos(){
     git clone https://github.com/ariary/tacos.git && cd tacos
     go mod tidy
     make before.build
-    make build.tacos && mv tacos $HOME/.local/bin/
+    make build.tacos.static && mv tacos $HOME/.local/bin/
     mkdir -p $HOME/.tacos
     mv light-pty4all/socat-forker-windows.sh.tpl $HOME/.tacos/
     mv light-pty4all/socat-forker.sh.tpl $HOME/.tacos/
