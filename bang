@@ -206,28 +206,7 @@ fi
 }
 
 ## tacos
-bang.tacos.listener() {
-EXPOSITION=$(gum choose "use IP" "tunnel: ngrok" "tunnel: bore")
-FLAGS=""
-
-if [ "$EXPOSITION" = "use IP" ]; then
-    IP=$(gum input --placeholder "Enter Attacker IP")
-    FLAGS="${FLAGS} --lhost ${IP}"
-elif [ "$IP_CHOICE" = "tunnel: bore" ]; then
-    FLAGS="${FLAGS} -b"
-else
-    FLAGS="${FLAGS} -n"
-fi
-
-TMP=""
-gum confirm "Shell from /tmp directory ?" && FLAGS="${FLAGS} --tmp"
-
-if [ ! -f "tacos" ]; then
-    cp $HOME/.local/bin/tacos .
-fi
-
-tmux new-session -s tacos "wrap ${FLAGS}"
-}
+alias bang.tacos.listener='tacos.listener'
 
 alias bang.tacos.container='docker run --net host --rm -it ariary/tacos'
 
