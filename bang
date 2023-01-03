@@ -11,7 +11,7 @@ alias pup='pup --color'
 alias pup.script='pup --color script'
 alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | cpy"
 alias bang.wget.mirror-site='wget --mirror --convert-links --html-extension --wait=2 -o log'
-alias bang.json-visio.link='echo "https://jsonvisio.com/editor"'
+alias bang.json-visio.link='echo "https://jsoncrack.com/editor"'
 
 ## Queensono send file
 bang.queensono.send.file() {
