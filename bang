@@ -12,7 +12,7 @@ alias bang.download-text-editor.cpy="echo 'curl https://getmic.ro | bash' | cpy"
 alias bang.wget.mirror-site='wget --mirror --convert-links --html-extension --wait=2 -o log'
 alias bang.json-visio.link='echo "https://jsoncrack.com/editor"'
 alias bang.diagram-drawing.link='echo "https://excalidraw.com/"'
-alias bang.sshx.launch.cpy="echo 'curl https://getmic.ro | bash' && sshx | cpy"
+alias bang.sshx.launch.cpy="echo '(curl  -sSf https://sshx.io/get | sh) && sshx' | cpy"
 
 ## Queensono send file
 bang.queensono.send.file() {
