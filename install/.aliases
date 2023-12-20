@@ -8,3 +8,4 @@ alias b64d='base64 -d'
 eb64(){echo "${1}" | base64}
 eb64d(){echo "${1}" | base64 -d}
 alias envgrep='env | grep'
+alias cheat='f(){ curl -s "cheat.sh/$1";  unset -f f; }; f'
