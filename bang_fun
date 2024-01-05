@@ -1,11 +1,11 @@
 bang.weather()
 {
-  curl "http://wttr.in/$1?1"
+  curl "https://wttr.in/$1?1"
 }
 
 bang.weather.tomorrow()
 {
-  curl "http://wttr.in/$1?2"
+  curl "https://wttr.in/$1?2"
 }
 
 bang.exit-vim.cpy()
